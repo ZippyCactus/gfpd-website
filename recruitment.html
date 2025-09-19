@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Great Falls Police Department. We are seeking dedicated individuals with a passion for community service. View requirements, benefits, and apply online.">
+    <meta name="keywords" content="Police Recruitment, Law Enforcement Jobs, Great Falls Police Jobs, GFPD Careers">
+    
+    <title>Recruitment | Great Falls Police Department</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #111827; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; }
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+        .form-input, .form-select, .form-checkbox {
+            background-color: #1f2937;
+            border: 1px solid #4b5563;
+            color: #d1d5db;
+            border-radius: 0.375rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input, .form-select { padding: 0.75rem 1rem; width: 100%; }
+        .form-input:focus, .form-select:focus, .form-checkbox:focus, .form-radio:focus {
+            outline: none;
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5);
+        }
+        .form-input:disabled, .form-select:disabled {
+            background-color: #374151;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        .form-checkbox {
+            appearance: none;
+            height: 1.25rem;
+            width: 1.25rem;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            cursor: pointer;
+        }
+        .form-checkbox:checked::before {
+            content: '✓';
+            font-size: 1rem;
+            color: #f59e0b;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .form-radio {
+            appearance: none;
+            border-radius: 9999px;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid #4b5563;
+            position: relative;
+            cursor: pointer;
+            vertical-align: middle;
+            transition: border-color 0.2s;
+        }
+        .form-radio:checked {
+            border-color: #f59e0b;
+        }
+        .form-radio:checked::before {
+            content: '';
+            display: block;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 9999px;
+            background-color: #f59e0b;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+        }
+        #parallax-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 110%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            will-change: transform;
+        }
+
+        /* Accordion Styles */
+        .accordion-content {
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            max-height: 0;
+        }
+        .accordion-button svg {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-button[aria-expanded="true"] svg {
+            transform: rotate(180deg);
+        }
+        .accordion-button[aria-expanded="true"] {
+            background-color: #f59e0b;
+            border-color: #f59e0b;
+            color: #111827;
+        }
+
+        /* Tab Styles */
+        .tab-button {
+            border-color: #4b5563;
+            background-color: transparent;
+            color: #d1d5db;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        .tab-button[aria-selected="true"] {
+            background-color: #f59e0b;
+            border-color: #f59e0b;
+            color: #111827;
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <header id="header" class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="./index.html" class="flex items-center space-x-3">
+                    <img src="./assets/gfpd-badge.png" alt="Great Falls Police Department Badge" class="h-12 w-auto">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold uppercase tracking-wider text-white">Great Falls</span>
+                        <span class="text-sm font-semibold uppercase tracking-widest text-amber-400">Police Department</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="./index.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Home</a>
+                    <a href="./contact.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Contact</a>
+                    <a href="./recruitment.html" class="text-white font-semibold hover:text-amber-400 transition-colors duration-300">Recruitment</a>
+                    <a href="./resources.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Resources</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="./index.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Home</a>
+                <a href="./contact.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Contact</a>
+                <a href="./recruitment.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700 rounded">Recruitment</a>
+                <a href="./resources.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Resources</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="parallax-container relative py-24 sm:py-32 flex items-center justify-center text-center text-white bg-black">
+            <div id="parallax-bg" style="background-image: url('./assets/police-back.jpg');"></div>
+            <div class="absolute inset-0 bg-black/70 z-10"></div>
+            <div class="relative z-20 p-8 fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider drop-shadow-lg">Become a Guardian of Great Falls</h1>
+                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Join a team dedicated to making a real difference. Embrace a rewarding career that challenges you, offers growth, and allows you to protect and serve the residents of our town.</p>
+                <a href="#application-form" class="mt-8 inline-block bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">Apply Now</a>
+            </div>
+        </section>
+
+        <section id="recruitment-info" class="py-16 sm:py-24 bg-gray-900">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider text-center">Join Our Team</h2>
+                    <p class="mt-4 text-lg text-gray-400 leading-relaxed text-center">The Great Falls Police Department is seeking dedicated individuals with a passion for small-town community service. We offer a professional environment where you can build a long-term career, receive ongoing training, and forge strong bonds with the community you serve. We believe in leadership, integrity, and excellence.</p>
+                </div>
+
+                <div id="recruitment-accordion" class="mt-12 md:hidden">
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-1">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-1" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Salary and Benefits</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-1" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                                </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-2">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-2" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Minimum Requirements</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-2" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-3">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-3" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Immediate Disqualifiers</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-3" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-4">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-4" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Hiring Process</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-4" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-5">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-5" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Important Documents</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-5" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="recruitment-tabs" class="mt-16 hidden md:block">
+                    <div role="tablist" aria-label="Recruitment Information" class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4 max-w-6xl mx-auto">
+                        <button id="tab-benefits" role="tab" aria-selected="true" aria-controls="panel-benefits" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Salary and Benefits</button>
+                        <button id="tab-requirements" role="tab" aria-selected="false" aria-controls="panel-requirements" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Minimum Requirements</button>
+                        <button id="tab-disqualifiers" role="tab" aria-selected="false" aria-controls="panel-disqualifiers" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Immediate Disqualifiers</button>
+                        <button id="tab-process" role="tab" aria-selected="false" aria-controls="panel-process" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Hiring Process</button>
+                        <button id="tab-documents" role="tab" aria-selected="false" aria-controls="panel-documents" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Important Documents</button>
+                    </div>
+
+                    <div class="mt-8 bg-gray-800 p-8 rounded-lg border border-gray-700 text-gray-300">
+                        <div id="panel-benefits" role="tabpanel" tabindex="0" aria-labelledby="tab-benefits">
+                           </div>
+                        <div id="panel-requirements" role="tabpanel" tabindex="0" aria-labelledby="tab-requirements" class="hidden leading-relaxed space-y-2">
+                           </div>
+                        <div id="panel-disqualifiers" role="tabpanel" tabindex="0" aria-labelledby="tab-disqualifiers" class="hidden leading-relaxed space-y-6">
+                            </div>
+                        <div id="panel-process" role="tabpanel" tabindex="0" aria-labelledby="tab-process" class="hidden leading-relaxed space-y-6">
+                             </div>
+                        <div id="panel-documents" role="tabpanel" tabindex="0" aria-labelledby="tab-documents" class="hidden leading-relaxed space-y-4">
+                             </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="application-form" class="py-16 sm:py-24 bg-gray-900">
+            <div class="container mx-auto px-6 max-w-5xl">
+                 <div class="text-center fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Police Department Application</h2>
+                    <p class="mt-4 text-lg text-gray-400">If you meet the <a href="#recruitment-info" id="requirements-link" class="text-amber-400 hover:underline">requirements</a> and are ready to serve, we invite you to fill out the form below.</p>
+                </div>
+                <form action="https://formspree.io/f/xpwjnqno" method="POST" class="mt-12 space-y-8 fade-in-up">
+                    
+                    <fieldset class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <legend class="sr-only">Personal Information</legend>
+                        <div><label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name <span class="text-amber-400">*</span></label><input type="text" id="name" name="name" required class="form-input"></div>
+                        <div><label for="dob" class="block text-sm font-medium text-gray-300 mb-1">Date of Birth <span class="text-amber-400">*</span></label><input type="text" placeholder="MM/DD/YYYY" id="dob" name="date_of_birth" required class="form-input"></div>
+                        <div><label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Phone <span class="text-amber-400">*</span></label><input type="tel" id="phone" name="phone" required class="form-input"></div>
+                        <div class="md:col-span-2 lg:col-span-3"><label for="address" class="block text-sm font-medium text-gray-300 mb-1">Address <span class="text-amber-400">*</span></label><input type="text" id="address" name="address" required class="form-input"></div>
+                        <div><label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email <span class="text-amber-400">*</span></label><input type="email" id="email" name="email" required class="form-input"></div>
+                        <div><label for="dl-number" class="block text-sm font-medium text-gray-300 mb-1">Driver's License Number <span class="text-amber-400">*</span></label><input type="text" id="dl-number" name="drivers_license_number" required class="form-input"></div>
+                        <div><label for="dl-state" class="block text-sm font-medium text-gray-300 mb-1">State Issued <span class="text-amber-400">*</span></label><input type="text" id="dl-state" name="drivers_license_state" required class="form-input"></div>
+                    </fieldset>
+                    
+                    <hr class="border-gray-700">
+
+                    <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                        <legend class="sr-only">Position Information</legend>
+                        <div>
+                            <p class="text-sm font-medium text-gray-300 mb-2">Position Applying For: <span class="text-amber-400">*</span></p>
+                            <div class="flex space-x-6"><label class="flex items-center"><input type="checkbox" name="position" value="Patrol Officer" required class="form-checkbox mr-2">Patrol Officer</label></div>
+                        </div>
+                        <div><label for="how-heard" class="block text-sm font-medium text-gray-300 mb-1">How did you hear about the position? </label><input type="text" id="how-heard" name="how_heard" class="form-input"></div>
+                        <div data-conditional-container>
+                            <p class="text-sm font-medium text-gray-300 mb-2">Did someone from GFPD refer you? <span class="text-amber-400">*</span></p>
+                            <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="referred" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="referred" value="No" class="form-radio mr-2" checked>No</label></div>
+                        </div>
+                        <div data-conditional-target="referred" class="hidden"><label for="referral-name" class="block text-sm font-medium text-gray-300 mb-1">If yes, please list the person. <span class="text-amber-400">*</span></label><input type="text" id="referral-name" name="referral_name" class="form-input" required disabled></div>
+                    </fieldset>
+
+                    <hr class="border-gray-700">
+                    
+                    <fieldset class="space-y-6">
+                        <legend class="sr-only">History and Eligibility</legend>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 items-start">
+                             <div data-conditional-container>
+                                <p class="text-sm font-medium text-gray-300 mb-2">Did you serve in the U.S. Military? <span class="text-amber-400">*</span></p>
+                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="military_service" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="military_service" value="No" class="form-radio mr-2" checked>No</label></div>
+                            </div>
+                            <div data-conditional-target="military_service" class="hidden">
+                                <label for="discharge-status" class="block text-sm font-medium text-gray-300 mb-1">Discharge Status <span class="text-amber-400">*</span></label>
+                                <select id="discharge-status" name="discharge_status" class="form-select" required disabled>
+                                    <option value="" disabled selected>Select Status...</option>
+                                    <option value="Honorable">Honorably Discharged</option>
+                                    <option value="General">General Discharge</option>
+                                    <option value="OTH">Other Than Honorable (OTH)</option>
+                                    <option value="Dishonorable">Bad Conduct / Dishonorable</option>
+                                    <option value="Serving">Still Serving (Active/Reserve)</option>
+                                </select>
+                            </div>
+                            <div data-conditional-container>
+                                <p class="text-sm font-medium text-gray-300 mb-2">Are you a certified Law Enforcement Officer? <span class="text-amber-400">*</span></p>
+                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="is_certified_leo" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="is_certified_leo" value="No" class="form-radio mr-2" checked>No</label></div>
+                            </div>
+                            <div data-conditional-target="is_certified_leo" class="hidden"><label for="certification-state" class="block text-sm font-medium text-gray-300 mb-1">If yes, list state of certification. <span class="text-amber-400">*</span></label><input type="text" id="certification-state" name="certification_state" class="form-input" required disabled></div>
+                             <div data-conditional-container>
+                                <p class="text-sm font-medium text-gray-300 mb-2">Do you currently work for a law enforcement agency? <span class="text-amber-400">*</span></p>
+                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="is_current_leo" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="is_current_leo" value="No" class="form-radio mr-2" checked>No</label></div>
+                            </div>
+                            <div data-conditional-target="is_current_leo" class="hidden"><label for="current-agency" class="block text-sm font-medium text-gray-300 mb-1">If yes, list agency name and time with agency. <span class="text-amber-400">*</span></label><input type="text" id="current-agency" name="current_agency" class="form-input" required disabled></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                             <div data-conditional-container>
+                                <p class="text-sm font-medium text-gray-300 mb-2">Have you ever been convicted of a crime (not including traffic citations)? <span class="text-amber-400">*</span></p>
+                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="crime_convicted" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="crime_convicted" value="No" class="form-radio mr-2" checked>No</label></div>
+                            </div>
+                            <div data-conditional-target="crime_convicted" class="hidden"><label for="crime_details" class="block text-sm font-medium text-gray-300 mb-1">If yes, identify the crime and when. <span class="text-amber-400">*</span></label><textarea id="crime_details" name="crime_details" rows="2" class="form-input" required disabled></textarea></div>
+                            <div data-conditional-container>
+                                <p class="text-sm font-medium text-gray-300 mb-2">Have you ever used marijuana or other illegal drugs? <span class="text-amber-400">*</span></p>
+                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="drug_use" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="drug_use" value="No" class="form-radio mr-2" checked>No</label></div>
+                            </div>
+                            <div data-conditional-target="drug_use" class="hidden"><label for="drug_details" class="block text-sm font-medium text-gray-300 mb-1">If yes, provide when and the circumstances. <span class="text-amber-400">*</span></label><textarea id="drug_details" name="drug_details" rows="2" class="form-input" required disabled></textarea></div>
+                             <div data-conditional-container>
+                                <p class="text-sm font-medium text-gray-300 mb-2">Has your driver's license ever been suspended or revoked? <span class="text-amber-400">*</span></p>
+                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="license_suspended" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="license_suspended" value="No" class="form-radio mr-2" checked>No</label></div>
+                            </div>
+                            <div data-conditional-target="license_suspended" class="hidden"><label for="license_details" class="block text-sm font-medium text-gray-300 mb-1">If yes, please provide when. <span class="text-amber-400">*</span></label><input type="text" id="license_details" name="license_details" class="form-input" required disabled></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                            <div><label for="citations" class="block text-sm font-medium text-gray-300 mb-1">Number of traffic citations in the last 10 years. <span class="text-amber-400">*</span></label><input type="number" id="citations" name="citations" min="0" required class="form-input"></div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-300 mb-2">Are you currently in default on your student loans? <span class="text-amber-400">*</span></p>
+                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="student_loan_default" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="student_loan_default" value="No" class="form-radio mr-2">No</label></div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-300 mb-2">Are you able to work nights, weekends, and/or holidays? <span class="text-amber-400">*</span></p>
+                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="availability" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="availability" value="No" class="form-radio mr-2">No</label></div>
+                            </div>
+                            <div><label for="salary_expectations" class="block text-sm font-medium text-gray-300 mb-1">What are your salary expectations? <span class="text-amber-400">*</span></label><input type="text" id="salary_expectations" name="salary_expectations" required class="form-input"></div>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="text-center pt-4">
+                        <p class="text-gray-400 text-sm mb-6">By submitting this application, you acknowledge that all applicants must sign an Authorization for the Release of Information form. A printable version is available <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline font-semibold">here</a>, or a copy can be provided for you at the police department.</p>
+                        <button type="submit" class="w-full sm:w-auto bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-gray-400">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left md:items-start">
+                <div>
+                    <h3 class="text-lg font-bold text-white uppercase tracking-wider">Contact Us</h3>
+                    <address class="mt-4 not-italic">Great Falls Police Department<br>324 Dearborn St<br>Great Falls, SC 29055</address>
+                    <div class="mt-4">
+                        <p>Non-Emergency: <a href="tel:803-482-2145" class="hover:text-amber-400">(803) 482-2145</a></p>
+                        <p class="font-bold text-white">In an Emergency, Dial 911</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="./assets/gfpd-badge.png" alt="Great Falls Police Department Badge" class="h-40 w-auto" loading="lazy">
+                </div>
+                <div class="md:text-right">
+                     <h3 class="text-lg font-bold text-white uppercase tracking-wider">Site Navigation</h3>
+                     <ul class="mt-4 space-y-2">
+                         <li><a href="./contact.html" class="hover:text-amber-400">Contact</a></li>
+                         <li><a href="./recruitment.html" class="hover:text-amber-400">Recruitment</a></li>
+                         <li><a href="./resources.html" class="hover:text-amber-400">Resources</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-sm">
+                <p>© <span id="current-year"></span> Great Falls Police Department. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Fade-in animations
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            if (animatedElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                animatedElements.forEach(el => { observer.observe(el); });
+            }
+
+            // Copyright Year
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Parallax Hero
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                let ticking = false;
+                window.addEventListener('scroll', function() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function() {
+                            const offset = window.pageYOffset;
+                            parallaxBg.style.transform = 'translateY(' + offset * 0.4 + 'px)';
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+            }
+
+            // Desktop Tabs
+            const tabs = document.querySelectorAll('#recruitment-tabs [role="tab"]');
+            const tabList = document.querySelector('#recruitment-tabs [role="tablist"]');
+
+            if (tabList) {
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        tabs.forEach(t => {
+                            t.setAttribute('aria-selected', 'false');
+                            const panel = document.getElementById(t.getAttribute('aria-controls'));
+                            panel.classList.add('hidden');
+                        });
+
+                        const clickedTab = e.currentTarget;
+                        clickedTab.setAttribute('aria-selected', 'true');
+                        
+                        const controls = clickedTab.getAttribute('aria-controls');
+                        document.getElementById(controls).classList.remove('hidden');
+                    });
+                });
+            }
+
+            // Mobile Accordion
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all other accordions first
+                    accordionButtons.forEach(btn => {
+                        btn.setAttribute('aria-expanded', 'false');
+                        const contentToClose = document.getElementById(btn.getAttribute('aria-controls'));
+                        contentToClose.style.maxHeight = '0px';
+                    });
+
+                    // Open the clicked one (if it was previously closed)
+                    if (!isExpanded) {
+                        button.setAttribute('aria-expanded', 'true');
+                        const contentToOpen = document.getElementById(button.getAttribute('aria-controls'));
+                        contentToOpen.style.maxHeight = contentToOpen.scrollHeight + 'px';
+                    }
+                });
+            });
+
+            // Populate Accordion and Tabs from a single source
+            const contentSource = {
+                'panel-benefits': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider">Compensation</h3>
+                    <p class="mt-2 text-lg">Competitive Salary (based on experience)</p>
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mt-6">Benefits & Perks</h3>
+                    <ul class="mt-4 list-disc list-inside text-lg space-y-2">
+                        <li>Take Home Vehicle</li>
+                        <li>Paid Holidays</li>
+                        <li>Retirement Plans</li>
+                        <li>Health & Wellness Programs</li>
+                        <li>Flexible Shift Rotation Hours</li>
+                        <li>Opportunities for Training & Advancement</li>
+                    </ul>`,
+                'panel-requirements': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mb-4">Minimum Requirements <span class="text-gray-400 text-lg normal-case font-normal">(South Carolina Minimum Requirements Act (23-23-60))</span></h3>
+                    <p>Applicants must meet all qualifications for employment consideration:</p>
+                    <ul class="list-disc list-inside space-y-2 pt-2">
+                        <li>Must be a minimum of 21 years of age</li>
+                        <li>Must have a clean driving history: No convictions for Driving Under Influence (DUI), Driving Under Suspension (DUS) within the past 5 years, and minimum convictions for speeding</li>
+                        <li>Must have a current South Carolina drivers license</li>
+                        <li>Must have good credit history, no judgments, no liens, no recent bankruptcy. Each applicant's history will be considered prior to employment</li>
+                        <li>Must have a high school diploma or General Education Development (GED) equivalent</li>
+                        <li>Must successfully complete a polygraph exam</li>
+                        <li>Must successfully complete a psychological evaluation</li>
+                        <li>Must successfully pass a background investigation</li>
+                        <li>Must successfully pass a medical physical exam and drug screening</li>
+                        <li>Must successfully pass an oral interview with the Chief of Police</li>
+                        <li>Must successfully pass the Police Officer Entry Level exam</li>
+                        <li>No convictions of Domestic Violence</li>
+                        <li>No convictions of felonies, misdemeanor crimes or crimes of moral turpitude</li>
+                    </ul>`,
+                'panel-disqualifiers': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mb-4">Immediate Disqualifiers</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Criminal History</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Adult commission of undetected crimes of a serious or repetitive nature</li>
+                                <li>Any conviction of domestic violence, including simple assault against a domestic partner, spouse, child or parent</li>
+                                <li>Conviction of any crime which carries a 6-months jail sentence or more, excluding traffic violations which are discussed separately, or the South Carolina State Law equivalent within the last 5 years</li>
+                                <li>Conviction of any felony or any crime involving moral turpitude (crimes contrary to justice, honesty, or good morals)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Traffic Violations</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Suspension of driver's license within the past thirty-six (36) months (Non-traffic related suspensions, such as an insurance related suspension, shall be reviewed on a case-by-case basis.)</li>
+                                <li>Four (4) or more moving violations within the past thirty-six (36) months (regardless of adjudication withheld)</li>
+                                <li>Accumulation of eight (8) points or more within the past 36 months on a South Carolina Operator's License or the equivalent for out of state licenses. Points may be negated by attending defensive driving school offered by the Division of Motor Vehicles prior to initial testing</li>
+                                <li>Conviction or case pending for DUI, DWI or Hit and Run within the last five (5) years.</li>
+                                <li>Any significant negative driving history, which shall be determined by management review of all relevant facts.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Drugs</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Any illegal possession/use of hallucinogens to include but no limited to: LSD (lysergic acid diethylamide), PCP (phencyclidine), magic mushrooms (psilocybin), ketamine, mescaline (peyote cactus), PCP, MDMA. <strong>*Requires a review by GFPD Recruiter and Chief of Police to determine if the circumstances warrant an immediate disqualifier</strong></li>
+                                <li>Any involvement in the sale or distribution of illegal drugs as an adult</li>
+                                <li>Illegal possession or use of anabolic steroids</li>
+                                <li>Illegal possession of marijuana or a derivative thereof within the last three (3) years. <strong>*Requires a review by GFPD Recruiter and Chief of Police to determine if the circumstances warrant an immediate disqualifier</strong></li>
+                                <li>Juvenile involvement in the sale or distribution of illegal drugs is an area of concern which will be given careful scrutiny in the context of the full investigation/review.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Credit</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Demonstrated a history of financial irresponsibility. (Examples of areas of concern include unpaid collections or unsatisfactory judgments where no payment plan has been established. Bankruptcies will be evaluated based on the time frame, circumstances, other measures pursued, and restoration of credit).</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Others</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Cheating on any examination or testing associated with the position</li>
+                                <li>Dishonorable discharge from any military service</li>
+                                <li>Untruthfulness and/or intentional withholding of information on any application, interview, or paperwork associated with the position. Examples of intentional withholding of information would include deliberate inaccuracies or incomplete statements.</li>
+                                <li>Currently in default on student loans when considered for employment.</li>
+                            </ul>
+                        </div>
+                    </div>`,
+                'panel-process': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mb-4">Steps in the Hiring Process</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Certified Applicant (In-state and Out-of-state)</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li><a href="#application-form" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
+                                <li>Applications reviewed for automatic disqualifiers</li>
+                                <li><strong>Interview:</strong> The applicant is scheduled for an interview with the Chief of Police.</li>
+                                <li><strong>Background Investigation:</strong> A thorough background investigation is completed on all applicants. This includes (but is not limited to) contacting former and current employers and references, a credit check, and a criminal history check.</li>
+                                <li><strong>Medical Screenings / Drug Screen</strong></li>
+                                <li><strong>Hiring:</strong> Once the applicant is determined to be a good hire, a conditional offer of employment will be extended to the applicant. The applicant must pass a drug and alcohol screen before they are sworn in.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Uncertified Applicants</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li><a href="#application-form" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
+                                <li>Applications reviewed for automatic disqualifiers</li>
+                                <li><strong>Written Exam:</strong> Applicants must take a written exam and must score 70% or better on this exam.</li>
+                                <li><strong>Physical Ability Test:</strong> After passing the written examination, the applicant will be required to complete the Physical Ability Test (PAT). This is required for admission into the South Carolina Criminal Justice Academy, and the course and all obstacles must be successfully completed in under 2 minutes and 6 seconds.</li>
+                                <li><strong>Interview:</strong> After successfully completing the written exam and PAT, applicants are scheduled for an interview with the Chief of Police.</li>
+                                <li><strong>Background Investigation:</strong> A thorough background investigation is completed on all applicants. This includes (but is not limited to) contacting former and current employers and references, a credit check, and a criminal history check.</li>
+                                <li><strong>Medical Screenings / Drug Screen</strong></li>
+                                <li><strong>Hiring:</strong> Once the applicant is determined to be a good hire, a conditional offer of employment will be extended to the applicant. The applicant must pass a drug and alcohol screen before they are sworn in.</li>
+                            </ul>
+                        </div>
+                    </div>`,
+                'panel-documents': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mb-4">Important Documents</h3>
+                    <div class="space-y-4">
+                        <p>In preparation for and the process to efficient, a list of documentation candidates will be required to provide is listed below. The Recruiter will not collect them personally. Applicants will be sent a link to Guardian Alliance Technology upon successful completion of the Physical Agility Test, Written Assessment, and Interview. This is for our candidate's knowledge so you can be proactive in obtaining all your information.</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Applicant's Birth Certificate (photocopy)</li>
+                            <li>Social Security Card (photocopy)</li>
+                            <li>Driver's License (photocopy)-all candidates must obtain a valid SC driver's license to be hired by our agency.</li>
+                            <li>Certified driving record for all states in which the applicant was/is licensed</li>
+                            <li>Highest college degree earned (photocopy)</li>
+                            <li>High school diploma or transcript (photocopy)</li>
+                            <li>An official transcript from the college from which the applicant graduated, sent directly to the Great Falls Police Department</li>
+                            <li>If the applicant served in the U.S. Military for any period of time, DD-214 (Member 4 Copy listing Characterization of Service, Separation and Re-Enlistment Codes) (photocopy) or Discharge Certificate (photocopy).</li>
+                            <li>Licenses or Certificate which show special qualifications or skills (photocopy). If the applicant is a certified law enforcement officer from outside South Carolina, a State Certificate and training academy curriculum with hours must be submitted (photocopy).</li>
+                        </ol>
+                        <p class="font-bold pt-4">FOR OUT OF STATE CANDIDATES TO BE CONSIDERED PRE-CERTIFIED OFFICERS IN THE STATE OF SOUTH CAROLINA. ALL OF THIS INFORMATION WILL BE OBTAINED BY THE GREAT FALLS POLICE DEPARMENTS OFFICE OF RECRUITMENT.</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Certificate of Completion (BLET Course, Basic Corrections or Detention Course or Federal Training Course)</li>
+                            <li>Curriculum/Syllabus showing hours and topics of training</li>
+                            <li>A completed POST letter has been received from the out-of-state POST agency. POST Letter</li>
+                            <li>A Letter of Good Standing from the current or last agency the applicant was employed is required</li>
+                            <li>Indication that a Letter of Good Standing has been requested for Federal/Military candidates; or a Verification of Employment Letter for SCDC Correction candidates.</li>
+                        </ol>
+                        <p>Prior to a candidate's registration for training at the Academy, the Training Review Request Form along with the required documentation above should be submitted.</p>
+                        <p>Upon receipt of the complete Training Review, an initial review will be conducted to determine eligibility and compliance in order for the training review to move forward for final recommendations by Certification & Compliance, Training Operations, Standards, Special Operations, and authorized approval by the CJA Director.</p>
+                        <p>All certified out of state candidates with less than one (1) year of law enforcement employment/experience (one year begins upon completion of training and subsequent employment) or candidates with no law enforcement employment/experience will have to attend the 4 X 8 basic training course.</p>
+                    </div>`
+            };
+
+            Object.keys(contentSource).forEach((panelId, index) => {
+                const tabPanel = document.getElementById(panelId);
+                if (tabPanel) {
+                    tabPanel.innerHTML = contentSource[panelId];
+                }
+                const accordionPanel = document.getElementById(`accordion-panel-${index + 1}`);
+                if (accordionPanel) {
+                    accordionPanel.querySelector('div').innerHTML = contentSource[panelId];
+                }
+            });
+
+
+            // Link to scroll to and open Requirements tab/accordion
+            const requirementsLink = document.getElementById('requirements-link');
+            if(requirementsLink) {
+                requirementsLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('recruitment-info').scrollIntoView({ behavior: 'smooth' });
+                    if (window.innerWidth < 768) { // md breakpoint
+                        document.querySelector('[aria-controls="accordion-panel-2"]').click();
+                    } else {
+                        document.getElementById('tab-requirements').click();
+                    }
+                });
+            }
+
+            // Conditional Form Fields Logic
+            const conditionalContainers = document.querySelectorAll('[data-conditional-container]');
+            conditionalContainers.forEach(container => {
+                const radios = container.querySelectorAll('input[type="radio"]');
+                const radioName = radios[0] ? radios[0].name : null;
+                if (!radioName) return;
+
+                const target = document.querySelector(`[data-conditional-target="${radioName}"]`);
+                if (!target) return;
+
+                const targetInput = target.querySelector('input, textarea, select');
+                if (!targetInput) return;
+
+                radios.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        if (this.value === 'Yes') {
+                            target.classList.remove('hidden');
+                            targetInput.disabled = false; // Enable the input
+                        } else {
+                            target.classList.add('hidden');
+                            targetInput.disabled = true; // Disable the input
+                            
+                            // Also clear the value for good measure
+                            if (targetInput.type === 'checkbox' || targetInput.type === 'radio') {
+                                targetInput.checked = false;
+                            } else {
+                                targetInput.value = '';
+                            }
+                        }
+                    });
+                });
+            });
+
+            // DOB Input Formatting
+            const dobInput = document.getElementById('dob');
+            if (dobInput) {
+                dobInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    let formattedValue = '';
+                    if (value.length > 0) {
+                        formattedValue = value.substring(0, 2);
+                        if (value.length > 2) {
+                            formattedValue += '/' + value.substring(2, 4);
+                        }
+                        if (value.length > 4) {
+                            formattedValue += '/' + value.substring(4, 8);
+                        }
+                    }
+                    e.target.value = formattedValue;
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>
