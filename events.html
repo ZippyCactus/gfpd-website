@@ -51,7 +51,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="./index.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Home</a>
                     <a href="./contact.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Contact</a>
-                    <a href="./events.html" class="text-white font-semibold hover:text-amber-400 transition-colors duration-300">Events</a>
+                    <a href="./events.html" class="text-white font-semibold hover:text-amber-400 transition-colors duration-300" aria-current="page">Events</a>
                     <a href="./recruitment.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Recruitment</a>
                     <a href="./resources.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Resources</a>
                 </div>
@@ -65,7 +65,7 @@
             <div id="mobile-menu" class="hidden md:hidden mt-4">
                 <a href="./index.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Home</a>
                 <a href="./contact.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Contact</a>
-                <a href="./events.html" class="block py-2 px-4 text-sm text-white hover:bg-gray-700 rounded">Events</a>
+                <a href="./events.html" class="block py-2 px-4 text-sm text-white bg-gray-700 rounded" aria-current="page">Events</a>
                 <a href="./recruitment.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Recruitment</a>
                 <a href="./resources.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Resources</a>
             </div>
@@ -74,7 +74,8 @@
     <main>
         <section class="parallax-container relative py-24 sm:py-32 flex items-center justify-center text-center text-white bg-black">
             <div id="parallax-bg" style="background-image: url('./assets/community-events.jpg');"></div>
-            <div class="absolute inset-0 bg-black/70 z-10"></div> <div class="relative z-20 p-8 fade-in-up">
+            <div class="absolute inset-0 bg-black/70 z-10"></div>
+            <div class="relative z-20 p-8 fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider drop-shadow-lg">Community & Events</h1>
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Connecting with our community is at the heart of what we do. Find out about upcoming events and see highlights from past gatherings.</p>
             </div>
@@ -104,6 +105,9 @@
                                 <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
                             </div>
                             <div id="calendar-grid" class="grid grid-cols-7 gap-1"></div>
+                            <div class="mt-4 text-center">
+                                <a href="#" id="show-upcoming-link" class="text-amber-400 hover:text-amber-300 font-semibold transition-colors">← View Upcoming</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -164,6 +168,7 @@
             if (parallaxBg) { window.addEventListener('scroll', () => { parallaxBg.style.transform = `translateY(${window.pageYOffset * 0.4}px)`; }); }
 
             // Calendar-specific elements
+            // The rest of the script remains unchanged...
             const calendarGrid = document.getElementById('calendar-grid');
             const monthYearHeader = document.getElementById('month-year-header');
             const prevMonthBtn = document.getElementById('prev-month-btn');
@@ -174,22 +179,17 @@
             const moreEventsLinkContainer = document.getElementById('more-events-link-container');
             const scrollToCalendarLink = document.getElementById('scroll-to-calendar-link');
             const calendarContainer = document.getElementById('calendar-container');
-
+            const showUpcomingLink = document.getElementById('show-upcoming-link');
             let currentDate = new Date();
             let allEvents = [];
             let selectedDateElement = null;
-
             async function fetchAndInitialize() {
                 eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">Loading events...</div>`;
                 try {
                     const response = await fetch('https://gfpd-website.vercel.app/api/getEvents');
                     if (!response.ok) throw new Error('Network response was not ok');
                     const rawEvents = await response.json();
-                    
-                    allEvents = rawEvents
-                        .map(event => ({ ...event, dateObj: new Date(event.date + 'T00:00:00') }))
-                        .sort((a, b) => a.dateObj - b.dateObj);
-
+                    allEvents = rawEvents.map(event => ({ ...event, dateObj: new Date(event.date + 'T00:00:00') })).sort((a, b) => a.dateObj - b.dateObj);
                 } catch (error) {
                     console.error('Failed to fetch events:', error);
                     eventList.innerHTML = `<p class="text-red-400">Could not load events. Please try again later.</p>`;
@@ -198,7 +198,6 @@
                     displayUpcomingEvents();
                 }
             }
-            
             function renderCalendar() {
                 calendarGrid.innerHTML = '';
                 const year = currentDate.getFullYear();
@@ -208,7 +207,6 @@
                 const daysInMonth = new Date(year, month + 1, 0).getDate();
                 const today = new Date();
                 for (let i = 0; i < firstDayOfMonth; i++) { calendarGrid.appendChild(document.createElement('div')); }
-
                 for (let day = 1; day <= daysInMonth; day++) {
                     const dayCell = document.createElement('div');
                     dayCell.textContent = day;
@@ -216,113 +214,65 @@
                     dayCell.dataset.date = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
                     const cellDate = new Date(year, month, day);
                     if (allEvents.some(e => e.dateObj.toDateString() === cellDate.toDateString())) { dayCell.classList.add('has-event'); }
-                    if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-                        dayCell.classList.add('is-today');
-                    }
+                    if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) { dayCell.classList.add('is-today'); }
                     calendarGrid.appendChild(dayCell);
                 }
             }
-
             function displayUpcomingEvents() {
                 eventListHeader.textContent = 'Upcoming Events';
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
-
                 const allUpcoming = allEvents.filter(event => event.dateObj >= today);
                 const displayEvents = allUpcoming.slice(0, 2);
-
-                if (displayEvents.length > 0) {
-                    eventList.innerHTML = displayEvents.map(event => renderEventHTML(event)).join('');
-                } else {
-                    eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">No upcoming events scheduled.</div>`;
-                }
-
-                if (allUpcoming.length > 2) {
-                    moreEventsLinkContainer.classList.remove('hidden');
-                } else {
-                    moreEventsLinkContainer.classList.add('hidden');
-                }
+                if (displayEvents.length > 0) { eventList.innerHTML = displayEvents.map(event => renderEventHTML(event)).join(''); } else { eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">No upcoming events scheduled.</div>`; }
+                if (allUpcoming.length > 2) { moreEventsLinkContainer.classList.remove('hidden'); } else { moreEventsLinkContainer.classList.add('hidden'); }
             }
-
             function displayEventsForDay(date) {
                 const formattedDate = date.toLocaleDateString('default', { month: 'long', day: 'numeric' });
                 eventListHeader.textContent = `Events for ${formattedDate}`;
-                
                 const eventsOnDay = allEvents.filter(event => event.dateObj.toDateString() === date.toDateString());
-                
-                if (eventsOnDay.length > 0) {
-                    eventList.innerHTML = eventsOnDay.map(event => renderEventHTML(event)).join('');
-                } else {
-                    eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">No events scheduled for this day.</div>`;
-                }
+                if (eventsOnDay.length > 0) { eventList.innerHTML = eventsOnDay.map(event => renderEventHTML(event)).join(''); } else { eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">No events scheduled for this day.</div>`; }
+                return eventsOnDay.length > 0;
             }
-
-            // UPDATED: Now creates a clickable link for the location
             function renderEventHTML(event) {
                 const eventDate = event.dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-                return `
-                    <div class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-amber-500">
-                        <h4 class="font-bold text-white">${event.title}</h4>
-                        <p class="text-sm font-semibold text-gray-300 mt-1">${eventDate}</p>
-                        <p class="text-sm text-gray-300 mt-1">
-                            ${event.time} @ 
-                            <a href="${event.mapLink}" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline decoration-dotted">
-                                ${event.displayLocation}
-                            </a>
-                        </p>
-                        <p class="text-sm text-gray-400 mt-2">${event.description}</p>
-                    </div>`;
+                return `<div class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-amber-500"><h4 class="font-bold text-white">${event.title}</h4><p class="text-sm font-semibold text-gray-300 mt-1">${eventDate}</p><p class="text-sm text-gray-300 mt-1">${event.time} @ <a href="${event.mapLink}" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline decoration-dotted">${event.displayLocation}</a></p><p class="text-sm text-gray-400 mt-2">${event.description}</p></div>`;
             }
-
             calendarGrid.addEventListener('click', function(e) {
                 const dayCell = e.target.closest('.calendar-day');
                 if (!dayCell || dayCell.classList.contains('is-disabled')) return;
-
                 if (selectedDateElement) selectedDateElement.classList.remove('is-selected');
                 dayCell.classList.add('is-selected');
                 selectedDateElement = dayCell;
-                
                 const [year, month, day] = dayCell.dataset.date.split('-').map(Number);
                 const cellDate = new Date(year, month - 1, day);
-                displayEventsForDay(cellDate);
-
-                eventListContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                const hasEvents = displayEventsForDay(cellDate);
+                if (hasEvents) {
+                    eventListContainer.classList.add('flash-border');
+                    setTimeout(() => { eventListContainer.classList.remove('flash-border'); }, 2000);
+                    eventListContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             });
-            
-            if (prevMonthBtn) {
-                prevMonthBtn.addEventListener('click', () => { 
-                    currentDate.setMonth(currentDate.getMonth() - 1); 
-                    if (selectedDateElement) selectedDateElement.classList.remove('is-selected');
-                    selectedDateElement = null; 
-                    renderCalendar(); 
-                });
-            }
-
-            if (nextMonthBtn) {
-                nextMonthBtn.addEventListener('click', () => { 
-                    currentDate.setMonth(currentDate.getMonth() + 1); 
-                    if (selectedDateElement) selectedDateElement.classList.remove('is-selected');
-                    selectedDateElement = null; 
-                    renderCalendar(); 
-                });
-            }
-
+            if (prevMonthBtn) { prevMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); if (selectedDateElement) selectedDateElement.classList.remove('is-selected'); selectedDateElement = null; renderCalendar(); }); }
+            if (nextMonthBtn) { nextMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); if (selectedDateElement) selectedDateElement.classList.remove('is-selected'); selectedDateElement = null; renderCalendar(); }); }
             if (scrollToCalendarLink) {
                 scrollToCalendarLink.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    if (window.innerWidth < 768) {
-                        calendarContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-
+                    if (window.innerWidth < 768) { calendarContainer.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
                     calendarContainer.classList.add('flash-border');
-
-                    setTimeout(() => {
-                        calendarContainer.classList.remove('flash-border');
-                    }, 2000);
+                    setTimeout(() => { calendarContainer.classList.remove('flash-border'); }, 2000);
                 });
             }
-            
+            if (showUpcomingLink) {
+                showUpcomingLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (selectedDateElement) { selectedDateElement.classList.remove('is-selected'); selectedDateElement = null; }
+                    displayUpcomingEvents();
+                    eventListContainer.classList.add('flash-border');
+                    setTimeout(() => { eventListContainer.classList.remove('flash-border'); }, 2000);
+                    if (window.innerWidth < 768) { eventListContainer.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+                });
+            }
             fetchAndInitialize();
         });
     </script>
