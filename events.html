@@ -28,6 +28,13 @@
         .calendar-day.has-event::after { content: ''; position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; border-radius: 50%; background-color: #f59e0b; }
         .calendar-day.is-selected.has-event::after { background-color: #111827; }
         .photo-placeholder { background-color: #1f2937; border: 2px dashed #4b5563; }
+        @keyframes flash {
+            0%, 50%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            25%, 75% { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+        }
+        .flash-border {
+            animation: flash 2s ease-out;
+        }
     </style>
 </head>
 <body class="text-gray-300">
@@ -42,11 +49,11 @@
                     </div>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="./index.html" class="text-gray-300 hover:text-amber-400">Home</a>
-                    <a href="./contact.html" class="text-gray-300 hover:text-amber-400">Contact</a>
-                    <a href="./events.html" class="text-white font-semibold hover:text-amber-400">Events</a>
-                    <a href="./recruitment.html" class="text-gray-300 hover:text-amber-400">Recruitment</a>
-                    <a href="./resources.html" class="text-gray-300 hover:text-amber-400">Resources</a>
+                    <a href="./index.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Home</a>
+                    <a href="./contact.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Contact</a>
+                    <a href="./events.html" class="text-white font-semibold hover:text-amber-400 transition-colors duration-300">Events</a>
+                    <a href="./recruitment.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Recruitment</a>
+                    <a href="./resources.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Resources</a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
@@ -66,9 +73,8 @@
     </header>
     <main>
         <section class="parallax-container relative py-24 sm:py-32 flex items-center justify-center text-center text-white bg-black">
-            <div id="parallax-bg" style="background-image: url('./assets/police-community-event.jpg');"></div>
-            <div class="absolute inset-0 bg-black/80 z-10"></div>
-            <div class="relative z-20 p-8 fade-in-up">
+            <div id="parallax-bg" style="background-image: url('./assets/community-events.jpg');"></div>
+            <div class="absolute inset-0 bg-black/70 z-10"></div> <div class="relative z-20 p-8 fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider drop-shadow-lg">Community & Events</h1>
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Connecting with our community is at the heart of what we do. Find out about upcoming events and see highlights from past gatherings.</p>
             </div>
@@ -78,7 +84,17 @@
                 <div class="max-w-6xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider text-center">Upcoming Events</h2>
                     <div class="mt-8 flex flex-col md:flex-row gap-8">
-                        <div class="w-full md:w-1/2 lg:w-3/5 bg-gray-800 p-6 rounded-lg border border-gray-700">
+                        <div id="event-list-container" class="w-full md:w-1/2 lg:w-2/5">
+                            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                                <h3 id="event-list-header" class="text-2xl font-bold text-white uppercase tracking-wider">Upcoming Events</h3>
+                                <div id="event-list" class="mt-4 space-y-4">
+                                </div>
+                                <div id="more-events-link-container" class="mt-4 text-center hidden">
+                                    <a href="#calendar-container" id="scroll-to-calendar-link" class="text-amber-400 hover:text-amber-300 font-semibold transition-colors">More Events ➝</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="calendar-container" class="w-full md:w-1/2 lg:w-3/5 bg-gray-800 p-6 rounded-lg border border-gray-700">
                             <div class="flex items-center justify-between mb-4">
                                 <button id="prev-month-btn" aria-label="Previous month" class="p-2 rounded-full hover:bg-gray-700"><svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
                                 <h3 id="month-year-header" class="text-xl font-bold text-white uppercase tracking-wider"></h3>
@@ -88,12 +104,6 @@
                                 <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
                             </div>
                             <div id="calendar-grid" class="grid grid-cols-7 gap-1"></div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-2/5">
-                            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 h-full">
-                                <h3 class="text-2xl font-bold text-white uppercase tracking-wider">Events for <span id="selected-date-display">Today</span></h3>
-                                <div id="event-list" class="mt-4 space-y-4 h-[22rem] overflow-y-auto pr-2"></div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,7 +122,7 @@
         </section>
     </main>
     <footer class="bg-black text-gray-400">
-        <div class="container mx-auto px-6 py-12">
+       <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left md:items-start">
                 <div>
                     <h3 class="text-lg font-bold text-white uppercase tracking-wider">Contact Us</h3>
@@ -136,42 +146,56 @@
             <div class="mt-12 border-t border-gray-800 pt-8 text-center text-sm"><p>&copy; <span id="current-year"></span> Great Falls Police Department. All Rights Reserved.</p></div>
         </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // General page setup
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+            if (mobileMenuButton) { mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); }); }
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
             const animatedElements = document.querySelectorAll('.fade-in-up');
-            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }); }, { threshold: 0.1 });
-            animatedElements.forEach(el => observer.observe(el));
+            if (animatedElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }); }, { threshold: 0.1 });
+                animatedElements.forEach(el => observer.observe(el));
+            }
             const parallaxBg = document.getElementById('parallax-bg');
             if (parallaxBg) { window.addEventListener('scroll', () => { parallaxBg.style.transform = `translateY(${window.pageYOffset * 0.4}px)`; }); }
 
+            // Calendar-specific elements
             const calendarGrid = document.getElementById('calendar-grid');
             const monthYearHeader = document.getElementById('month-year-header');
             const prevMonthBtn = document.getElementById('prev-month-btn');
             const nextMonthBtn = document.getElementById('next-month-btn');
+            const eventListContainer = document.getElementById('event-list-container');
+            const eventListHeader = document.getElementById('event-list-header');
             const eventList = document.getElementById('event-list');
-            const selectedDateDisplay = document.getElementById('selected-date-display');
+            const moreEventsLinkContainer = document.getElementById('more-events-link-container');
+            const scrollToCalendarLink = document.getElementById('scroll-to-calendar-link');
+            const calendarContainer = document.getElementById('calendar-container');
+
             let currentDate = new Date();
-            let events = [];
+            let allEvents = [];
             let selectedDateElement = null;
 
-            async function fetchAndRenderEvents() {
+            async function fetchAndInitialize() {
                 eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">Loading events...</div>`;
                 try {
-                    // This now fetches from our Vercel serverless function.
-                    const response = await fetch('/api/getEvents');
+                    const response = await fetch('https://gfpd-website.vercel.app/api/getEvents');
                     if (!response.ok) throw new Error('Network response was not ok');
                     const rawEvents = await response.json();
-                    events = rawEvents.map(event => ({ ...event, dateObj: new Date(event.date + 'T00:00:00') }));
+                    
+                    allEvents = rawEvents
+                        .map(event => ({ ...event, dateObj: new Date(event.date + 'T00:00:00') }))
+                        .sort((a, b) => a.dateObj - b.dateObj);
+
                 } catch (error) {
                     console.error('Failed to fetch events:', error);
                     eventList.innerHTML = `<p class="text-red-400">Could not load events. Please try again later.</p>`;
                 } finally {
                     renderCalendar();
-                    displayEventsForDay(new Date());
+                    displayUpcomingEvents();
                 }
             }
             
@@ -189,42 +213,117 @@
                     const dayCell = document.createElement('div');
                     dayCell.textContent = day;
                     dayCell.className = 'calendar-day flex items-center justify-center h-12 rounded';
+                    dayCell.dataset.date = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
                     const cellDate = new Date(year, month, day);
-                    if (events.some(e => e.dateObj.toDateString() === cellDate.toDateString())) { dayCell.classList.add('has-event'); }
+                    if (allEvents.some(e => e.dateObj.toDateString() === cellDate.toDateString())) { dayCell.classList.add('has-event'); }
                     if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
                         dayCell.classList.add('is-today');
-                        if (selectedDateElement === null) {
-                            dayCell.classList.add('is-selected');
-                            selectedDateElement = dayCell;
-                        }
                     }
-                    dayCell.addEventListener('click', () => {
-                        if (selectedDateElement) selectedDateElement.classList.remove('is-selected');
-                        dayCell.classList.add('is-selected');
-                        selectedDateElement = dayCell;
-                        displayEventsForDay(cellDate);
-                    });
                     calendarGrid.appendChild(dayCell);
                 }
             }
 
+            function displayUpcomingEvents() {
+                eventListHeader.textContent = 'Upcoming Events';
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                const allUpcoming = allEvents.filter(event => event.dateObj >= today);
+                const displayEvents = allUpcoming.slice(0, 2);
+
+                if (displayEvents.length > 0) {
+                    eventList.innerHTML = displayEvents.map(event => renderEventHTML(event)).join('');
+                } else {
+                    eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">No upcoming events scheduled.</div>`;
+                }
+
+                if (allUpcoming.length > 2) {
+                    moreEventsLinkContainer.classList.remove('hidden');
+                } else {
+                    moreEventsLinkContainer.classList.add('hidden');
+                }
+            }
+
             function displayEventsForDay(date) {
-                selectedDateDisplay.textContent = (date.toDateString() === new Date().toDateString()) ? 'Today' : date.toLocaleDateString('default', { month: 'long', day: 'numeric' });
-                const eventsOnDay = events.filter(event => event.dateObj.toDateString() === date.toDateString());
+                const formattedDate = date.toLocaleDateString('default', { month: 'long', day: 'numeric' });
+                eventListHeader.textContent = `Events for ${formattedDate}`;
+                
+                const eventsOnDay = allEvents.filter(event => event.dateObj.toDateString() === date.toDateString());
+                
                 if (eventsOnDay.length > 0) {
-                    eventList.innerHTML = eventsOnDay.map(event => `
-                        <div class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-amber-500">
-                            <h4 class="font-bold text-white">${event.title}</h4>
-                            <p class="text-sm text-gray-300 mt-1">${event.time} @ ${event.location}</p>
-                            <p class="text-sm text-gray-400 mt-2">${event.description}</p>
-                        </div>`).join('');
+                    eventList.innerHTML = eventsOnDay.map(event => renderEventHTML(event)).join('');
                 } else {
                     eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">No events scheduled for this day.</div>`;
                 }
             }
-            prevMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); selectedDateElement = null; renderCalendar(); });
-            nextMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); selectedDateElement = null; renderCalendar(); });
-            fetchAndRenderEvents();
+
+            // UPDATED: Now creates a clickable link for the location
+            function renderEventHTML(event) {
+                const eventDate = event.dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                return `
+                    <div class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-amber-500">
+                        <h4 class="font-bold text-white">${event.title}</h4>
+                        <p class="text-sm font-semibold text-gray-300 mt-1">${eventDate}</p>
+                        <p class="text-sm text-gray-300 mt-1">
+                            ${event.time} @ 
+                            <a href="${event.mapLink}" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline decoration-dotted">
+                                ${event.displayLocation}
+                            </a>
+                        </p>
+                        <p class="text-sm text-gray-400 mt-2">${event.description}</p>
+                    </div>`;
+            }
+
+            calendarGrid.addEventListener('click', function(e) {
+                const dayCell = e.target.closest('.calendar-day');
+                if (!dayCell || dayCell.classList.contains('is-disabled')) return;
+
+                if (selectedDateElement) selectedDateElement.classList.remove('is-selected');
+                dayCell.classList.add('is-selected');
+                selectedDateElement = dayCell;
+                
+                const [year, month, day] = dayCell.dataset.date.split('-').map(Number);
+                const cellDate = new Date(year, month - 1, day);
+                displayEventsForDay(cellDate);
+
+                eventListContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            
+            if (prevMonthBtn) {
+                prevMonthBtn.addEventListener('click', () => { 
+                    currentDate.setMonth(currentDate.getMonth() - 1); 
+                    if (selectedDateElement) selectedDateElement.classList.remove('is-selected');
+                    selectedDateElement = null; 
+                    renderCalendar(); 
+                });
+            }
+
+            if (nextMonthBtn) {
+                nextMonthBtn.addEventListener('click', () => { 
+                    currentDate.setMonth(currentDate.getMonth() + 1); 
+                    if (selectedDateElement) selectedDateElement.classList.remove('is-selected');
+                    selectedDateElement = null; 
+                    renderCalendar(); 
+                });
+            }
+
+            if (scrollToCalendarLink) {
+                scrollToCalendarLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (window.innerWidth < 768) {
+                        calendarContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    calendarContainer.classList.add('flash-border');
+
+                    setTimeout(() => {
+                        calendarContainer.classList.remove('flash-border');
+                    }, 2000);
+                });
+            }
+            
+            fetchAndInitialize();
         });
     </script>
 </body>
