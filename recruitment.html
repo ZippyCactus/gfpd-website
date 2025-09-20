@@ -283,9 +283,9 @@
             <div class="container mx-auto px-6 max-w-5xl">
                  <div class="text-center fade-in-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Police Department Application</h2>
-                    <p class="mt-4 text-lg text-gray-400">If you meet the <a href="#recruitment-info" id="requirements-link" class="text-amber-400 hover:underline">requirements</a> and are ready to serve, we invite you to fill out the form below.</p>
+                    <p class="mt-4 text-lg text-gray-400">If you meet the <a href="#requirements-link" class="text-amber-400 hover:underline">requirements</a> and are ready to serve, we invite you to fill out the form below.</p>
                 </div>
-                <form action="https://formspree.io/f/xpwjnqno" method="POST" class="mt-12 space-y-8 fade-in-up">
+                <form action="https://formspree.io/f/xpwjnqno" method="POST" class="mt-12 space-y-8 fade-in-up" enctype="multipart/form-data">
                     
                     <fieldset class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <legend class="sr-only">Personal Information</legend>
@@ -374,6 +374,20 @@
                             </div>
                             <div><label for="salary_expectations" class="block text-sm font-medium text-gray-300 mb-1">What are your salary expectations? <span class="text-amber-400">*</span></label><input type="text" id="salary_expectations" name="salary_expectations" required class="form-input"></div>
                         </div>
+                    </fieldset>
+
+                    <hr class="border-gray-700">
+                    
+                    <fieldset>
+                        <legend class="block text-sm font-medium text-gray-300 mb-2">Supporting Documents</legend>
+                        <p class="text-sm text-gray-400 mb-4">Upload your resume, driver's license, certificates, or any other relevant documents. You can upload multiple files.</p>
+                        <div class="relative">
+                            <label for="file-upload" class="cursor-pointer inline-flex items-center bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-3 px-6 rounded-lg hover:bg-amber-400 transition-colors">
+                                Choose Files
+                            </label>
+                            <input id="file-upload" name="attachment" type="file" class="sr-only" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                        </div>
+                        <div id="file-list-display" class="mt-4 space-y-2" aria-live="polite"></div>
                     </fieldset>
                     
                     <div class="text-center pt-4">
@@ -492,14 +506,12 @@
                 button.addEventListener('click', () => {
                     const isExpanded = button.getAttribute('aria-expanded') === 'true';
                     
-                    // Close all other accordions first
                     accordionButtons.forEach(btn => {
                         btn.setAttribute('aria-expanded', 'false');
                         const contentToClose = document.getElementById(btn.getAttribute('aria-controls'));
                         contentToClose.style.maxHeight = '0px';
                     });
 
-                    // Open the clicked one (if it was previously closed)
                     if (!isExpanded) {
                         button.setAttribute('aria-expanded', 'true');
                         const contentToOpen = document.getElementById(button.getAttribute('aria-controls'));
@@ -510,7 +522,7 @@
 
             // Populate Accordion and Tabs from a single source
             const contentSource = {
-                'panel-benefits': `
+                 'panel-benefits': `
                     <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider">Compensation</h3>
                     <p class="mt-2 text-lg">Competitive Salary (based on experience)</p>
                     <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mt-6">Benefits & Perks</h3>
@@ -641,7 +653,7 @@
                         </ol>
                         <p>Prior to a candidate's registration for training at the Academy, the Training Review Request Form along with the required documentation above should be submitted.</p>
                         <p>Upon receipt of the complete Training Review, an initial review will be conducted to determine eligibility and compliance in order for the training review to move forward for final recommendations by Certification & Compliance, Training Operations, Standards, Special Operations, and authorized approval by the CJA Director.</p>
-                        <p>All certified out of state candidates with less than one (1) year of law enforcement employment/experience (one year begins upon completion of training and subsequent employment) or candidates with no law enforcement employment/experience will have to attend the 4 X 8 basic training course.</p>
+                        <p>All certified out of state candidates with less than one (1) year of law enforcement employment/experience (one year begins upon completion of training and subsequent employment) or a candidate with no law enforcement employment/experience will have to attend the 4 X 8 basic training course.</p>
                     </div>`
             };
 
@@ -688,12 +700,10 @@
                     radio.addEventListener('change', function() {
                         if (this.value === 'Yes') {
                             target.classList.remove('hidden');
-                            targetInput.disabled = false; // Enable the input
+                            targetInput.disabled = false;
                         } else {
                             target.classList.add('hidden');
-                            targetInput.disabled = true; // Disable the input
-                            
-                            // Also clear the value for good measure
+                            targetInput.disabled = true;
                             if (targetInput.type === 'checkbox' || targetInput.type === 'radio') {
                                 targetInput.checked = false;
                             } else {
@@ -720,6 +730,32 @@
                         }
                     }
                     e.target.value = formattedValue;
+                });
+            }
+            
+            // NEW: Native File Input Logic
+            const fileUploadInput = document.getElementById('file-upload');
+            const fileListDisplay = document.getElementById('file-list-display');
+            if (fileUploadInput && fileListDisplay) {
+                fileUploadInput.addEventListener('change', function(e) {
+                    fileListDisplay.innerHTML = ''; // Clear the list first
+                    if (this.files.length > 0) {
+                        const listTitle = document.createElement('p');
+                        listTitle.className = 'text-sm font-bold text-gray-300';
+                        listTitle.textContent = 'Selected Files:';
+                        fileListDisplay.appendChild(listTitle);
+
+                        const ul = document.createElement('ul');
+                        ul.className = 'list-disc list-inside text-gray-400 text-sm space-y-1';
+                        
+                        Array.from(this.files).forEach(function(file) {
+                            const li = document.createElement('li');
+                            li.textContent = file.name;
+                            ul.appendChild(li);
+                        });
+                        
+                        fileListDisplay.appendChild(ul);
+                    }
                 });
             }
 
