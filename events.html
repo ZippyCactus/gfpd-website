@@ -99,7 +99,7 @@
                                 <div id="event-list" class="mt-4 space-y-4">
                                 </div>
                                 <div id="more-events-link-container" class="mt-4 text-center hidden">
-                                    <a href="#calendar-container" id="scroll-to-calendar-link" class="text-amber-400 hover:text-amber-300 font-semibold transition-colors">More Events ➝</a>
+                                    <a href="#calendar-container" id="scroll-to-calendar-link" class="text-amber-400 hover:text-amber-300 font-semibold transition-colors">More Events →</a>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +199,7 @@
             const parallaxBg = document.getElementById('parallax-bg');
             if (parallaxBg) { window.addEventListener('scroll', () => { parallaxBg.style.transform = `translateY(${window.pageYOffset * 0.4}px)`; }); }
 
-            // ** FULL CALENDAR LOGIC (RESTORED) **
+            // CALENDAR LOGIC
             const calendarGrid = document.getElementById('calendar-grid');
             const monthYearHeader = document.getElementById('month-year-header');
             const prevMonthBtn = document.getElementById('prev-month-btn');
@@ -214,13 +214,48 @@
             let currentDate = new Date();
             let allEvents = [];
             let selectedDateElement = null;
+
+            function correctEventTime(timeString) {
+                if (!timeString || !timeString.includes('M')) return timeString;
+                const timeParts = timeString.split(' - ');
+                const correctedParts = timeParts.map(part => {
+                    let [time, modifier] = part.match(/(\d{1,2}:\d{2})(AM|PM)/i).slice(1);
+                    let [hours, minutes] = time.split(':').map(Number);
+                    if (modifier.toUpperCase() === 'PM' && hours !== 12) hours += 12;
+                    if (modifier.toUpperCase() === 'AM' && hours === 12) hours = 0;
+                    hours -= 4;
+                    if (hours < 0) hours += 24;
+                    const newModifier = hours >= 12 ? 'PM' : 'AM';
+                    let newHours = hours % 12;
+                    if (newHours === 0) newHours = 12;
+                    const newMinutes = String(minutes).padStart(2, '0');
+                    return `${newHours}:${newMinutes}${newModifier}`;
+                });
+                return correctedParts.join(' - ');
+            }
+            
+            function formatDescription(description) {
+                if (!description) return '';
+                const urlRegex = /(https?:\/\/[^\s]+)/g;
+                let formattedText = description.replace(urlRegex, (url) => {
+                    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline decoration-dotted">${url}</a>`;
+                });
+                return formattedText.replace(/\n/g, '<br>');
+            }
+
             async function fetchAndInitialize() {
                 eventList.innerHTML = `<div class="text-center pt-10 text-gray-500">Loading events...</div>`;
                 try {
                     const response = await fetch('https://gfpd-website.vercel.app/api/getEvents');
                     if (!response.ok) throw new Error('Network response was not ok');
                     const rawEvents = await response.json();
-                    allEvents = rawEvents.map(event => ({ ...event, dateObj: new Date(event.date + 'T00:00:00') })).sort((a, b) => a.dateObj - b.dateObj);
+                    // **FIX: Manually parse the date to avoid timezone issues**
+                    allEvents = rawEvents.map(event => {
+                        const [year, month, day] = event.date.split('-').map(Number);
+                        // Create date as local time to prevent the "day-behind" error
+                        const dateObj = new Date(year, month - 1, day);
+                        return { ...event, dateObj };
+                    }).sort((a, b) => a.dateObj - b.dateObj);
                 } catch (error) {
                     console.error('Failed to fetch events:', error);
                     eventList.innerHTML = `<p class="text-red-400">Could not load events. Please try again later.</p>`;
@@ -267,7 +302,10 @@
             }
             function renderEventHTML(event) {
                 const eventDate = event.dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-                return `<div class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-amber-500"><h4 class="font-bold text-white">${event.title}</h4><p class="text-sm font-semibold text-gray-300 mt-1">${eventDate}</p><p class="text-sm text-gray-300 mt-1">${event.time} @ <a href="${event.mapLink}" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline decoration-dotted">${event.displayLocation}</a></p><p class="text-sm text-gray-400 mt-2">${event.description}</p></div>`;
+                const location = event.displayLocation.split(',')[0] + ', Great Falls';
+                const correctedTime = correctEventTime(event.time);
+                const formattedDescription = formatDescription(event.description);
+                return `<div class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-amber-500"><h4 class="font-bold text-white">${event.title}</h4><p class="text-sm font-semibold text-gray-300 mt-1">${eventDate}</p><p class="text-sm text-gray-300 mt-1">${correctedTime} @ <a href="${event.mapLink}" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline decoration-dotted">${location}</a></p><p class="text-sm text-gray-400 mt-2 break-words">${formattedDescription}</p></div>`;
             }
             calendarGrid.addEventListener('click', function(e) {
                 const dayCell = e.target.closest('.calendar-day');
@@ -306,7 +344,7 @@
             }
             fetchAndInitialize();
 
-            // ** FLYER CAROUSEL LOGIC **
+            // FLYER CAROUSEL LOGIC
             const flyers = Array.from(document.querySelectorAll('.flyer-item'));
             const prevFlyerBtn = document.getElementById('flyer-prev-btn');
             const nextFlyerBtn = document.getElementById('flyer-next-btn');
@@ -346,7 +384,7 @@
                 showPage(0);
             }
 
-            // ** FLYER MODAL LOGIC **
+            // FLYER MODAL LOGIC
             const modal = document.getElementById('flyer-modal');
             const modalImage = document.getElementById('modal-image');
             flyers.forEach(flyer => {

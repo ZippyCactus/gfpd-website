@@ -176,15 +176,15 @@
             <div class="relative z-20 p-8 fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider drop-shadow-lg">Become a Guardian of Great Falls</h1>
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Join a team dedicated to making a real difference. Embrace a rewarding career that challenges you, offers growth, and allows you to protect and serve the residents of our town.</p>
-                <a href="#application-form" class="mt-8 inline-block bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">Apply Now</a>
+                <a href="./application.html" class="mt-8 inline-block bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">Apply Now</a>
             </div>
         </section>
 
-        <section id="recruitment-info" class="py-16 sm:py-24 bg-gray-900">
+        <section id="recruitment-info" class="pt-16 sm:pt-24 pb-4 bg-gray-900">
              <div class="container mx-auto px-6 fade-in-up">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider text-center">Join Our Team</h2>
-                    <p class="mt-4 text-lg text-gray-400 leading-relaxed text-center">The Great Falls Police Department is seeking dedicated individuals with a passion for small-town community service. We offer a professional environment where you can build a long-term career, receive ongoing training, and forge strong bonds with the community you serve. We believe in leadership, integrity, and excellence.</p>
+                    <p class="mt-4 text-lg text-gray-400 leading-relaxed text-center">The Great Falls Police Department is seeking dedicated individuals with a passion for small-town community service. We offer a professional environment where you can build a long-term career, receive ongoing training, and forge strong bonds with the community you serve.</p>
                 </div>
 
                 <div id="recruitment-accordion" class="mt-12 md:hidden">
@@ -275,132 +275,16 @@
             </div>
         </section>
 
-        <section id="application-form" class="py-16 sm:py-24 bg-gray-900">
+        <section id="application-section" class="pt-4 pb-12 bg-gray-900">
             <div class="container mx-auto px-6 max-w-5xl">
-                 <div class="text-center fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Police Department Application</h2>
-                    <p class="mt-4 text-lg text-gray-400">If you meet the <a href="#recruitment-info" id="requirements-link" class="text-amber-400 hover:underline">requirements</a> and are ready to serve, we invite you to fill out the form below.</p>
-                </div>
-                
-                <div id="form-container" class="mt-12">
-                    <form id="gfpd-application-form" action="https://formspree.io/f/xpwjnqno" method="POST" class="space-y-8 fade-in-up" enctype="multipart/form-data">
-                        <fieldset class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <legend class="sr-only">Personal Information</legend>
-                        <div><label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name <span class="text-amber-400">*</span></label><input type="text" id="name" name="name" required class="form-input"></div>
-                        <div><label for="dob" class="block text-sm font-medium text-gray-300 mb-1">Date of Birth <span class="text-amber-400">*</span></label><input type="text" placeholder="MM/DD/YYYY" id="dob" name="date_of_birth" required class="form-input"></div>
-                        <div><label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Phone <span class="text-amber-400">*</span></label><input type="tel" id="phone" name="phone" required class="form-input"></div>
-                        <div class="md:col-span-2 lg:col-span-3"><label for="address" class="block text-sm font-medium text-gray-300 mb-1">Address <span class="text-amber-400">*</span></label><input type="text" id="address" name="address" required class="form-input"></div>
-                        <div><label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email <span class="text-amber-400">*</span></label><input type="email" id="email" name="email" required class="form-input"></div>
-                        <div><label for="dl-number" class="block text-sm font-medium text-gray-300 mb-1">Driver's License Number <span class="text-amber-400">*</span></label><input type="text" id="dl-number" name="drivers_license_number" required class="form-input"></div>
-                        <div><label for="dl-state" class="block text-sm font-medium text-gray-300 mb-1">State Issued <span class="text-amber-400">*</span></label><input type="text" id="dl-state" name="drivers_license_state" required class="form-input"></div>
-                    </fieldset>
-                    
-                    <hr class="border-gray-700">
-
-                    <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                        <legend class="sr-only">Position Information</legend>
-                        <div>
-                            <p class="text-sm font-medium text-gray-300 mb-2">Position Applying For: <span class="text-amber-400">*</span></p>
-                            <div class="flex space-x-6"><label class="flex items-center"><input type="checkbox" name="position" value="Patrol Officer" required class="form-checkbox mr-2">Patrol Officer</label></div>
-                        </div>
-                        <div><label for="how-heard" class="block text-sm font-medium text-gray-300 mb-1">How did you hear about the position? </label><input type="text" id="how-heard" name="how_heard" class="form-input"></div>
-                        <div data-conditional-container>
-                            <p class="text-sm font-medium text-gray-300 mb-2">Did someone from GFPD refer you? <span class="text-amber-400">*</span></p>
-                            <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="referred" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="referred" value="No" class="form-radio mr-2" checked>No</label></div>
-                        </div>
-                        <div data-conditional-target="referred" class="hidden"><label for="referral-name" class="block text-sm font-medium text-gray-300 mb-1">If yes, please list the person. <span class="text-amber-400">*</span></label><input type="text" id="referral-name" name="referral_name" class="form-input" required disabled></div>
-                    </fieldset>
-
-                    <hr class="border-gray-700">
-                    
-                    <fieldset class="space-y-6">
-                        <legend class="sr-only">History and Eligibility</legend>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 items-start">
-                             <div data-conditional-container>
-                                <p class="text-sm font-medium text-gray-300 mb-2">Did you serve in the U.S. Military? <span class="text-amber-400">*</span></p>
-                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="military_service" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="military_service" value="No" class="form-radio mr-2" checked>No</label></div>
-                            </div>
-                            <div data-conditional-target="military_service" class="hidden">
-                                <label for="discharge-status" class="block text-sm font-medium text-gray-300 mb-1">Discharge Status <span class="text-amber-400">*</span></label>
-                                <select id="discharge-status" name="discharge_status" class="form-select" required disabled>
-                                    <option value="" disabled selected>Select Status...</option>
-                                    <option value="Honorable">Honorably Discharged</option>
-                                    <option value="General">General Discharge</option>
-                                    <option value="OTH">Other Than Honorable (OTH)</option>
-                                    <option value="Dishonorable">Bad Conduct / Dishonorable</option>
-                                    <option value="Serving">Still Serving (Active/Reserve)</option>
-                                </select>
-                            </div>
-                            <div data-conditional-container>
-                                <p class="text-sm font-medium text-gray-300 mb-2">Are you a certified Law Enforcement Officer? <span class="text-amber-400">*</span></p>
-                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="is_certified_leo" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="is_certified_leo" value="No" class="form-radio mr-2" checked>No</label></div>
-                            </div>
-                            <div data-conditional-target="is_certified_leo" class="hidden"><label for="certification-state" class="block text-sm font-medium text-gray-300 mb-1">If yes, list state of certification. <span class="text-amber-400">*</span></label><input type="text" id="certification-state" name="certification_state" class="form-input" required disabled></div>
-                             <div data-conditional-container>
-                                <p class="text-sm font-medium text-gray-300 mb-2">Do you currently work for a law enforcement agency? <span class="text-amber-400">*</span></p>
-                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="is_current_leo" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="is_current_leo" value="No" class="form-radio mr-2" checked>No</label></div>
-                            </div>
-                            <div data-conditional-target="is_current_leo" class="hidden"><label for="current-agency" class="block text-sm font-medium text-gray-300 mb-1">If yes, list agency name and time with agency. <span class="text-amber-400">*</span></label><input type="text" id="current-agency" name="current_agency" class="form-input" required disabled></div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                             <div data-conditional-container>
-                                <p class="text-sm font-medium text-gray-300 mb-2">Have you ever been convicted of a crime (not including traffic citations)? <span class="text-amber-400">*</span></p>
-                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="crime_convicted" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="crime_convicted" value="No" class="form-radio mr-2" checked>No</label></div>
-                            </div>
-                            <div data-conditional-target="crime_convicted" class="hidden"><label for="crime_details" class="block text-sm font-medium text-gray-300 mb-1">If yes, identify the crime and when. <span class="text-amber-400">*</span></label><textarea id="crime_details" name="crime_details" rows="2" class="form-input" required disabled></textarea></div>
-                            <div data-conditional-container>
-                                <p class="text-sm font-medium text-gray-300 mb-2">Have you ever used marijuana or other illegal drugs? <span class="text-amber-400">*</span></p>
-                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="drug_use" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="drug_use" value="No" class="form-radio mr-2" checked>No</label></div>
-                            </div>
-                            <div data-conditional-target="drug_use" class="hidden"><label for="drug_details" class="block text-sm font-medium text-gray-300 mb-1">If yes, provide when and the circumstances. <span class="text-amber-400">*</span></label><textarea id="drug_details" name="drug_details" rows="2" class="form-input" required disabled></textarea></div>
-                             <div data-conditional-container>
-                                <p class="text-sm font-medium text-gray-300 mb-2">Has your driver's license ever been suspended or revoked? <span class="text-amber-400">*</span></p>
-                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="license_suspended" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="license_suspended" value="No" class="form-radio mr-2" checked>No</label></div>
-                            </div>
-                            <div data-conditional-target="license_suspended" class="hidden"><label for="license_details" class="block text-sm font-medium text-gray-300 mb-1">If yes, please provide when. <span class="text-amber-400">*</span></label><input type="text" id="license_details" name="license_details" class="form-input" required disabled></div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                            <div><label for="citations" class="block text-sm font-medium text-gray-300 mb-1">Number of traffic citations in the last 10 years. <span class="text-amber-400">*</span></label><input type="number" id="citations" name="citations" min="0" required class="form-input"></div>
-                            <div>
-                                <p class="text-sm font-medium text-gray-300 mb-2">Are you currently in default on your student loans? <span class="text-amber-400">*</span></p>
-                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="student_loan_default" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="student_loan_default" value="No" class="form-radio mr-2">No</label></div>
-                            </div>
-                            <div>
-                                <p class="text-sm font-medium text-gray-300 mb-2">Are you able to work nights, weekends, and/or holidays? <span class="text-amber-400">*</span></p>
-                                <div class="flex space-x-6"><label class="flex items-center"><input type="radio" name="availability" value="Yes" required class="form-radio mr-2">Yes</label><label class="flex items-center"><input type="radio" name="availability" value="No" class="form-radio mr-2">No</label></div>
-                            </div>
-                            <div><label for="salary_expectations" class="block text-sm font-medium text-gray-300 mb-1">What are your salary expectations? <span class="text-amber-400">*</span></label><input type="text" id="salary_expectations" name="salary_expectations" required class="form-input"></div>
-                        </div>
-                    </fieldset>
-
-                        <hr class="border-gray-700">
-                        
-                        <fieldset>
-                            <legend class="block text-sm font-medium text-gray-300 mb-2">Supporting Documents</legend>
-                            <p class="text-sm text-gray-400 mb-4">Upload your resume, driver's license, certificates, or any other relevant documents. You can upload multiple files.</p>
-                            <div class="relative">
-                                <label for="file-upload" class="cursor-pointer inline-flex items-center bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-3 px-6 rounded-lg hover:bg-amber-400 transition-colors">
-                                    Choose Files
-                                </label>
-                                <input id="file-upload" name="attachment" type="file" class="sr-only" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
-                            </div>
-                            <div id="file-list-display" class="mt-4 space-y-2" aria-live="polite"></div>
-                        </fieldset>
-                        
-                        <div class="text-center pt-4">
-                            <p class="text-gray-400 text-sm mb-6">By submitting this application, you acknowledge that all applicants must sign an Authorization for the Release of Information form. A printable version is available <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline font-semibold">here</a>, or a copy can be provided for you at the police department.</p>
-                            <button type="submit" class="w-full sm:w-auto bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors">Submit Application</button>
-                        </div>
-                    </form>
-
-                    <div id="success-message" class="hidden text-center bg-gray-800 p-8 md:p-12 rounded-lg border border-green-500">
-                        <h2 class="text-3xl font-bold text-white uppercase tracking-wider">Thank You!</h2>
-                        <p class="mt-4 text-lg text-gray-300">Your application has been submitted successfully. Thanks for applying, we will contact you soon with the next steps.</p>
-                    </div>
-
-                    <div id="error-message" class="hidden text-center bg-gray-800 p-8 md:p-12 rounded-lg border border-red-500">
-                        <h2 class="text-3xl font-bold text-white uppercase tracking-wider">Submission Failed</h2>
-                        <p class="mt-4 text-lg text-gray-300">Sorry, there was an error submitting your application. Please try again later or contact us directly.</p>
+                <!-- Start Application Button -->
+                <div class="text-center fade-in-up">
+                    <div class="bg-gray-800 p-8 md:p-12 rounded-lg border border-gray-700">
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-wider mb-4">Ready to Apply?</h3>
+                        <p class="text-lg text-gray-300 mb-6">Click the button below to begin your application process. You'll be taken through a comprehensive form to complete your submission.</p>
+                        <a href="./application.html" class="inline-block bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">
+                            Start Application
+                        </a>
                     </div>
                 </div>
             </div>
@@ -437,16 +321,6 @@
         </div>
     </footer>
 
-    <div id="loading-overlay" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="loading-heading">
-        <div class="flex flex-col items-center text-center text-white">
-            <svg class="animate-spin h-10 w-10 text-amber-400 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <h2 id="loading-heading" class="text-2xl font-bold uppercase tracking-wider">Submitting Application</h2>
-            <p class="mt-2 text-gray-300">Please wait, your files are uploading. Do not leave this page.</p>
-        </div>
-    </div>
 
 
     <script>
@@ -613,7 +487,7 @@
                         <div>
                             <h4 class="text-xl font-bold text-white">Certified Applicant (In-state and Out-of-state)</h4>
                             <ul class="list-disc list-inside space-y-2 pt-2">
-                                <li><a href="#application-form" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
+                                <li><a href="./application.html" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
                                 <li>Applications reviewed for automatic disqualifiers</li>
                                 <li><strong>Interview:</strong> The applicant is scheduled for an interview with the Chief of Police.</li>
                                 <li><strong>Background Investigation:</strong> A thorough background investigation is completed on all applicants. This includes (but is not limited to) contacting former and current employers and references, a credit check, and a criminal history check.</li>
@@ -624,7 +498,7 @@
                         <div>
                             <h4 class="text-xl font-bold text-white">Uncertified Applicants</h4>
                             <ul class="list-disc list-inside space-y-2 pt-2">
-                                <li><a href="#application-form" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
+                                <li><a href="./application.html" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
                                 <li>Applications reviewed for automatic disqualifiers</li>
                                 <li><strong>Written Exam:</strong> Applicants must take a written exam and must score 70% or better on this exam.</li>
                                 <li><strong>Physical Ability Test:</strong> After passing the written examination, the applicant will be required to complete the Physical Ability Test (PAT). This is required for admission into the South Carolina Criminal Justice Academy, and the course and all obstacles must be successfully completed in under 2 minutes and 6 seconds.</li>
@@ -690,108 +564,18 @@
                 });
             }
 
-            const conditionalContainers = document.querySelectorAll('[data-conditional-container]');
-            conditionalContainers.forEach(container => {
-                const radios = container.querySelectorAll('input[type="radio"]');
-                const radioName = radios[0] ? radios[0].name : null;
-                if (!radioName) return;
-                const target = document.querySelector(`[data-conditional-target="${radioName}"]`);
-                if (!target) return;
-                const targetInput = target.querySelector('input, textarea, select');
-                if (!targetInput) return;
-                radios.forEach(radio => {
-                    radio.addEventListener('change', function() {
-                        if (this.value === 'Yes') {
-                            target.classList.remove('hidden');
-                            targetInput.disabled = false;
-                        } else {
-                            target.classList.add('hidden');
-                            targetInput.disabled = true;
-                            if (targetInput.type === 'checkbox' || targetInput.type === 'radio') {
-                                targetInput.checked = false;
-                            } else {
-                                targetInput.value = '';
-                            }
-                        }
-                    });
-                });
-            });
-
-            const dobInput = document.getElementById('dob');
-            if (dobInput) {
-                dobInput.addEventListener('input', function(e) {
-                    let value = e.target.value.replace(/\D/g, '');
-                    let formattedValue = '';
-                    if (value.length > 0) {
-                        formattedValue = value.substring(0, 2);
-                        if (value.length > 2) {
-                            formattedValue += '/' + value.substring(2, 4);
-                        }
-                        if (value.length > 4) {
-                            formattedValue += '/' + value.substring(4, 8);
-                        }
+            // Auto-open requirements tab when coming from application page
+            if (window.location.hash === '#recruitment-info') {
+                setTimeout(() => {
+                    document.getElementById('recruitment-info').scrollIntoView({ behavior: 'smooth' });
+                    if (window.innerWidth < 768) { // md breakpoint
+                        document.querySelector('[aria-controls="accordion-panel-2"]').click();
+                    } else {
+                        document.getElementById('tab-requirements').click();
                     }
-                    e.target.value = formattedValue;
-                });
-            }
-            
-            const fileUploadInput = document.getElementById('file-upload');
-            const fileListDisplay = document.getElementById('file-list-display');
-            if (fileUploadInput && fileListDisplay) {
-                fileUploadInput.addEventListener('change', function(e) {
-                    fileListDisplay.innerHTML = ''; 
-                    if (this.files.length > 0) {
-                        const listTitle = document.createElement('p');
-                        listTitle.className = 'text-sm font-bold text-gray-300';
-                        listTitle.textContent = 'Selected Files:';
-                        fileListDisplay.appendChild(listTitle);
-                        const ul = document.createElement('ul');
-                        ul.className = 'list-disc list-inside text-gray-400 text-sm space-y-1';
-                        Array.from(this.files).forEach(function(file) {
-                            const li = document.createElement('li');
-                            li.textContent = file.name;
-                            ul.appendChild(li);
-                        });
-                        fileListDisplay.appendChild(ul);
-                    }
-                });
+                }, 500);
             }
 
-            // AJAX Form Submission
-            const applicationForm = document.getElementById('gfpd-application-form');
-            const loadingOverlay = document.getElementById('loading-overlay');
-            const successMessage = document.getElementById('success-message');
-            const errorMessage = document.getElementById('error-message');
-
-            if (applicationForm) {
-                applicationForm.addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    if (loadingOverlay) loadingOverlay.classList.remove('hidden');
-                    const formData = new FormData(applicationForm);
-                    
-                    fetch(applicationForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    }).then(response => {
-                        if (response.ok) {
-                            if (successMessage) successMessage.classList.remove('hidden');
-                            applicationForm.classList.add('hidden');
-                        } else {
-                            if (errorMessage) errorMessage.classList.remove('hidden');
-                            applicationForm.classList.add('hidden');
-                        }
-                    }).catch(error => {
-                        console.error('Submission Error:', error);
-                        if (errorMessage) errorMessage.classList.remove('hidden');
-                        applicationForm.classList.add('hidden');
-                    }).finally(() => {
-                        if (loadingOverlay) loadingOverlay.classList.add('hidden');
-                    });
-                });
-            }
         });
     </script>
 </body>

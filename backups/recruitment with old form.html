@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Great Falls Police Department. We are seeking dedicated individuals with a passion for community service. View requirements, benefits, and apply online.">
+    <meta name="keywords" content="Police Recruitment, Law Enforcement Jobs, Great Falls Police Jobs, GFPD Careers">
+    
+    <title>Recruitment | Great Falls Police Department</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #111827; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; }
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+.form-input, .form-select, .form-checkbox {
+    background-color: #ffffff;
+    border: 1px solid #4b5563;
+    color: #111827;
+    border-radius: 0.375rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+        .form-input, .form-select { padding: 0.75rem 1rem; width: 100%; }
+        .form-input:focus, .form-select:focus, .form-checkbox:focus, .form-radio:focus {
+            outline: none;
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5);
+        }
+        .form-input:disabled, .form-select:disabled {
+            background-color: #374151;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        .form-checkbox {
+            appearance: none;
+            height: 1.25rem;
+            width: 1.25rem;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            cursor: pointer;
+        }
+        .form-checkbox:checked::before {
+            content: '✓';
+            font-size: 1rem;
+            color: #f59e0b;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .form-radio {
+            appearance: none;
+            border-radius: 9999px;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid #4b5563;
+            position: relative;
+            cursor: pointer;
+            vertical-align: middle;
+            transition: border-color 0.2s;
+        }
+        .form-radio:checked {
+            border-color: #f59e0b;
+        }
+        .form-radio:checked::before {
+            content: '';
+            display: block;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 9999px;
+            background-color: #f59e0b;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+        }
+        #parallax-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 110%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            will-change: transform;
+        }
+        .accordion-content {
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            max-height: 0;
+        }
+        .accordion-button svg {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-button[aria-expanded="true"] svg {
+            transform: rotate(180deg);
+        }
+        .accordion-button[aria-expanded="true"] {
+            background-color: #f59e0b;
+            border-color: #f59e0b;
+            color: #111827;
+        }
+        .tab-button {
+            border-color: #4b5563;
+            background-color: transparent;
+            color: #d1d5db;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        .tab-button[aria-selected="true"] {
+            background-color: #f59e0b;
+            border-color: #f59e0b;
+            color: #111827;
+        }
+        
+        /* Application Form Styles */
+        .form-section {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .form-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .input-group {
+            margin-bottom: 1.5rem;
+    break-inside: avoid;
+        }
+.radio-checkbox-group,
+.checkbox-group {
+    break-inside: avoid;
+}
+        .input-group label, .radio-group p, .checkbox-group p {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+        .form-section :is(p, span, label, h1, h2, h3, h4, h5, h6),
+        .form-section [class*="text-gray-"] {
+            color: #111827 !important;
+        }
+        .form-section h4,
+        .form-section h5,
+        .form-section h6 {
+            color: #111827 !important;
+        }
+        .notary-box p,
+        .notary-box span,
+        .notary-box label {
+            color: #111827 !important;
+        }
+        /* Style for printable inputs */
+        .printable-input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #9ca3af;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0.5rem 0.25rem;
+            width: 100%;
+        }
+        .printable-input:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 2px solid #3b82f6;
+        }
+        .lined-textarea {
+            background-image: linear-gradient(to bottom, #d1d5db 1px, transparent 1px);
+            background-size: 100% 1.75rem;
+            line-height: 1.75rem;
+            border: 1px solid #d1d5db;
+            padding: 0 0.5rem;
+            width: 100%;
+            border-radius: 0;
+        }
+        .lined-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        /* Style for textareas in tables */
+        .printable-textarea {
+            resize: none;
+            overflow: hidden;
+            line-height: 1.5;
+            min-height: 2.5rem;
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+        .printable-textarea:focus {
+             outline: none;
+        }
+
+        /* Style for radio buttons to look like checkboxes */
+        .radio-checkbox-group .radio-option {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 1.5rem;
+        }
+        .radio-checkbox-group input[type="radio"] {
+            display: none;
+        }
+        .radio-checkbox-group .custom-checkbox {
+            width: 1.15rem;
+            height: 1.15rem;
+            border: 1px solid #4b5563;
+            border-radius: 0.25rem;
+            margin-right: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111827;
+        }
+        .radio-checkbox-group input[type="radio"]:checked + .custom-checkbox::after {
+            content: '✔';
+            font-size: 0.9rem;
+            color: #111827;
+        }
+.notary-box {
+    border: 1px solid #d1d5db;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    color: #111827 !important;
+}
+        #gfpd-application-form,
+        #gfpd-application-form * {
+            color: #111827 !important;
+        }
+        #gfpd-application-form input,
+        #gfpd-application-form textarea,
+        #gfpd-application-form select {
+            color: #111827 !important;
+        }
+        #gfpd-application-form input::placeholder,
+        #gfpd-application-form textarea::placeholder,
+        #gfpd-application-form select::placeholder {
+            color: #6b7280 !important;
+            opacity: 1;
+        }
+        #gfpd-application-form option {
+            color: #111827 !important;
+        }
+        .printable-subheading { color: #111827 !important; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; width: auto; }
+        h3.printable-subheading { color: #111827 !important; }
+    </style>
+</head>
+<body class="text-gray-100">
+
+    <header id="header" class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="./index.html" class="flex items-center space-x-3">
+                    <img src="./assets/gfpd-badge.png" alt="Great Falls Police Department Badge" class="h-12 w-auto">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold uppercase tracking-wider text-white">Great Falls</span>
+                        <span class="text-sm font-semibold uppercase tracking-widest text-amber-400">Police Department</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="./index.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Home</a>
+                    <a href="./contact.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Contact</a>
+                    <a href="./events.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Events</a>
+                    <a href="./recruitment.html" class="text-white font-semibold hover:text-amber-400 transition-colors duration-300" aria-current="page">Recruitment</a>
+                    <a href="./resources.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Resources</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="./index.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Home</a>
+                <a href="./contact.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Contact</a>
+                <a href="./events.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Events</a>
+                <a href="./recruitment.html" class="block py-2 px-4 text-sm text-white bg-gray-700 rounded" aria-current="page">Recruitment</a>
+                <a href="./resources.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Resources</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="parallax-container relative py-24 sm:py-32 flex items-center justify-center text-center text-white bg-black">
+            <div id="parallax-bg" style="background-image: url('./assets/police-back.jpg');"></div>
+            <div class="absolute inset-0 bg-black/70 z-10"></div>
+            <div class="relative z-20 p-8 fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider drop-shadow-lg">Become a Guardian of Great Falls</h1>
+                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Join a team dedicated to making a real difference. Embrace a rewarding career that challenges you, offers growth, and allows you to protect and serve the residents of our town.</p>
+                <button id="open-application-modal-hero" class="mt-8 bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">Apply Now</button>
+            </div>
+        </section>
+
+        <section id="recruitment-info" class="py-16 sm:py-24 bg-gray-900">
+             <div class="container mx-auto px-6 fade-in-up">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider text-center">Join Our Team</h2>
+                    <p class="mt-4 text-lg text-gray-400 leading-relaxed text-center">The Great Falls Police Department is seeking dedicated individuals with a passion for small-town community service. We offer a professional environment where you can build a long-term career, receive ongoing training, and forge strong bonds with the community you serve. We believe in leadership, integrity, and excellence.</p>
+                </div>
+
+                <div id="recruitment-accordion" class="mt-12 md:hidden">
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-1">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-1" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Salary and Benefits</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-1" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                                </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-2">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-2" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Minimum Requirements</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-2" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-3">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-3" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Immediate Disqualifiers</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-3" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-4">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-4" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Hiring Process</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-4" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b-2 border-gray-700">
+                        <h3 id="accordion-heading-5">
+                            <button type="button" aria-expanded="false" aria-controls="accordion-panel-5" class="accordion-button flex justify-between items-center w-full p-5 font-bold text-left text-gray-300">
+                                <span>Important Documents</span>
+                                <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h3>
+                        <div id="accordion-panel-5" class="accordion-content">
+                            <div class="p-5 border-t border-gray-700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="recruitment-tabs" class="mt-16 hidden md:block">
+                    <div role="tablist" aria-label="Recruitment Information" class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4 max-w-6xl mx-auto">
+                        <button id="tab-benefits" role="tab" aria-selected="true" aria-controls="panel-benefits" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Salary and Benefits</button>
+                        <button id="tab-requirements" role="tab" aria-selected="false" aria-controls="panel-requirements" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Minimum Requirements</button>
+                        <button id="tab-disqualifiers" role="tab" aria-selected="false" aria-controls="panel-disqualifiers" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Immediate Disqualifiers</button>
+                        <button id="tab-process" role="tab" aria-selected="false" aria-controls="panel-process" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Hiring Process</button>
+                        <button id="tab-documents" role="tab" aria-selected="false" aria-controls="panel-documents" class="tab-button text-sm sm:text-base font-bold uppercase p-4 border-2 rounded-md">Important Documents</button>
+                    </div>
+
+                    <div class="mt-8 bg-gray-800 p-8 rounded-lg border border-gray-700 text-gray-300">
+                        <div id="panel-benefits" role="tabpanel" tabindex="0" aria-labelledby="tab-benefits">
+                           </div>
+                        <div id="panel-requirements" role="tabpanel" tabindex="0" aria-labelledby="tab-requirements" class="hidden leading-relaxed space-y-2">
+                           </div>
+                        <div id="panel-disqualifiers" role="tabpanel" tabindex="0" aria-labelledby="tab-disqualifiers" class="hidden leading-relaxed space-y-6">
+                            </div>
+                        <div id="panel-process" role="tabpanel" tabindex="0" aria-labelledby="tab-process" class="hidden leading-relaxed space-y-6">
+                             </div>
+                        <div id="panel-documents" role="tabpanel" tabindex="0" aria-labelledby="tab-documents" class="hidden leading-relaxed space-y-4">
+                             </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="application-form" class="py-16 sm:py-24 bg-gray-900">
+            <div class="container mx-auto px-6 max-w-5xl">
+                 <div class="text-center fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Police Department Application</h2>
+                    <p class="mt-4 text-lg text-gray-400">If you meet the <a href="#recruitment-info" id="requirements-link" class="text-amber-400 hover:underline">requirements</a> and are ready to serve, we invite you to fill out the comprehensive application form.</p>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <button id="open-application-modal" class="bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors">
+                        Start Application
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-gray-400">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left md:items-start">
+                <div>
+                    <h3 class="text-lg font-bold text-white uppercase tracking-wider">Contact Us</h3>
+                    <address class="mt-4 not-italic">Great Falls Police Department<br>324 Dearborn St<br>Great Falls, SC 29055</address>
+                    <div class="mt-4">
+                        <p>Non-Emergency: <a href="tel:803-482-2145" class="hover:text-amber-400">(803) 482-2145</a></p>
+                        <p class="font-bold text-white">In an Emergency, Dial 911</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="./assets/gfpd-badge.png" alt="Great Falls Police Department Badge" class="h-40 w-auto" loading="lazy">
+                </div>
+                <div class="md:text-right">
+                     <h3 class="text-lg font-bold text-white uppercase tracking-wider">Site Navigation</h3>
+                     <ul class="mt-4 space-y-2">
+                         <li><a href="./contact.html" class="hover:text-amber-400">Contact</a></li>
+                         <li><a href="./events.html" class="hover:text-amber-400">Events</a></li>
+                         <li><a href="./recruitment.html" class="hover:text-amber-400">Recruitment</a></li>
+                         <li><a href="./resources.html" class="hover:text-amber-400">Resources</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-sm">
+                <p>© <span id="current-year"></span> Great Falls Police Department. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Modal -->
+    <div id="application-modal" class="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-white w-full h-full max-w-7xl mx-auto rounded-lg shadow-2xl overflow-hidden flex flex-col">
+            <!-- Modal Header -->
+            <div class="bg-gray-800 text-white p-6 flex items-center justify-between border-b border-gray-700">
+                <h2 id="modal-title" class="text-2xl font-bold uppercase tracking-wider">Great Falls Police Department - Employment Application</h2>
+                <button id="close-application-modal" class="text-gray-400 hover:text-white transition-colors p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="flex-1 overflow-y-auto bg-gray-50">
+                <div class="p-6">
+                    <!-- Application Form Content -->
+                    <div id="modal-form-content" class="max-w-5xl mx-auto">
+                        <form id="gfpd-application-form" action="https://formspree.io/f/xpwjnqno" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="application_html" id="application_html">
+                            <!-- A. Instructions -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">A. Instructions</h3>
+                                <p class="text-gray-600">Application must be typewritten or printed legibly in ink. All questions must be answered. Applications which are not complete will not be considered. If space provided is not sufficient for complete answers or you wish to furnish additional information, attach sheets of the same size as this application, and number answers to correspond with questions.</p>
+                            </section>
+
+                            <!-- B. Position Applying For -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">B. Position Applying For</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                                    <div class="input-group"><label for="job_title">Job Title</label><input type="text" id="job_title" name="job_title" class="printable-input"></div>
+                                    <div class="input-group"><label for="employment_type">Position Type (Full Time, Part Time, or Reserve):</label><select id="employment_type" name="employment_type" class="printable-input"><option></option><option>Full Time</option><option>Part Time</option><option>Reserve Officer</option></select></div>
+                                    <div class="input-group"><label for="start_date">Available Start Date</label><input type="text" id="start_date" name="start_date" class="printable-input date-input"></div>
+                                    <div class="checkbox-group"><p>What shifts will you work?</p><div class="mt-2 flex items-center space-x-6"><label class="inline-flex items-center"><input type="checkbox" name="shift" value="days" class="h-4 w-4 rounded border-gray-400"><span class="ml-2">Days</span></label><label class="inline-flex items-center"><input type="checkbox" name="shift" value="nights" class="h-4 w-4 rounded border-gray-400"><span class="ml-2">Nights</span></label><label class="inline-flex items-center"><input type="checkbox" name="shift" value="any" class="h-4 w-4 rounded border-gray-400"><span class="ml-2">Any</span></label></div></div>
+                                </div>
+                                <div class="mt-6 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-md"><p class="font-bold">Notice:</p><p>During the Background Check, we will be contacting your present employer.</p></div>
+                            </section>
+                            
+                            <!-- C. Personal History -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">C. Personal History</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="input-group"><label for="first_name">First Name</label><input type="text" id="first_name" name="first_name" class="printable-input"></div><div class="input-group"><label for="middle_name">Middle Name</label><input type="text" id="middle_name" name="middle_name" class="printable-input"></div><div class="input-group"><label for="last_name">Last Name</label><input type="text" id="last_name" name="last_name" class="printable-input"></div></div>
+                                <div class="input-group"><label for="address">Current Address</label><input type="text" id="address" name="address" class="printable-input"></div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="input-group"><label for="city">City</label><input type="text" id="city" name="city" class="printable-input"></div><div class="input-group"><label for="state">State</label><input type="text" id="state" name="state" class="printable-input"></div><div class="input-group"><label for="zip">Zip Code</label><input type="text" id="zip" name="zip" class="printable-input"></div><div class="md:col-span-3 input-group"><label for="county">County</label><input type="text" id="county" name="county" class="printable-input"></div></div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="input-group"><label for="phone">Telephone Number</label><input type="tel" id="phone" name="phone" class="printable-input"></div><div class="input-group"><label for="message_phone">Message Number</label><input type="tel" id="message_phone" name="message_phone" class="printable-input"></div><div class="md:col-span-2 input-group"><label for="email">Email Address</label><input type="email" id="email" name="email" class="printable-input"></div><div class="md:col-span-2 input-group"><label for="emergency_contact">Emergency Contact Name & Phone Number</label><input type="text" id="emergency_contact" name="emergency_contact" class="printable-input"></div></div>
+                                <div class="input-group"><label>Other names used (maiden name, aliases, nicknames):</label><div class="table-container"><table><thead><tr><th>Name</th><th>Circumstance</th><th>Dates From (Mo/Yr)</th><th>Dates To (Mo/Yr)</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="radio-checkbox-group"><p>Are you a United States Citizen?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="citizen" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="citizen" value="no"><span class="custom-checkbox"></span><span>No</span></label></div></div><div class="radio-checkbox-group"><p>Do you have or have you ever applied for a passport?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="passport" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="passport" value="no"><span class="custom-checkbox"></span><span>No</span></label></div></div></div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4"><div class="input-group"><label>If naturalized, Place:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Court:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Naturalization No.:</label><input type="text" class="printable-input"></div></div>
+                                <div class="radio-checkbox-group"><p>Can you perform the essential functions of this job with or without reasonable accommodation?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="perform_functions" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="perform_functions" value="no"><span class="custom-checkbox"></span><span>No</span></label></div></div>
+                            </section>
+
+                            <!-- D. Education / Training -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">D. Education / Training</h3>
+                                <div class="printable-page-block"><div class="input-group"><label>High School or GED</label><div class="table-container"><table><thead><tr><th>Name/Address</th><th>Dates Attended (From/To)</th><th>Years Completed</th><th>Did You Graduate?</th><th>Type of Diploma</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div></div>
+                                <div class="printable-page-block"><div class="input-group"><label>College/University</label><div class="table-container"><table><thead><tr><th>Name/Address</th><th>Dates Attended (From/To)</th><th>Credit Hours (Qtr/Sem)</th><th>Did You Graduate?</th><th>Type of Degree</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div></div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="input-group"><label>Major</label><input type="text" class="printable-input"></div><div class="input-group"><label>Minor</label><input type="text" class="printable-input"></div></div>
+                                <div class="printable-page-block"><div class="input-group"><label>Other Schools (Trade, Vocational, Business or Military):</label><div class="table-container"><table><thead><tr><th>Name/Address</th><th>Dates Attended (From/To)</th><th>Credit Hours Earned</th><th>Area of Study</th><th>Did You Graduate?</th><th>Type of Degree or Certificate</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div></div>
+                                <div class="input-group"><label for="school_awards">1. Describe any awards, honors, citations, positions held in school organizations, and any other special recognition you received while attending school that you would like us to know about:</label><textarea id="school_awards" rows="3" class="lined-textarea"></textarea></div>
+                                <div class="radio-checkbox-group"><p>2. Have you ever been suspended or expelled from school?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="expelled" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="expelled" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, please explain:</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                                <div class="input-group mt-4"><label>3. List any foreign languages you can speak, read, or write:</label><input type="text" class="printable-input" placeholder="Speak"><input type="text" class="printable-input mt-2" placeholder="Read"><input type="text" class="printable-input mt-2" placeholder="Write"></div>
+                                <div class="input-group"><label>4. Indicate any law enforcement education/training:</label><div class="table-container"><table><thead><tr><th>Name/Topic of Training</th><th>Certificate?</th><th>Date</th><th>Location of Training</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div>
+                                <div class="radio-checkbox-group"><p>5. Has your law enforcement certification ever been suspended, revoked, relinquished or subject to discipline or investigation by POST or any other state's law enforcement certification agency?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="cert_suspended" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="cert_suspended" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, explain:</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                                <div class="input-group mt-4"><label for="hobbies">6. Describe any special abilities, interests, and hobbies including the degree of proficiency:</label><textarea id="hobbies" rows="3" class="lined-textarea"></textarea></div>
+                                <div class="input-group"><label for="special_license">7. Indicate any type of special license such as pilot, radio operator, etc., showing licensing authority, where the license was first issued, and date current license expires (except vehicle operator's license):</label><textarea id="special_license" rows="2" class="lined-textarea"></textarea></div>
+                                <div class="input-group"><label for="special_skills">8. Indicate any special skills you possess and equipment you can use which may be related to law enforcement work. (For example: two-way radio communications, breathalyzer, speed detection equipment, firearms):</label><textarea id="special_skills" rows="2" class="lined-textarea"></textarea></div>
+                                <div class="radio-checkbox-group"><p>9. Have you had any training/education with K-9's?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="k9_training" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="k9_training" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, provide details:</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                            </section>
+
+                            <!-- E. Technology Skills -->
+                            <section class="form-section">
+                                 <h3 class="text-xl font-semibold mb-4 text-gray-700">E. Technology Skills</h3>
+                                 <p class="mb-4 text-gray-600">Check All Skills & Software Applications You Have Experience Using (any version):</p>
+                                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                     <label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">PC User</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Macintosh User</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Windows</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Microsoft Word</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Microsoft Excel</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Microsoft Access</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Microsoft Publisher</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">E-Mail</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Internet</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Web Page Design</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Scanner</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Copier</span></label><label class="inline-flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400"> <span class="ml-2">Fax</span></label>
+                                 </div>
+                                 <div class="input-group mt-4"><label for="other_skills">Other: Please list</label><input type="text" id="other_skills" name="other_skills" class="printable-input"></div>
+                                 <div class="input-group"><label for="licenses_certs">Professional Licenses or Certificates Held:</label><input type="text" id="licenses_certs" name="licenses_certs" class="printable-input"></div>
+                            </section>
+
+                            <!-- F. Employment History -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">F. Employment History</h3>
+                                <p class="text-sm text-gray-600 mb-4">List chronologically all employment beginning with present employment. All time must be accounted for. If unemployed for a period, set forth dates of unemployment.</p>
+                                <div class="space-y-8">
+                                    <!-- Employer 1 -->
+                                    <div class="border border-gray-200 p-4 rounded-lg"><h4 class="printable-subheading font-semibold text-lg mb-4">Current/Most Recent Employer</h4><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Employer:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Supervisor Name:</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Telephone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Position Held:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Dates From:</label><input type="text" class="printable-input date-input"></div><div class="input-group"><label>To:</label><input type="text" class="printable-input date-input"></div><div class="md:col-span-2 input-group"><label>Primary Duties:</label><textarea rows="3" class="lined-textarea"></textarea></div><div class="input-group"><label>Final Rate of Pay:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Reason for Leaving:</label><input type="text" class="printable-input"></div></div></div>
+                                    <!-- Employer 2 -->
+                                    <div class="border border-gray-200 p-4 rounded-lg"><h4 class="printable-subheading font-semibold text-lg mb-4">Next Employer</h4><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Employer:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Supervisor Name:</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Telephone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Position Held:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Dates From:</label><input type="text" class="printable-input date-input"></div><div class="input-group"><label>To:</label><input type="text" class="printable-input date-input"></div><div class="md:col-span-2 input-group"><label>Primary Duties:</label><textarea rows="3" class="lined-textarea"></textarea></div><div class="input-group"><label>Final Rate of Pay:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Reason for Leaving:</label><input type="text" class="printable-input"></div></div></div>
+                                    <!-- Employer 3 -->
+                                    <div class="border border-gray-200 p-4 rounded-lg"><h4 class="printable-subheading font-semibold text-lg mb-4">Next Employer</h4><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Employer:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Supervisor Name:</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Telephone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Position Held:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Dates From:</label><input type="text" class="printable-input date-input"></div><div class="input-group"><label>To:</label><input type="text" class="printable-input date-input"></div><div class="md:col-span-2 input-group"><label>Primary Duties:</label><textarea rows="3" class="lined-textarea"></textarea></div><div class="input-group"><label>Final Rate of Pay:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Reason for Leaving:</label><input type="text" class="printable-input"></div></div></div>
+                                </div>
+                                <div class="space-y-6 mt-8"><div class="radio-checkbox-group"><p>1. Have you ever been dismissed or asked to resign or had any disciplinary action taken against you from any employment or volunteer position you have held?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="dismissed" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="dismissed" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If YES, please give details:</label><textarea class="lined-textarea" rows="2"></textarea></div><div class="radio-checkbox-group"><p>2. Have you resigned or left a job by mutual agreement following allegations of misconduct or unsatisfactory job performance?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="mutual_agreement" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="mutual_agreement" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If YES, please give details:</label><textarea class="lined-textarea" rows="2"></textarea></div><div class="radio-checkbox-group"><p>3. Have you ever applied to or performed paid or unpaid services for a law enforcement agency not listed as an employer?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="other_le_apply" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="other_le_apply" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, please provide name of agency and date:</label><textarea class="lined-textarea" rows="2"></textarea></div><div class="radio-checkbox-group"><p>4. Do you or have you owned a business, or are you or were you a partner or corporate officer in any business or organization not listed previously?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="owned_business" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="owned_business" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, please provide details:</label><textarea class="lined-textarea" rows="2"></textarea></div></div>
+                            </section>
+
+                            <!-- G. Applicants with Current or Prior Law Enforcement Experience -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">G. Applicants with Current or Prior Law Enforcement Experience</h3>
+                                <div class="printable-page-block"><div class="input-group"><label>1. Identify ALL complaints (however characterized) made against you by any member of the public.</label><div class="table-container"><table><thead><tr><th>Agency</th><th>Name of Complainant</th><th>Approximate Date</th><th>Disposition</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div></div>
+                                <div class="printable-page-block"><div class="input-group"><label>2. Identify ALL complaints (however characterized) made against you by any law enforcement personnel (including supervisors or administrators).</label><div class="table-container"><table><thead><tr><th>Agency</th><th>Name of Complainant</th><th>Approximate Date</th><th>Disposition</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div></div>
+                                <div class="printable-page-block"><div class="input-group"><label>3. Identify ALL claims or lawsuits (however characterized) filed against you or your employing agency based on allegations of negligent or wrongful acts or omissions by you.</label><div class="table-container"><table><thead><tr><th>Agency</th><th>Name of Plaintiff(s)</th><th>Approximate Date</th><th>Court Where Filed</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div></div>
+                                <div class="printable-page-block"><div class="input-group"><label>4. Identify ALL disciplinary action (however characterized) taken against you by a law enforcement employer.</label><div class="table-container"><table><thead><tr><th>Agency</th><th>Supervisor or Administrator Taking Action</th><th>Approximate Date</th><th>Basis and Form of Discipline</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div></div>
+                                <div class="input-group"><label>5. Identify ALL circumstances in which you have been requested or ordered to take a polygraph exam, CVSA or any other form of truth/deception technology.</label><div class="table-container"><table><thead><tr><th>Agency</th><th>Basis for Exam</th><th>Approximate Date</th><th>Outcome</th></tr></thead><tbody><tr><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td><td><textarea rows="1" class="printable-textarea"></textarea></td></tr></tbody></table></div></div>
+                            </section>
+
+                            <!-- H. Driving History -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">H. Driving History</h3>
+                                <div class="radio-checkbox-group"><p>1. Are you a licensed S.C. automobile operator?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="sc_license" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="sc_license" value="no"><span class="custom-checkbox"></span><span>No</span></label></div></div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4"><div class="input-group"><label>License No.:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Date of Expiration:</label><input type="text" class="printable-input date-input"></div><div class="input-group"><label>Restrictions:</label><input type="text" class="printable-input"></div></div>
+                                <div class="radio-checkbox-group mt-4"><p>2. Do you hold or have you ever held an operator license in another state?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="other_license" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="other_license" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, please provide state(s), name used and approximate dates license(s) was/were held.</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                                <div class="radio-checkbox-group mt-4"><p>3. Have you ever been denied issuance of a license or have you ever had a license suspended or revoked?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="license_revoked" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="license_revoked" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, please provide complete details including why license was revoked.</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                                <div class="printable-page-block"><div class="radio-checkbox-group mt-4"><p>4. Have you ever had automobile insurance refused, withdrawn, revoked, or required to obtain special risk insurance?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="insurance_revoked" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="insurance_revoked" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, please provide complete details.</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                            </section>
+                            
+                            <!-- I. Military History -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">I. Military History</h3>
+                                <div class="radio-checkbox-group"><p>1. Have you ever served on active duty in the Armed Forces of the United States?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="active_duty" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="active_duty" value="no"><span class="custom-checkbox"></span><span>No</span></label></div></div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4"><div class="input-group"><label>Branch of Service:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Serial #:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Highest Rank:</label><input type="text" class="printable-input"></div></div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="input-group"><label>Duty Dates: From:</label><input type="text" class="printable-input date-input"></div><div class="input-group"><label>To:</label><input type="text" class="printable-input date-input"></div></div>
+                                <div class="input-group"><label>2. Date and type of discharge:</label><input type="text" class="printable-input"></div>
+                                <div class="radio-checkbox-group mt-4"><p>3. Are you now or have you ever been a member of a reserve unit or the National Guard?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="reserve_guard" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="reserve_guard" value="no"><span class="custom-checkbox"></span><span>No</span></label></div></div>
+                                <div class="input-group mt-4"><label>4. If yes state the branch of service, name and location of your unit:</label><input type="text" class="printable-input"></div>
+                                <div class="radio-checkbox-group mt-4"><p>5. Was any type of disciplinary action taken against you in the service?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="service_discipline" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="service_discipline" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, please provide details (Date, Place, Nature of Offense, Action Taken):</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                                <div class="radio-checkbox-group mt-4"><p>6. Have you ever served in the Armed Forces of a foreign country?</p><div class="flex space-x-4"><label class="radio-option"><input type="radio" name="foreign_service" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="foreign_service" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If yes, please specify countries and dates.</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                            </section>
+
+                            <!-- J. Veteran's Preference -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">J. Veteran's Preference</h3>
+                                <div class="input-group"><label>If you are NOT claiming Veteran's Preference, please initial here and proceed to the next section.</label><input type="text" class="w-24 printable-input"></div>
+                                <p class="text-sm text-gray-600">Per South Carolina Code, Employer will afford a preference to employment of veterans. In the event of equal qualifications and experience between candidates for an available position, a veteran who qualifies will be preferred. If claiming veteran's preference, please complete the information below and attach a copy of your DD-214 to this application.</p>
+                                <div class="mt-4 space-y-2"><label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400 mr-2"><span>I served on active duty in the armed forces of the United States for a period of more than one-hundred eighty (180) days and was honorably discharged.</span></label><label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400 mr-2"><span>I have a service-connected disability of 10% or more.</span></label><label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400 mr-2"><span>I am the spouse of an eligible disabled veteran, who has a service-connected disability.</span></label><label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400 mr-2"><span>I am the widow or widower of an eligible veteran and have remained unmarried.</span></label><label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-400 mr-2"><span>I have attached a copy of my DD-214. Veteran's preference will not be considered without this document.</span></label></div>
+                            </section>
+
+                            <!-- K. Organization Membership -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">K. Organization Membership</h3>
+                                <div class="radio-checkbox-group"><p>1. Are you now, or have you ever been, a member of any foreign or domestic organization, association, movement, group or combination of persons which advocates or approves the commission of acts of force or violence to deny other persons their rights under the constitution of the United States, or which seeks to alter the form of government of the United States by unconstitutional means?</p><div class="flex space-x-4 mt-2"><label class="radio-option"><input type="radio" name="org_member" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="org_member" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If YES, including name of organization, dates of membership and location.</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                                <div class="radio-checkbox-group mt-4"><p>2. Have you ever made a financial or other material contribution to any organization of the type described in question #1 above?</p><div class="flex space-x-4 mt-2"><label class="radio-option"><input type="radio" name="org_contrib" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="org_contrib" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If YES, explain including name of organization, date(s) and location.</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                                <div class="radio-checkbox-group mt-4"><p>3. At the time of your membership, participation, or contribution, did you know of any unlawful aims of the organization?</p><div class="flex space-x-4 mt-2"><label class="radio-option"><input type="radio" name="org_unlawful" value="yes"><span class="custom-checkbox"></span><span>Yes</span></label><label class="radio-option"><input type="radio" name="org_unlawful" value="no"><span class="custom-checkbox"></span><span>No</span></label></div><label class="mt-4 block font-medium">If YES, explain including name of organization, dates and location.</label><textarea class="lined-textarea" rows="2"></textarea></div>
+                            </section>
+                            
+                            <!-- L. Personal & Professional References -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">L. Personal & Professional References</h3>
+                                <div class="mb-8">
+                                    <h4 class="printable-subheading text-lg font-semibold mb-2">Personal references</h4>
+                                    <p class="text-sm text-gray-600 mb-4">Please list the names of three (3) persons not related to you by blood or marriage.</p>
+                                    <div class="space-y-6">
+                                        <div class="border p-4 rounded-lg"><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Complete Name (Last, First, Middle)</label><input type="text" class="printable-input"></div><div class="input-group"><label>Yrs. Known</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Occupation</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Home Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Home Phone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Business Phone:</label><input type="text" class="printable-input"></div></div></div>
+                                        <div class="border p-4 rounded-lg"><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Complete Name (Last, First, Middle)</label><input type="text" class="printable-input"></div><div class="input-group"><label>Yrs. Known</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Occupation</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Home Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Home Phone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Business Phone:</label><input type="text" class="printable-input"></div></div></div>
+                                        <div class="border p-4 rounded-lg"><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Complete Name (Last, First, Middle)</label><input type="text" class="printable-input"></div><div class="input-group"><label>Yrs. Known</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Occupation</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Home Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Home Phone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Business Phone:</label><input type="text" class="printable-input"></div></div></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="printable-subheading text-lg font-semibold mb-2">Professional References</h4>
+                                    <p class="text-sm text-gray-600 mb-4">List names of three (3) professional references who have known you well for at least five (5) years and who are not related to you by blood or marriage.</p>
+                                     <div class="space-y-6">
+                                        <div class="border p-4 rounded-lg"><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Complete Name (Last, First, Middle)</label><input type="text" class="printable-input"></div><div class="input-group"><label>Yrs. Known</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Occupation</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Home Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Home Phone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Business Phone:</label><input type="text" class="printable-input"></div></div></div>
+                                        <div class="border p-4 rounded-lg"><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Complete Name (Last, First, Middle)</label><input type="text" class="printable-input"></div><div class="input-group"><label>Yrs. Known</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Occupation</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Home Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Home Phone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Business Phone:</label><input type="text" class="printable-input"></div></div></div>
+                                        <div class="border p-4 rounded-lg"><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="input-group"><label>Complete Name (Last, First, Middle)</label><input type="text" class="printable-input"></div><div class="input-group"><label>Yrs. Known</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Occupation</label><input type="text" class="printable-input"></div><div class="md:col-span-2 input-group"><label>Home Address:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Home Phone:</label><input type="text" class="printable-input"></div><div class="input-group"><label>Business Phone:</label><input type="text" class="printable-input"></div></div></div>
+                                    </div>
+                                </div>
+                            </section>
+                            
+                            <!-- M. Documents to be Attached -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">M. Documents to be Attached</h3>
+                                <ul class="list-disc list-inside space-y-2 text-gray-600">
+                                    <li>Applicant's Birth Certificate (photocopy)</li>
+                                    <li>Social Security Card (photocopy)</li>
+                                    <li>Driver's License (photocopy) - all candidates must obtain a valid SC driver's license to be hired by our agency.</li>
+                                    <li>Certified driving record for all states in which the applicant was/is licensed</li>
+                                    <li>Highest college degree earned (photocopy)</li>
+                                    <li>High school diploma or transcript (photocopy)</li>
+                                    <li>An official transcript from the college from which the applicant graduated, sent directly to the Great Falls Police Department</li>
+                                    <li>If the applicant served in the U.S. Military for any period of time, DD-214 (Member 4 Copy) (photocopy).</li>
+                                    <li>Licenses or Certificate which show special qualifications or skills (photocopy).</li>
+                                </ul>
+                                <p class="mt-4 text-sm text-gray-600">When requested by this agency, applicant will be fingerprinted and shall be required to submit to a drug test and complete physical examination, as well as be required to complete the Background Information form and a polygraph examination.</p>
+                            </section>
+
+                            <!-- N. Signature & Certification of Accuracy & Notary Seal -->
+                            <section class="form-section">
+                                <h3 class="text-xl font-semibold mb-4 text-gray-700">N. Signature & Certification of Accuracy & Notary Seal</h3>
+                                <p class="text-gray-600">I, <input type="text" class="w-64 border-b border-gray-400 align-bottom">, hereby certify that each and every statement made on this form is true and complete to the best of my knowledge, and I understand that any misstatement or omissions of information will subject me to disqualification or dismissal. I, also, acknowledge that I have a continuing duty to update all information contained in this document and, if employed by this Agency, I acknowledge that my failure to update this information may result in my discipline up to and including termination from employment. I understand that should an investigation disclose inaccurate, incomplete or misleading answers, my application may be rejected and my name removed from consideration for employment with Employer, and if employed, my termination from employment.</p>
+                                <div class="mt-8 flex items-center space-x-4">
+                                    <span class="printable-subheading">Signed this the</span><input type="text" class="w-16 border-b border-gray-400"><span class="printable-subheading">day of</span><input type="text" class="w-32 border-b border-gray-400"><span class="printable-subheading">, 20</span><input type="text" class="w-16 border-b border-gray-400">
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                                    <div class="input-group"><label for="signature_full">Signature in Full</label><div id="signature_full" class="printable-input h-10 bg-gray-100 print:bg-white" contenteditable="false"></div></div>
+                                    <div class="input-group"><label for="print_name_full">Print Name in Full</label><input type="text" id="print_name_full" class="printable-input"></div>
+                                </div>
+                <div class="notary-box">
+                                    <h4 class="text-center font-bold text-lg mb-4">NOTARY</h4>
+                                    <p>State of <input type="text" class="w-48 border-b align-bottom">, County of <input type="text" class="w-48 border-b align-bottom">) ss.</p>
+                                    <p class="mt-4">On this <input type="text" class="w-16 border-b align-bottom"> day of <input type="text" class="w-32 border-b align-bottom">, 20<input type="text" class="w-16 border-b align-bottom">, before me, the undersigned notary public in and for said State, personally appeared <input type="text" class="w-48 border-b align-bottom"> or identified to me to be the person whose name is subscribed to the within instrument, and acknowledged to me that he/she executed the same.</p>
+                                    <p class="mt-4">IN WITNESS WHEREOF, I have hereunto set my hand and affixed my official seal the day and year in this Statement first above written.</p>
+                                    <div class="mt-8">
+                                        <div class="input-group"><label>Notary Public in and for the State of</label><input type="text" class="printable-input"></div>
+                                        <div class="input-group"><label>Residing in</label><input type="text" class="printable-input"></div>
+                                        <div class="input-group"><label>My Commission Expires:</label><input type="text" class="printable-input date-input"></div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Release of Information -->
+                            <section class="printable-page-block">
+                                <h3 class="text-2xl font-bold text-center mb-6 text-gray-900 printable-subheading">RELEASE OF INFORMATION</h3>
+                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                                     <div class="input-group"><label>TO:</label><input type="text" class="printable-input"></div><div class="input-group"><label>APPLICANT'S NAME:</label><input type="text" class="printable-input"></div>
+                                     <div class="input-group"><label>OR Repository of Records</label><input type="text" class="printable-input"></div><div class="input-group"><label>DATE OF BIRTH:</label><input type="text" class="printable-input date-input"></div>
+                                     <div class="md:col-span-2 input-group"><label>NAME & ADDRESS OF EMPLOYING AGENCY REQUESTING BACKGROUND INFO:</label><input type="text" class="printable-input"></div><div class="input-group"><label>SOCIAL SECURITY NO.:</label><input type="text" class="printable-input"></div>
+                                 </div>
+                                 <p class="text-sm text-gray-600 mt-4">I hereby authorize any authorized representative bearing this release, or copy thereof, to obtain any information in your files pertaining to me including, but not limited to, achievement, attendance, personal history, disciplinary records, credit records, criminal history records, training records, and educational records. I specifically authorize all of my prior employer(s) to give their opinions about my prior work history, work ethic, whether or not they would rehire me and any other opinions that may be pertinent to my application for employment with the requesting agency.</p>
+                                 <p class="text-sm text-gray-600 mt-4">I hereby direct you to release such information upon request of the bearer. This release is executed with full knowledge and understanding that the information is for the official use of the requesting agency. Consent is granted for the agency to furnish such information, as is described above, to third parties in the course of fulfilling its official responsibilities. I hereby release you, as the custodian of such records, and your employer, education institution, credit bureau or consumer reporting agency, including its officers, employees, and related personnel, both individually and collectively, from any and all liability for damages of whatever kind, which may at any time result to me, my heirs, family or associates because of compliance with this authorization and request to release information, or any attempt to comply with it. A photocopy of this form will be as effective as the original.</p>
+                                 <p class="text-sm text-gray-600 mt-4">I hereby authorize the National Records Center, Great Falls, South Carolina, or other custodian of my military record to release information or photocopies from my military personnel, including a photocopy of my DD 214, Report of Separation, to: <input type="text" class="w-full mt-1 border-b"></p>
+                                 <div class="mt-8 flex items-center space-x-4">
+                                     <span>Signed this the</span><input type="text" class="w-16 border-b border-gray-400"><span>day of</span><input type="text" class="w-32 border-b border-gray-400">, 20<input type="text" class="w-16 border-b border-gray-400">
+                                 </div>
+                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                                     <div class="input-group"><label for="signature_full_release">Signature in Full</label><div id="signature_full_release" class="printable-input h-10 bg-gray-100 print:bg-white" contenteditable="false"></div></div>
+                                     <div class="input-group"><label for="print_name_full_release">PRINTED Signature in Full</label><input type="text" id="print_name_full_release" class="printable-input"></div>
+                                 </div>
+                <div class="notary-box">
+                                      <h4 class="text-center font-bold text-lg mb-4">NOTARY</h4>
+                                     <p>State of <input type="text" class="w-48 border-b align-bottom">, County of <input type="text" class="w-48 border-b align-bottom">) ss.</p>
+                                     <p class="mt-4">On this <input type="text" class="w-16 border-b align-bottom"> day of <input type="text" class="w-32 border-b align-bottom">, 20<input type="text" class="w-16 border-b align-bottom">, before me, the undersigned notary public in and for said State, personally appeared <input type="text" class="w-48 border-b align-bottom"> or identified to me to be the person whose name is subscribed to the within instrument, and acknowledged to me that he/she executed the same.</p>
+                                     <p class="mt-4">IN WITNESS WHEREOF, I have hereunto set my hand and affixed my official seal the day and year in this Statement first above written.</p>
+                                     <div class="mt-8">
+                                         <div class="input-group"><label>Notary Public in and for the State of</label><input type="text" class="printable-input"></div>
+                                         <div class="input-group"><label>Residing in</label><input type="text" class="printable-input"></div>
+                                         <div class="input-group"><label>My Commission Expires:</label><input type="text" class="printable-input date-input"></div>
+                                     </div>
+                                 </div>
+                             </section>
+
+                            <!-- Submit Button -->
+                            <div class="text-center pt-8">
+                                <button type="submit" class="bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors">
+                                    Submit Application
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="loading-heading">
+        <div class="flex flex-col items-center text-center text-white">
+            <svg class="animate-spin h-10 w-10 text-amber-400 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <h2 id="loading-heading" class="text-2xl font-bold uppercase tracking-wider">Submitting Application</h2>
+            <p class="mt-2 text-gray-300">Please wait, your files are uploading. Do not leave this page.</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // All previous JS (Mobile Menu, Animations, Parallax, etc.) remains the same
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            if (animatedElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                animatedElements.forEach(el => { observer.observe(el); });
+            }
+
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                let ticking = false;
+                window.addEventListener('scroll', function() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function() {
+                            const offset = window.pageYOffset;
+                            parallaxBg.style.transform = 'translateY(' + offset * 0.4 + 'px)';
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+            }
+
+            const tabs = document.querySelectorAll('#recruitment-tabs [role="tab"]');
+            const tabList = document.querySelector('#recruitment-tabs [role="tablist"]');
+            if (tabList) {
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        tabs.forEach(t => {
+                            t.setAttribute('aria-selected', 'false');
+                            const panel = document.getElementById(t.getAttribute('aria-controls'));
+                            panel.classList.add('hidden');
+                        });
+                        const clickedTab = e.currentTarget;
+                        clickedTab.setAttribute('aria-selected', 'true');
+                        document.getElementById(clickedTab.getAttribute('aria-controls')).classList.remove('hidden');
+                    });
+                });
+            }
+
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                    accordionButtons.forEach(btn => {
+                        btn.setAttribute('aria-expanded', 'false');
+                        const contentToClose = document.getElementById(btn.getAttribute('aria-controls'));
+                        contentToClose.style.maxHeight = '0px';
+                    });
+                    if (!isExpanded) {
+                        button.setAttribute('aria-expanded', 'true');
+                        const contentToOpen = document.getElementById(button.getAttribute('aria-controls'));
+                        contentToOpen.style.maxHeight = contentToOpen.scrollHeight + 'px';
+                    }
+                });
+            });
+
+            const contentSource = {
+                 'panel-benefits': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider">Compensation</h3>
+                    <p class="mt-2 text-lg">Competitive Salary (based on experience)</p>
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mt-6">Benefits & Perks</h3>
+                    <ul class="mt-4 list-disc list-inside text-lg space-y-2">
+                        <li>Take Home Vehicle</li>
+                        <li>Paid Holidays</li>
+                        <li>Retirement Plans</li>
+                        <li>Health & Wellness Programs</li>
+                        <li>Flexible Shift Rotation Hours</li>
+                        <li>Opportunities for Training & Advancement</li>
+                    </ul>`,
+                'panel-requirements': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mb-4">Minimum Requirements <span class="text-gray-400 text-lg normal-case font-normal">(South Carolina Minimum Requirements Act (23-23-60))</span></h3>
+                    <p>Applicants must meet all qualifications for employment consideration:</p>
+                    <ul class="list-disc list-inside space-y-2 pt-2">
+                        <li>Must be a minimum of 21 years of age</li>
+                        <li>Must have a clean driving history: No convictions for Driving Under Influence (DUI), Driving Under Suspension (DUS) within the past 5 years, and minimum convictions for speeding</li>
+                        <li>Must have a current South Carolina drivers license</li>
+                        <li>Must have good credit history, no judgments, no liens, no recent bankruptcy. Each applicant's history will be considered prior to employment</li>
+                        <li>Must have a high school diploma or General Education Development (GED) equivalent</li>
+                        <li>Must successfully complete a polygraph exam</li>
+                        <li>Must successfully complete a psychological evaluation</li>
+                        <li>Must successfully pass a background investigation</li>
+                        <li>Must successfully pass a medical physical exam and drug screening</li>
+                        <li>Must successfully pass an oral interview with the Chief of Police</li>
+                        <li>Must successfully pass the Police Officer Entry Level exam</li>
+                        <li>No convictions of Domestic Violence</li>
+                        <li>No convictions of felonies, misdemeanor crimes or crimes of moral turpitude</li>
+                    </ul>`,
+                'panel-disqualifiers': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mb-4">Immediate Disqualifiers</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Criminal History</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Adult commission of undetected crimes of a serious or repetitive nature</li>
+                                <li>Any conviction of domestic violence, including simple assault against a domestic partner, spouse, child or parent</li>
+                                <li>Conviction of any crime which carries a 6-months jail sentence or more, excluding traffic violations which are discussed separately, or the South Carolina State Law equivalent within the last 5 years</li>
+                                <li>Conviction of any felony or any crime involving moral turpitude (crimes contrary to justice, honesty, or good morals)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Traffic Violations</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Suspension of driver's license within the past thirty-six (36) months (Non-traffic related suspensions, such as an insurance related suspension, shall be reviewed on a case-by-case basis.)</li>
+                                <li>Four (4) or more moving violations within the past thirty-six (36) months (regardless of adjudication withheld)</li>
+                                <li>Accumulation of eight (8) points or more within the past 36 months on a South Carolina Operator's License or the equivalent for out of state licenses. Points may be negated by attending defensive driving school offered by the Division of Motor Vehicles prior to initial testing</li>
+                                <li>Conviction or case pending for DUI, DWI or Hit and Run within the last five (5) years.</li>
+                                <li>Any significant negative driving history, which shall be determined by management review of all relevant facts.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Drugs</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Any illegal possession/use of hallucinogens to include but no limited to: LSD (lysergic acid diethylamide), PCP (phencyclidine), magic mushrooms (psilocybin), ketamine, mescaline (peyote cactus), PCP, MDMA. <strong>*Requires a review by GFPD Recruiter and Chief of Police to determine if the circumstances warrant an immediate disqualifier</strong></li>
+                                <li>Any involvement in the sale or distribution of illegal drugs as an adult</li>
+                                <li>Illegal possession or use of anabolic steroids</li>
+                                <li>Illegal possession of marijuana or a derivative thereof within the last three (3) years. <strong>*Requires a review by GFPD Recruiter and Chief of Police to determine if the circumstances warrant an immediate disqualifier</strong></li>
+                                <li>Juvenile involvement in the sale or distribution of illegal drugs is an area of concern which will be given careful scrutiny in the context of the full investigation/review.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Credit</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Demonstrated a history of financial irresponsibility. (Examples of areas of concern include unpaid collections or unsatisfactory judgments where no payment plan has been established. Bankruptcies will be evaluated based on the time frame, circumstances, other measures pursued, and restoration of credit).</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Others</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li>Cheating on any examination or testing associated with the position</li>
+                                <li>Dishonorable discharge from any military service</li>
+                                <li>Untruthfulness and/or intentional withholding of information on any application, interview, or paperwork associated with the position. Examples of intentional withholding of information would include deliberate inaccuracies or incomplete statements.</li>
+                                <li>Currently in default on student loans when considered for employment.</li>
+                            </ul>
+                        </div>
+                    </div>`,
+                'panel-process': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mb-4">Steps in the Hiring Process</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Certified Applicant (In-state and Out-of-state)</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li><a href="#application-form" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
+                                <li>Applications reviewed for automatic disqualifiers</li>
+                                <li><strong>Interview:</strong> The applicant is scheduled for an interview with the Chief of Police.</li>
+                                <li><strong>Background Investigation:</strong> A thorough background investigation is completed on all applicants. This includes (but is not limited to) contacting former and current employers and references, a credit check, and a criminal history check.</li>
+                                <li><strong>Medical Screenings / Drug Screen</strong></li>
+                                <li><strong>Hiring:</strong> Once the applicant is determined to be a good hire, a conditional offer of employment will be extended to the applicant. The applicant must pass a drug and alcohol screen before they are sworn in.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Uncertified Applicants</h4>
+                            <ul class="list-disc list-inside space-y-2 pt-2">
+                                <li><a href="#application-form" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
+                                <li>Applications reviewed for automatic disqualifiers</li>
+                                <li><strong>Written Exam:</strong> Applicants must take a written exam and must score 70% or better on this exam.</li>
+                                <li><strong>Physical Ability Test:</strong> After passing the written examination, the applicant will be required to complete the Physical Ability Test (PAT). This is required for admission into the South Carolina Criminal Justice Academy, and the course and all obstacles must be successfully completed in under 2 minutes and 6 seconds.</li>
+                                <li><strong>Interview:</strong> After successfully completing the written exam and PAT, applicants are scheduled for an interview with the Chief of Police.</li>
+                                <li><strong>Background Investigation:</strong> A thorough background investigation is completed on all applicants. This includes (but is not limited to) contacting former and current employers and references, a credit check, and a criminal history check.</li>
+                                <li><strong>Medical Screenings / Drug Screen</strong></li>
+                                <li><strong>Hiring:</strong> Once the applicant is determined to be a good hire, a conditional offer of employment will be extended to the applicant. The applicant must pass a drug and alcohol screen before they are sworn in.</li>
+                            </ul>
+                        </div>
+                    </div>`,
+                'panel-documents': `
+                    <h3 class="text-2xl font-bold text-amber-400 uppercase tracking-wider mb-4">Important Documents</h3>
+                    <div class="space-y-4">
+                        <p>In preparation for and the process to efficient, a list of documentation candidates will be required to provide is listed below. The Recruiter will not collect them personally. Applicants will be sent a link to Guardian Alliance Technology upon successful completion of the Physical Agility Test, Written Assessment, and Interview. This is for our candidate's knowledge so you can be proactive in obtaining all your information.</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Applicant's Birth Certificate (photocopy)</li>
+                            <li>Social Security Card (photocopy)</li>
+                            <li>Driver's License (photocopy)-all candidates must obtain a valid SC driver's license to be hired by our agency.</li>
+                            <li>Certified driving record for all states in which the applicant was/is licensed</li>
+                            <li>Highest college degree earned (photocopy)</li>
+                            <li>High school diploma or transcript (photocopy)</li>
+                            <li>An official transcript from the college from which the applicant graduated, sent directly to the Great Falls Police Department</li>
+                            <li>If the applicant served in the U.S. Military for any period of time, DD-214 (Member 4 Copy listing Characterization of Service, Separation and Re-Enlistment Codes) (photocopy) or Discharge Certificate (photocopy).</li>
+                            <li>Licenses or Certificate which show special qualifications or skills (photocopy). If the applicant is a certified law enforcement officer from outside South Carolina, a State Certificate and training academy curriculum with hours must be submitted (photocopy).</li>
+                        </ol>
+                        <p class="font-bold pt-4">FOR OUT OF STATE CANDIDATES TO BE CONSIDERED PRE-CERTIFIED OFFICERS IN THE STATE OF SOUTH CAROLINA. ALL OF THIS INFORMATION WILL BE OBTAINED BY THE GREAT FALLS POLICE DEPARMENTS OFFICE OF RECRUITMENT.</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Certificate of Completion (BLET Course, Basic Corrections or Detention Course or Federal Training Course)</li>
+                            <li>Curriculum/Syllabus showing hours and topics of training</li>
+                            <li>A completed POST letter has been received from the out-of-state POST agency. POST Letter</li>
+                            <li>A Letter of Good Standing from the current or last agency the applicant was employed is required</li>
+                            <li>Indication that a Letter of Good Standing has been requested for Federal/Military candidates; or a Verification of Employment Letter for SCDC Correction candidates.</li>
+                        </ol>
+                        <p>Prior to a candidate's registration for training at the Academy, the Training Review Request Form along with the required documentation above should be submitted.</p>
+                        <p>Upon receipt of the complete Training Review, an initial review will be conducted to determine eligibility and compliance in order for the training review to move forward for final recommendations by Certification & Compliance, Training Operations, Standards, Special Operations, and authorized approval by the CJA Director.</p>
+                        <p>All certified out of state candidates with less than one (1) year of law enforcement employment/experience (one year begins upon completion of training and subsequent employment) or a candidate with no law enforcement employment/experience will have to attend the 4 X 8 basic training course.</p>
+                    </div>`
+            };
+
+            Object.keys(contentSource).forEach((panelId, index) => {
+                const tabPanel = document.getElementById(panelId);
+                if (tabPanel) {
+                    tabPanel.innerHTML = contentSource[panelId];
+                }
+                const accordionPanel = document.getElementById(`accordion-panel-${index + 1}`);
+                if (accordionPanel) {
+                    accordionPanel.querySelector('div').innerHTML = contentSource[panelId];
+                }
+            });
+
+
+            // RESTORED: Link to scroll to and open Requirements tab/accordion
+            const requirementsLink = document.getElementById('requirements-link');
+            if(requirementsLink) {
+                requirementsLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('recruitment-info').scrollIntoView({ behavior: 'smooth' });
+                    if (window.innerWidth < 768) { // md breakpoint
+                        document.querySelector('[aria-controls="accordion-panel-2"]').click();
+                    } else {
+                        document.getElementById('tab-requirements').click();
+                    }
+                });
+            }
+
+            const conditionalContainers = document.querySelectorAll('[data-conditional-container]');
+            conditionalContainers.forEach(container => {
+                const radios = container.querySelectorAll('input[type="radio"]');
+                const radioName = radios[0] ? radios[0].name : null;
+                if (!radioName) return;
+                const target = document.querySelector(`[data-conditional-target="${radioName}"]`);
+                if (!target) return;
+                const targetInput = target.querySelector('input, textarea, select');
+                if (!targetInput) return;
+                radios.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        if (this.value === 'Yes') {
+                            target.classList.remove('hidden');
+                            targetInput.disabled = false;
+                        } else {
+                            target.classList.add('hidden');
+                            targetInput.disabled = true;
+                            if (targetInput.type === 'checkbox' || targetInput.type === 'radio') {
+                                targetInput.checked = false;
+                            } else {
+                                targetInput.value = '';
+                            }
+                        }
+                    });
+                });
+            });
+
+            const dobInput = document.getElementById('dob');
+            if (dobInput) {
+                dobInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    let formattedValue = '';
+                    if (value.length > 0) {
+                        formattedValue = value.substring(0, 2);
+                        if (value.length > 2) {
+                            formattedValue += '/' + value.substring(2, 4);
+                        }
+                        if (value.length > 4) {
+                            formattedValue += '/' + value.substring(4, 8);
+                        }
+                    }
+                    e.target.value = formattedValue;
+                });
+            }
+            
+            const fileUploadInput = document.getElementById('file-upload');
+            const fileListDisplay = document.getElementById('file-list-display');
+            if (fileUploadInput && fileListDisplay) {
+                fileUploadInput.addEventListener('change', function(e) {
+                    fileListDisplay.innerHTML = '';
+                    const files = Array.from(this.files);
+                    const fileNames = [];
+                    if (files.length > 0) {
+                        const listTitle = document.createElement('p');
+                        listTitle.className = 'text-sm font-bold text-gray-300';
+                        listTitle.textContent = 'Selected Files:';
+                        fileListDisplay.appendChild(listTitle);
+                        const ul = document.createElement('ul');
+                        ul.className = 'list-disc list-inside text-gray-400 text-sm space-y-1';
+                        files.forEach(function(file) {
+                            const li = document.createElement('li');
+                            li.textContent = file.name;
+                            fileNames.push(file.name);
+                            ul.appendChild(li);
+                        });
+                        fileListDisplay.appendChild(ul);
+                    }
+                    fileUploadInput.dataset.uploadedFiles = fileNames.join('||');
+                });
+            }
+
+            // Modal functionality
+            const openModalButton = document.getElementById('open-application-modal');
+            const openModalButtonHero = document.getElementById('open-application-modal-hero');
+            const closeModalButton = document.getElementById('close-application-modal');
+            const applicationModal = document.getElementById('application-modal');
+
+            const openModal = function() {
+                applicationModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            };
+
+            if (openModalButton && applicationModal) {
+                openModalButton.addEventListener('click', openModal);
+            }
+
+            if (openModalButtonHero && applicationModal) {
+                openModalButtonHero.addEventListener('click', openModal);
+            }
+
+            if (closeModalButton && applicationModal) {
+                closeModalButton.addEventListener('click', function() {
+                    applicationModal.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restore scrolling
+                });
+            }
+
+            // Close modal when clicking outside
+            if (applicationModal) {
+                applicationModal.addEventListener('click', function(e) {
+                    if (e.target === applicationModal) {
+                        applicationModal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && applicationModal && !applicationModal.classList.contains('hidden')) {
+                    applicationModal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // AJAX Form Submission
+            const applicationForm = document.getElementById('gfpd-application-form');
+            const loadingOverlay = document.getElementById('loading-overlay');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            const applicationHtmlField = document.getElementById('application_html');
+
+            const escapeHTML = (unsafe) => {
+                if (unsafe === undefined || unsafe === null) return '';
+                return String(unsafe)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;');
+            };
+
+            const formatDateValue = (value) => {
+                if (!value) return '';
+                if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+                    const [year, month, day] = value.split('-');
+                    return `${month}/${day}/${year}`;
+                }
+                return value;
+            };
+
+            const isEmptyValue = (value) => {
+                if (value === undefined || value === null) return true;
+                if (typeof value === 'string') {
+                    return value.trim().length === 0;
+                }
+                return false;
+            };
+
+            const createLineField = (value, sourceField) => {
+                const container = document.createElement('span');
+                container.className = 'printable-line-wrapper';
+
+                const line = document.createElement('span');
+                line.className = 'printable-line-field';
+
+                const normalized = typeof value === 'string' ? value.trim() : value;
+                if (!isEmptyValue(normalized)) {
+                    line.textContent = normalized;
+                    container.classList.add('has-content');
+                } else {
+                    line.classList.add('is-empty');
+                }
+
+                container.appendChild(line);
+
+                const underline = document.createElement('span');
+                underline.className = 'printable-line-underline';
+                container.appendChild(underline);
+
+                if (sourceField) {
+                    const computedWidth = sourceField.offsetWidth || sourceField.clientWidth;
+                    const computedHeight = sourceField.offsetHeight || sourceField.clientHeight;
+
+                    if (computedWidth) {
+                        container.style.minWidth = `${computedWidth}px`;
+                        underline.style.width = `${computedWidth}px`;
+                    }
+
+                    if (computedHeight) {
+                        container.style.minHeight = `${computedHeight}px`;
+                    }
+
+                    const printWidth = parseFloat(sourceField.dataset.printWidth || '');
+                    const printMinWidth = parseFloat(sourceField.dataset.printMinWidth || '');
+                    const marginRight = parseFloat(sourceField.dataset.printMarginRight || '');
+                    const marginLeft = parseFloat(sourceField.dataset.printMarginLeft || '');
+                    const verticalAlign = sourceField.dataset.printVerticalAlign;
+
+                    if (!Number.isNaN(printWidth)) {
+                        container.style.width = `${printWidth}px`;
+                        underline.style.width = `${printWidth}px`;
+                    } else if (!Number.isNaN(printMinWidth)) {
+                        container.style.minWidth = `${printMinWidth}px`;
+                        underline.style.minWidth = `${printMinWidth}px`;
+                    }
+
+                    if (!Number.isNaN(marginRight)) {
+                        container.style.marginRight = `${marginRight}px`;
+                    }
+
+                    if (!Number.isNaN(marginLeft)) {
+                        container.style.marginLeft = `${marginLeft}px`;
+                    }
+
+                    if (verticalAlign) {
+                        container.style.verticalAlign = verticalAlign;
+                    }
+                }
+
+                return container;
+            };
+
+            const createMultilineBlock = (value, sourceField) => {
+                const div = document.createElement('div');
+                div.className = 'printable-textarea-block';
+                if (!isEmptyValue(value)) {
+                    div.innerHTML = escapeHTML(String(value)).replace(/\n/g, '<br>');
+                } else {
+                    div.classList.add('is-empty');
+                }
+
+                return div;
+            };
+
+            const createChoiceMark = (checked, type) => {
+                const span = document.createElement('span');
+                span.className = 'printable-choice-mark';
+                if (type === 'radio') {
+                    span.textContent = checked ? '●' : '○';
+                } else {
+                    span.textContent = checked ? '☑' : '☐';
+                }
+                return span;
+            };
+
+            const transformCloneForPrint = (form, clone) => {
+                clone.removeAttribute('id');
+                clone.removeAttribute('action');
+                clone.removeAttribute('method');
+                clone.removeAttribute('enctype');
+
+                const originalFields = Array.from(form.querySelectorAll('input, select, textarea'));
+                const clonedFields = Array.from(clone.querySelectorAll('input, select, textarea'));
+
+                originalFields.forEach((field, index) => {
+                    const cloneField = clonedFields[index];
+                    if (!cloneField) return;
+
+                    const rect = field.getBoundingClientRect();
+                    if (rect) {
+                        cloneField.dataset.printWidth = rect.width;
+                        cloneField.dataset.printHeight = rect.height;
+                    }
+
+                    const computed = window.getComputedStyle(field);
+                    cloneField.dataset.printMarginRight = parseFloat(computed.marginRight) || 0;
+                    cloneField.dataset.printMarginLeft = parseFloat(computed.marginLeft) || 0;
+                    cloneField.dataset.printDisplay = computed.display;
+                    cloneField.dataset.printVerticalAlign = computed.verticalAlign;
+                });
+
+                clone.querySelectorAll('section').forEach(section => {
+                    section.classList.add('printable-section');
+                });
+
+                clone.querySelectorAll('.input-group > label, .checkbox-group > p, .radio-checkbox-group > p, .notary-box label').forEach(label => {
+                    label.classList.add('printable-label');
+                });
+
+                clone.querySelectorAll('table').forEach(table => {
+                    table.classList.add('printable-table');
+                });
+
+                clone.querySelectorAll('select').forEach(field => {
+                    const selectedOptions = Array.from(field.options).filter(option => option.selected && option.textContent.trim().length);
+                    const display = selectedOptions.length ? selectedOptions.map(option => option.textContent.trim()).join(', ') : field.value || '';
+                    field.replaceWith(createLineField(display, field));
+                });
+
+                clone.querySelectorAll('textarea').forEach(field => {
+                    field.replaceWith(createMultilineBlock(field.value, field));
+                });
+
+                clone.querySelectorAll('input').forEach(field => {
+                    const type = (field.getAttribute('type') || field.type || 'text').toLowerCase();
+
+                    if (type === 'hidden') {
+                        field.remove();
+                        return;
+                    }
+
+                    if (type === 'checkbox' || type === 'radio') {
+                        const optionWrapper = document.createElement('span');
+                        optionWrapper.className = 'printable-choice-wrapper';
+                        const mark = createChoiceMark(field.checked, type);
+                        optionWrapper.appendChild(mark);
+                        let labelTextContent = '';
+                        let nextElement = field.nextElementSibling;
+                        while (nextElement && nextElement.classList && (nextElement.classList.contains('custom-checkbox') || nextElement.classList.contains('sr-only'))) {
+                            const toRemove = nextElement;
+                            nextElement = nextElement.nextElementSibling;
+                            toRemove.remove();
+                        }
+                        if (nextElement && nextElement.textContent && nextElement.textContent.trim().length) {
+                            labelTextContent = nextElement.textContent.trim();
+                            nextElement.remove();
+                        } else if (field.nextSibling && field.nextSibling.nodeType === Node.TEXT_NODE && field.nextSibling.textContent.trim().length) {
+                            labelTextContent = field.nextSibling.textContent.trim();
+                            field.nextSibling.textContent = '';
+                        } else if (field.getAttribute('aria-label')) {
+                            labelTextContent = field.getAttribute('aria-label');
+                        } else if (field.getAttribute('value')) {
+                            labelTextContent = field.getAttribute('value');
+                        }
+                        if (labelTextContent) {
+                            const labelText = document.createElement('span');
+                            labelText.className = 'printable-choice-label';
+                            labelText.textContent = labelTextContent;
+                            optionWrapper.appendChild(labelText);
+                        }
+                        field.replaceWith(optionWrapper);
+                        return;
+                    }
+
+                    if (type === 'file') {
+                        const container = document.createElement('div');
+                        container.className = 'printable-file-block';
+                        const files = (field.dataset.filesDisplay || '').split('||').filter(Boolean);
+                        if (files.length) {
+                            const title = document.createElement('strong');
+                            title.textContent = 'Uploaded Files';
+                            const list = document.createElement('ul');
+                            list.className = 'printable-file-list';
+                            files.forEach(name => {
+                                const li = document.createElement('li');
+                                li.textContent = name;
+                                list.appendChild(li);
+                            });
+                            container.appendChild(title);
+                            container.appendChild(list);
+                        } else {
+                            container.textContent = 'No files uploaded';
+                        }
+                        field.replaceWith(container);
+                        return;
+                    }
+
+                    if (type === 'date') {
+                        const formatted = formatDateValue(field.value);
+                        field.replaceWith(createLineField(formatted, field));
+                        return;
+                    }
+
+                    field.replaceWith(createLineField(field.value, field));
+                });
+
+                clone.querySelectorAll('.radio-checkbox-group, .checkbox-group').forEach(group => {
+                    const options = group.querySelectorAll('span.printable-choice-wrapper');
+                    if (options.length) {
+                        const wrapper = document.createElement('span');
+                        wrapper.className = 'printable-choice-group';
+                        group.appendChild(wrapper);
+                        options.forEach(option => wrapper.appendChild(option));
+                    }
+                });
+
+                clone.querySelectorAll('button').forEach(button => button.remove());
+            };
+
+            const getPrintableStyles = () => `
+<style>
+.printable-application-wrapper { font-family: 'Helvetica Neue', Arial, sans-serif; color: #111827; background-color: #ffffff; line-height: 1.6; }
+.printable-header { padding: 24px; border-bottom: 4px solid #111827; text-align: center; background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%); }
+.printable-header h1 { margin: 0; font-size: 26px; text-transform: uppercase; letter-spacing: 0.08em; }
+.printable-subtitle { margin: 8px 0 0; font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #1f2937; }
+.printable-meta { margin: 6px 0 0; font-size: 13px; color: #4b5563; }
+.printable-body { padding: 24px 32px 40px; background-color: #ffffff; }
+.printable-body section,
+.printable-body .notary-box,
+.printable-body .printable-textarea-block,
+.printable-body .printable-choice-wrapper,
+.printable-body .printable-page-block,
+.printable-body .input-group,
+.printable-body .radio-checkbox-group,
+.printable-body .checkbox-group { page-break-inside: avoid; break-inside: avoid; }
+.printable-body .notary-box { color: #111827 !important; }
+.printable-body table { page-break-inside: avoid; page-break-before: auto; page-break-after: auto; }
+.printable-section { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 2px solid #e5e7eb; }
+.printable-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.printable-section h3 { margin: 0 0 12px; font-size: 18px; text-transform: uppercase; letter-spacing: 0.08em; color: #111827; }
+.printable-subheading { color: #111827 !important; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; width: auto; }
+        .printable-section p { margin: 0 0 12px; font-size: 14px; color: #111827; }
+.printable-label { display: block; margin: 18px 0 6px; font-weight: 600; font-size: 14px; color: #1f2937; text-transform: none; letter-spacing: 0.02em; }
+.printable-line-wrapper { position: relative; display: inline-block; min-height: 24px; }
+.printable-line-field { display: inline-block; min-height: 20px; padding: 0 4px; font-size: 13px; color: #111827; background-color: transparent; }
+.printable-line-field.is-empty { color: transparent; }
+.printable-line-underline { position: absolute; left: 0; right: 0; bottom: 2px; border-bottom: 1px solid #9ca3af; height: 0; }
+.printable-line-wrapper.has-content .printable-line-underline { opacity: 0.4; }
+.printable-textarea-block { position: relative; display: block; width: 100%; min-height: 36px; padding: 6px 10px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; color: #111827; background: repeating-linear-gradient(to bottom, transparent, transparent 15px, #e5e7eb 16px); }
+.printable-textarea-block.is-empty { color: transparent; }
+.printable-textarea-block.is-empty::after { content: '\\00a0'; }
+.printable-choice-group { display: flex; flex-wrap: wrap; gap: 12px; }
+.printable-choice-wrapper { display: inline-flex; align-items: center; margin-right: 0; }
+.printable-choice-mark { display: inline-block; width: 16px; height: 16px; margin-right: 4px; text-align: center; line-height: 16px; font-size: 13px; color: #111827; }
+.printable-choice-label { font-size: 13px; color: #111827; }
+.printable-file-list { margin: 4px 0 0 16px; padding: 0; list-style: disc; color: #111827; }
+.printable-file-list li { margin-bottom: 4px; }
+.printable-file-block { border: 1px solid #d1d5db; border-radius: 4px; padding: 10px 12px; margin-top: 6px; background-color: #f9fafb; }
+.printable-body table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; page-break-inside: avoid; }
+.printable-body table:first-child { margin-top: 0; }
+.printable-body table thead { background-color: #f3f4f6; page-break-inside: avoid; }
+.printable-body table tbody { page-break-inside: avoid; }
+.printable-body table tr { page-break-inside: avoid; }
+.printable-body th, .printable-body td { border: 1px solid #d1d5db; padding: 8px 10px; vertical-align: top; }
+.printable-body th { background-color: #f3f4f6; font-weight: 600; color: #1f2937; text-transform: uppercase; font-size: 13px; letter-spacing: 0.04em; }
+@media print {
+    .printable-body { padding: 16px 24px; }
+    .printable-application-wrapper { page-break-after: avoid; }
+}
+</style>
+`;
+
+            const generatePrintableApplication = (form) => {
+                const formClone = form.cloneNode(true);
+                transformCloneForPrint(form, formClone);
+
+                const submittedAt = new Date();
+                const readableSubmittedAt = submittedAt.toLocaleString();
+                const styleBlock = getPrintableStyles();
+
+                return `${styleBlock}
+<div class="printable-application-wrapper">
+    <header class="printable-header">
+        <h1>Great Falls Police Department</h1>
+        <p class="printable-subtitle">Employment Application Submission</p>
+        <p class="printable-meta">Submitted ${escapeHTML(readableSubmittedAt)}</p>
+    </header>
+    <div class="printable-body">
+        ${formClone.innerHTML}
+    </div>
+</div>`;
+            };
+
+            if (applicationForm) {
+                applicationForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    if (applicationHtmlField) {
+                        try {
+                            applicationHtmlField.value = generatePrintableApplication(applicationForm);
+                        } catch (printError) {
+                            console.error('Printable application build failed:', printError);
+                            applicationHtmlField.value = 'Printable application could not be generated.';
+                        }
+                    }
+                    if (loadingOverlay) loadingOverlay.classList.remove('hidden');
+                    const formData = new FormData(applicationForm);
+                    
+                    fetch(applicationForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            if (successMessage) successMessage.classList.remove('hidden');
+                            applicationForm.classList.add('hidden');
+                        } else {
+                            if (errorMessage) errorMessage.classList.remove('hidden');
+                            applicationForm.classList.add('hidden');
+                        }
+                    }).catch(error => {
+                        console.error('Submission Error:', error);
+                        if (errorMessage) errorMessage.classList.remove('hidden');
+                        applicationForm.classList.add('hidden');
+                    }).finally(() => {
+                        if (loadingOverlay) loadingOverlay.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Date Input Logic
+            const dateInputs = document.querySelectorAll('.date-input');
+            dateInputs.forEach(input => {
+                input.addEventListener('focus', () => { input.type = 'date'; });
+                input.addEventListener('blur', () => { if (!input.value) { input.type = 'text'; } });
+            });
+
+            // Textarea Autosize Logic
+            const textareas = document.querySelectorAll('.printable-textarea');
+            const autoSize = (el) => {
+                el.style.height = 'auto';
+                el.style.height = el.scrollHeight + 'px';
+            };
+            textareas.forEach(textarea => {
+                textarea.addEventListener('input', () => autoSize(textarea), false);
+                // Initial size check
+                autoSize(textarea);
+                textarea.dataset.printHeight = textarea.scrollHeight;
+            });
+        });
+    </script>
+</body>
+</html>
