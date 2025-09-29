@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the site
+Allow: /assets/
+Allow: /contact.html
+Allow: /events.html
+Allow: /recruitment.html
+Allow: /resources.html
+
+# Block access to sensitive directories
+Disallow: /backups/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://GreatFallsPoliceSC.com/sitemap.xml
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1

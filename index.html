@@ -4,14 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The official website for the Great Falls, SC Police Department. Committed to protecting and serving our community with integrity, respect, and fairness.">
-    <meta name="keywords" content="Great Falls Police, GFPD, Great Falls SC, law enforcement, police department">
+    <meta name="keywords" content="Great Falls Police, GFPD, Great Falls SC, law enforcement, police department, South Carolina police, Chester County police">
+    <meta name="author" content="Great Falls Police Department">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://GreatFallsPoliceSC.com/">
     
-    <title>GFPD | Official Website</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Great Falls Police Department | Official Website">
+    <meta property="og:description" content="The official website for the Great Falls, SC Police Department. Committed to protecting and serving our community with integrity, respect, and fairness.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://GreatFallsPoliceSC.com/">
+    <meta property="og:image" content="https://GreatFallsPoliceSC.com/assets/gfpd-banner.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Great Falls Police Department">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Great Falls Police Department | Official Website">
+    <meta name="twitter:description" content="The official website for the Great Falls, SC Police Department. Committed to protecting and serving our community with integrity, respect, and fairness.">
+    <meta name="twitter:image" content="https://GreatFallsPoliceSC.com/assets/gfpd-banner.jpg">
+    
+    <title>Great Falls Police Department | Official Website</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="manifest" href="/site.webmanifest">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -172,6 +192,82 @@
             transform: translateY(-2px);
         }
     </style>
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "PoliceStation",
+        "name": "Great Falls Police Department",
+        "alternateName": "GFPD",
+        "description": "The official website for the Great Falls, SC Police Department. Committed to protecting and serving our community with integrity, respect, and fairness.",
+        "url": "https://GreatFallsPoliceSC.com",
+        "logo": "https://GreatFallsPoliceSC.com/assets/gfpd-badge.png",
+        "image": "https://GreatFallsPoliceSC.com/assets/gfpd-banner.jpg",
+        "telephone": "(803) 482-2145",
+        "email": "contact@GreatFallsPoliceSC.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "324 Dearborn St",
+            "addressLocality": "Great Falls",
+            "addressRegion": "SC",
+            "postalCode": "29055",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "34.578644",
+            "longitude": "-80.901875"
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "serviceArea": {
+            "@type": "City",
+            "name": "Great Falls",
+            "containedInPlace": {
+                "@type": "State",
+                "name": "South Carolina"
+            }
+        },
+        "department": {
+            "@type": "Organization",
+            "name": "Great Falls Police Department"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Police Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Emergency Response",
+                        "description": "24/7 emergency police services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Community Policing",
+                        "description": "Community outreach and engagement programs"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Crime Prevention",
+                        "description": "Crime prevention education and resources"
+                    }
+                }
+            ]
+        },
+        "sameAs": [
+            "https://GreatFallsPoliceSC.com/contact.html",
+            "https://GreatFallsPoliceSC.com/recruitment.html"
+        ]
+    }
+    </script>
 </head>
 <body class="text-gray-300">
 
@@ -261,24 +357,7 @@
             </div>
         </section>
 
-        <section id="chief-message" class="pt-16 sm:pt-24 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/3 fade-in-up">
-                        <div class="rounded-full shadow-2xl mx-auto w-64 h-64 lg:w-full lg:h-auto lg:aspect-square overflow-hidden border-4 border-gray-700">
-                            <img src="./assets/chief-james-parker.png" alt="Chief James Parker" class="w-full h-full object-cover object-top" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="lg:w-2/3 text-center lg:text-left fade-in-up" style="transition-delay: 200ms;">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Meet the Chief</h2>
-                        <h3 class="text-xl md:text-2xl font-semibold text-amber-400 mt-1">Chief James Parker</h3>
-                        <p class="mt-6 text-lg text-gray-400 leading-relaxed">Chief James Parker was appointed as Chief of Police for the Great Falls Police Department in July, 2025. With over 28 years of law enforcement experience, he has served in roles ranging from patrol officer, Narcotics Commander, Patrol Division Supervisor, and Investigations Division Supervisor. Chief Parker is committed to leading with integrity, accountability, and professionalism while fostering strong relationships between the police department and the community. His vision is to ensure a safe and thriving Great Falls by emphasizing transparency, innovation, and community trust.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="community-qa" class="py-16 sm:py-24 bg-gray-900">
+        <section id="community-qa" class="py-16 sm:py-24 bg-gray-800">
             <div class="container mx-auto px-6 max-w-4xl text-center">
                 <div class="fade-in-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Community Q&A</h2>
@@ -294,7 +373,9 @@
                             <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Leash Laws</button>
                             <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Noise Curfew</button>
                             <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Marijuana Laws</button>
-                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Fireworks rules</button>
+                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Fireworks Rules</button>
+                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Zoning and Land Use</button>
+
                         </div>
                     </div>
                 </div>
@@ -308,6 +389,23 @@
                     <div id="ai-response"></div>
                     <div id="ai-sources" class="mt-6 border-t border-gray-600 pt-4"></div>
                     <p class="mt-6 text-xs text-gray-500 italic">Disclaimer: This AI assistant provides information for general guidance only and is not a substitute for legal advice. Please consult official documents or a legal professional for specific situations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="chief-message" class="pt-16 sm:pt-24 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/3 fade-in-up">
+                        <div class="rounded-full shadow-2xl mx-auto w-64 h-64 lg:w-full lg:h-auto lg:aspect-square overflow-hidden border-4 border-gray-700">
+                            <img src="./assets/chief-james-parker.png" alt="Chief James Parker" class="w-full h-full object-cover object-top" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 text-center lg:text-left fade-in-up" style="transition-delay: 200ms;">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Meet the Chief</h2>
+                        <h3 class="text-xl md:text-2xl font-semibold text-amber-400 mt-1">Chief James Parker</h3>
+                        <p class="mt-6 text-lg text-gray-400 leading-relaxed">Chief James Parker was appointed as Chief of Police for the Great Falls Police Department in July, 2025. With over 28 years of law enforcement experience, he has served in roles ranging from patrol officer, Narcotics Commander, Patrol Division Supervisor, and Investigations Division Supervisor. Chief Parker is committed to leading with integrity, accountability, and professionalism while fostering strong relationships between the police department and the community. His vision is to ensure a safe and thriving Great Falls by emphasizing transparency, innovation, and community trust.</p>
+                    </div>
                 </div>
             </div>
         </section>
