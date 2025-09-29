@@ -388,6 +388,11 @@
                     </div>
                     <div id="ai-response"></div>
                     <div id="ai-sources" class="mt-6 border-t border-gray-600 pt-4"></div>
+                    <div id="fallback-button" class="mt-6 text-center hidden">
+                        <button id="contact-form-btn" class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300 border border-gray-600 hover:border-gray-500">
+                            Not the answer you were looking for? Send us a message
+                        </button>
+                    </div>
                     <p class="mt-6 text-xs text-gray-500 italic">Disclaimer: This AI assistant provides information for general guidance only and is not a substitute for legal advice. Please consult official documents or a legal professional for specific situations.</p>
                 </div>
             </div>
@@ -435,7 +440,7 @@
                 <div class="mt-12">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider fade-in-up">Our Core Values</h2>
-                        <p class="text-lg text-gray-400 mt-2 fade-in-up">The principles that guide our actions.</p>
+                        <p class="text-lg text-gray-400 mt-2 fade-in-up">The principles that guide our actions:</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
                         <div class="fade-in-up p-6 bg-gray-800 rounded-lg border border-gray-700">
@@ -619,6 +624,7 @@
             const responseEl = document.getElementById('ai-response');
             const sourcesEl = document.getElementById('ai-sources');
             const loadingEl = document.getElementById('ai-loading');
+            const fallbackButton = document.getElementById('fallback-button');
             let ordinanceData = [];
             try {
                 const response = await fetch('./assets/ordinances.json');
@@ -642,11 +648,13 @@
                 loadingEl.classList.remove('hidden');
                 responseEl.innerHTML = '';
                 sourcesEl.innerHTML = '';
+                fallbackButton.classList.add('hidden');
                 generateBtn.disabled = true;
                 try {
                     const result = await getAIResponse(query);
                     responseEl.innerHTML = marked.parse(result.text);
                     displaySources(result.sources);
+                    fallbackButton.classList.remove('hidden');
                 } catch (error) {
                     console.error("Error getting AI response:", error);
                     responseEl.innerHTML = `<p class="text-red-400">Sorry, an error occurred while generating the response. Please try again.</p><p class="text-xs text-gray-500 mt-2">${error.message}</p>`;
@@ -709,6 +717,14 @@
                 const sourceTitle = sources[0].uri.includes('municode.com') ? 'Source Documents:' : 'Web Sources:';
                 const sourceLinks = sources.map(source => `<a href="${source.uri}" target="_blank" rel="noopener noreferrer" class="source-link hover:bg-gray-600">${source.title}</a>`).join('');
                 sourcesEl.innerHTML = `<h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">${sourceTitle}</h4><div class="mt-2">${sourceLinks}</div>`;
+            }
+
+            // Contact form button functionality
+            const contactFormBtn = document.getElementById('contact-form-btn');
+            if (contactFormBtn) {
+                contactFormBtn.addEventListener('click', () => {
+                    window.location.href = './contact.html#contact-form-section';
+                });
             }
         });
         

@@ -59,6 +59,15 @@
             z-index: 0;
             will-change: transform;
         }
+        /* Styles for the AI response section */
+        #ai-response h3 { font-size: 1.25rem; font-weight: 700; color: #f59e0b; margin-top: 1.5rem; }
+        #ai-response h4 { font-size: 1.1rem; font-weight: 600; color: #ffffff; margin-top: 1rem; }
+        #ai-response p { margin-top: 0.5rem; line-height: 1.6; }
+        #ai-response ul { list-style-type: disc; margin-left: 1.5rem; margin-top: 0.5rem; }
+        #ai-response li { margin-bottom: 0.25rem; }
+        #ai-response a { color: #f59e0b; text-decoration: underline; }
+        #ai-response a:hover { color: #fbbf24; }
+        .source-link { display: inline-block; background-color: #374151; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; margin-top: 0.5rem; margin-right: 0.5rem; }
     </style>
 </head>
 <body class="text-gray-300">
@@ -107,6 +116,24 @@
             <div class="relative z-20 p-8 fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider drop-shadow-lg">Contact Us</h1>
                 <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">We are here to help. Select a topic below to get in touch with the right person for your needs.</p>
+            </div>
+        </section>
+
+        <!-- AI Assistant Banner -->
+        <section class="py-8 bg-gradient-to-r from-amber-500/10 to-orange-500/10 border-y border-amber-500/20">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center md:justify-center md:gap-8 gap-4">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-bold text-white flex items-center justify-center md:justify-start gap-2">
+                            <span class="text-2xl flex-shrink-0">💡</span>
+                            <span>Need immediate answers?</span>
+                        </h3>
+                        <p class="text-gray-300 mt-1">Try our AI Assistant for instant responses</p>
+                    </div>
+                    <button id="ai-banner-btn" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-gray-900 font-bold uppercase tracking-wider py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-amber-500/25 whitespace-nowrap">
+                        Ask AI Assistant
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -221,6 +248,47 @@
                 </div>
             </div>
         </section>
+
+        <section id="community-qa" class="py-16 sm:py-24 bg-gray-800">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <div class="fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Community Q&A</h2>
+                    <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Have a question about local ordinances or safety? Ask our digital assistant for information grounded in official town documents and public safety resources.</p>
+                </div>
+                <div class="mt-8 fade-in-up">
+                    <div class="max-w-2xl mx-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="text" id="ai-prompt" placeholder="Ask about noise ordinances, parking, pets..." class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-white">
+                            <button id="ai-generate-btn" class="bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-3 px-8 rounded-md hover:bg-amber-400 transition-colors">Ask</button>
+                        </div>
+                        <div class="mt-4 flex flex-wrap justify-center gap-2">
+                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Leash Laws</button>
+                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Noise Curfew</button>
+                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Marijuana Laws</button>
+                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Fireworks Rules</button>
+                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Zoning and Land Use</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="ai-response-container" class="mt-8 text-left bg-gray-800 p-8 rounded-lg border border-gray-700 fade-in-up hidden">
+                    <div id="ai-loading" class="text-center hidden">
+                        <div class="flex justify-center items-center">
+                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-amber-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                            <span>Thinking...</span>
+                        </div>
+                    </div>
+                    <div id="ai-response"></div>
+                    <div id="ai-sources" class="mt-6 border-t border-gray-600 pt-4"></div>
+                    <div id="fallback-button" class="mt-6 text-center hidden">
+                        <button id="contact-form-btn" class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300 border border-gray-600 hover:border-gray-500">
+                            Not the answer you were looking for? Send us a message
+                        </button>
+                    </div>
+                    <p class="mt-6 text-xs text-gray-500 italic">Disclaimer: This AI assistant provides information for general guidance only and is not a substitute for legal advice. Please consult official documents or a legal professional for specific situations.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-black text-gray-400">
@@ -254,6 +322,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const parallaxBg = document.getElementById('parallax-bg');
@@ -324,6 +393,147 @@
             }
             const yearSpan = document.getElementById('current-year');
             if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+
+            // AI Banner smooth scroll functionality
+            const aiBannerBtn = document.getElementById('ai-banner-btn');
+            if (aiBannerBtn) {
+                aiBannerBtn.addEventListener('click', () => {
+                    const qaSection = document.getElementById('community-qa');
+                    if (qaSection) {
+                        qaSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+
+            // --- Digital Community Officer ---
+            const apiUrl = "https://gfpd-ai-proxy.mc-bygone.workers.dev";
+            const aiPromptInput = document.getElementById('ai-prompt');
+            const generateBtn = document.getElementById('ai-generate-btn');
+            const presetBtns = document.querySelectorAll('.preset-btn');
+            const responseContainer = document.getElementById('ai-response-container');
+            const responseEl = document.getElementById('ai-response');
+            const sourcesEl = document.getElementById('ai-sources');
+            const loadingEl = document.getElementById('ai-loading');
+            const fallbackButton = document.getElementById('fallback-button');
+            let ordinanceData = [];
+            
+            // Load ordinance data
+            (async () => {
+                try {
+                    const response = await fetch('./assets/ordinances.json');
+                    if (!response.ok) { throw new Error(`Failed to load ordinances: ${response.statusText}`); }
+                    ordinanceData = await response.json();
+                } catch (error) {
+                    console.error("Error loading ordinance data:", error);
+                    responseContainer.classList.remove('hidden');
+                    responseEl.innerHTML = `<p class="text-red-400">Error: Could not load the town ordinance data. The Q&A feature may not function correctly.</p>`;
+                }
+            })();
+
+            const handleGeneration = async () => {
+                const query = aiPromptInput.value.trim();
+                if (!query) return;
+                if (!apiUrl || apiUrl === "PASTE_YOUR_CLOUDFLARE_WORKER_URL_HERE") {
+                    responseContainer.classList.remove('hidden');
+                    responseEl.innerHTML = `<p class="text-red-400"><strong>Configuration Error:</strong> The Cloudflare Worker URL has not been set. Please add your URL to the index.html file to enable this feature.</p>`;
+                    sourcesEl.innerHTML = "";
+                    return;
+                }
+                responseContainer.classList.remove('hidden');
+                loadingEl.classList.remove('hidden');
+                responseEl.innerHTML = '';
+                sourcesEl.innerHTML = '';
+                fallbackButton.classList.add('hidden');
+                generateBtn.disabled = true;
+                try {
+                    const result = await getAIResponse(query);
+                    responseEl.innerHTML = marked.parse(result.text);
+                    displaySources(result.sources);
+                    fallbackButton.classList.remove('hidden');
+                } catch (error) {
+                    console.error("Error getting AI response:", error);
+                    responseEl.innerHTML = `<p class="text-red-400">Sorry, an error occurred while generating the response. Please try again.</p><p class="text-xs text-gray-500 mt-2">${error.message}</p>`;
+                } finally {
+                    loadingEl.classList.add('hidden');
+                    generateBtn.disabled = false;
+                }
+            };
+
+            if (generateBtn) generateBtn.addEventListener('click', handleGeneration);
+            if (aiPromptInput) aiPromptInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { handleGeneration(); } });
+            presetBtns.forEach(btn => { btn.addEventListener('click', () => { aiPromptInput.value = btn.textContent; handleGeneration(); }); });
+
+            function searchOrdinances(query) {
+                if (!ordinanceData || ordinanceData.length === 0) return [];
+                const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
+                const scoredResults = ordinanceData.map(ordinance => {
+                    const title = ordinance.title.toLowerCase();
+                    const text = ordinance.text.toLowerCase();
+                    let score = 0;
+                    queryWords.forEach(word => {
+                        if (title.includes(word)) score += 10;
+                        if (text.includes(word)) score += 1;
+                    });
+                    return { ...ordinance, score };
+                }).filter(o => o.score > 0);
+                scoredResults.sort((a, b) => b.score - a.score);
+                return scoredResults.slice(0, 3);
+            }
+
+            async function getAIResponse(userQuery) {
+                const MIN_SCORE_THRESHOLD = 10;
+                let relevantOrdinances = searchOrdinances(userQuery);
+                let payload;
+                let useWebSearch = false;
+                if (relevantOrdinances.length > 0 && relevantOrdinances[0].score >= MIN_SCORE_THRESHOLD) {
+                    const context = relevantOrdinances.map(o => `Title: ${o.title}\nContent: ${o.text}`).join('\n\n');
+                    const systemPrompt = `You are a helpful, friendly digital assistant for the Great Falls, SC Police Department. Your tone should be professional, clear, and easy to understand for a citizen. Base your answer *strictly* on the provided local ordinances. Do not add information not present in the text. Directly address the user's question. Format your response clearly using markdown.`;
+                    payload = { contents: [{ parts: [{ text: `CONTEXT:\n${context}\n\nQUESTION:\n${userQuery}` }] }], systemInstruction: { parts: [{ text: systemPrompt }] }, };
+                } else {
+                    useWebSearch = true;
+                    const systemPrompt = `You are a helpful, friendly digital assistant for the Great Falls, SC Police Department. Your tone should be professional, clear, and easy to understand for a citizen. The user is asking a question about laws or safety. Answer the question specifically for Great Falls, South Carolina, USA. Use the search tool to find the most accurate and up-to-date information. Format your response clearly using markdown.`;
+                    payload = { contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemPrompt }] }, tools: [{ "google_search": {} }], };
+                }
+                let response;
+                try {
+                    response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                    if (!response.ok) { const errorBody = await response.text(); throw new Error(`API request failed with status ${response.status}: ${errorBody}`); }
+                } catch (error) { console.error("Fetch failed:", error); throw new Error("Could not connect to the AI service. Please check your network connection."); }
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+                if (!candidate || !candidate.content?.parts?.[0]?.text) { console.error("Invalid response structure:", result); throw new Error("Received an invalid response from the AI service."); }
+                const text = candidate.content.parts[0].text;
+                let sources = [];
+                if (useWebSearch) {
+                     const groundingMetadata = candidate.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) { sources = groundingMetadata.groundingAttributions.map(attr => ({ uri: attr.web?.uri, title: attr.web?.title })).filter(source => source.uri && source.title); }
+                } else { sources = relevantOrdinances.map(o => ({ uri: o.url, title: o.title })); }
+                return { text, sources };
+            }
+
+            function displaySources(sources) {
+                if (!sources || sources.length === 0) { sourcesEl.innerHTML = ""; return; }
+                const sourceTitle = sources[0].uri.includes('municode.com') ? 'Source Documents:' : 'Web Sources:';
+                const sourceLinks = sources.map(source => `<a href="${source.uri}" target="_blank" rel="noopener noreferrer" class="source-link hover:bg-gray-600">${source.title}</a>`).join('');
+                sourcesEl.innerHTML = `<h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">${sourceTitle}</h4><div class="mt-2">${sourceLinks}</div>`;
+            }
+
+            // Contact form button functionality
+            const contactFormBtn = document.getElementById('contact-form-btn');
+            if (contactFormBtn) {
+                contactFormBtn.addEventListener('click', () => {
+                    const contactFormSection = document.getElementById('contact-form-section');
+                    if (contactFormSection) {
+                        contactFormSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
         });
     </script>
 </body>
