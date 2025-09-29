@@ -48,9 +48,144 @@
         #ai-response a { color: #f59e0b; text-decoration: underline; }
         #ai-response a:hover { color: #fbbf24; }
         .source-link { display: inline-block; background-color: #374151; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; margin-top: 0.5rem; margin-right: 0.5rem; }
+        
+        /* Recruiting Flyer Popup Styles */
+        #recruiting-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            box-sizing: border-box;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        #recruiting-popup.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-content {
+            position: relative;
+            display: inline-block;
+            cursor: default;
+            padding: 16px;
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.85) 0%, rgba(17, 24, 39, 0.6) 100%);
+            border-radius: 20px;
+        }
+        
+        .popup-content img {
+            max-width: calc(100vw - 128px);
+            max-height: calc(100vh - 160px);
+            width: auto;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.2s ease;
+            object-fit: contain;
+            cursor: pointer;
+            display: block;
+        }
+        
+        .popup-content:hover img {
+            transform: scale(1.02);
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 48px;
+            height: 48px;
+            background-color: #ef4444;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            z-index: 10000;
+        }
+        
+        .popup-close:hover {
+            background-color: #dc2626;
+            transform: scale(1.1);
+        }
+        
+        .popup-close:active {
+            transform: scale(0.95);
+        }
+        
+        .popup-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .popup-btn {
+            min-width: 140px;
+            padding: 0.65rem 1.8rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+        
+        .popup-btn-primary {
+            background-color: transparent;
+            border: 2px solid #f97316;
+            color: #f97316;
+        }
+        
+        .popup-btn-primary:hover {
+            background-color: #f97316;
+            color: #111827;
+            transform: translateY(-2px);
+        }
+        
+        .popup-btn-secondary {
+            background-color: #ef4444;
+            border: 2px solid #ef4444;
+            color: #ffffff;
+        }
+        
+        .popup-btn-secondary:hover {
+            background-color: #dc2626;
+            border-color: #dc2626;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body class="text-gray-300">
+
+    <!-- Recruiting Flyer Popup Overlay -->
+    <div id="recruiting-popup">
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Close popup">&times;</button>
+            <img src="./assets/recruiting-flyer.jpg" alt="Great Falls Police Department Recruitment Flyer" onclick="window.location.href='./recruitment.html'">
+            <div class="popup-actions">
+                <button class="popup-btn popup-btn-primary" id="popup-more-info">More Info</button>
+                <button class="popup-btn popup-btn-secondary" id="popup-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
 
     <header id="header" class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-3">
@@ -158,7 +293,7 @@
                         <div class="mt-4 flex flex-wrap justify-center gap-2">
                             <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Leash Laws</button>
                             <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Noise Curfew</button>
-                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Is weed legal?</button>
+                            <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Marijuana Laws</button>
                             <button class="preset-btn bg-gray-700 text-sm py-1 px-3 rounded-full hover:bg-gray-600">Fireworks rules</button>
                         </div>
                     </div>
@@ -263,9 +398,82 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
+        const POPUP_STORAGE_KEY = 'gfpdRecruitingPopupDismissedAt';
+        const POPUP_SUPPRESS_DURATION_MS = 60 * 60 * 1000; // 1 hour
+
         document.addEventListener('DOMContentLoaded', async function() {
             // --- General Page Setup ---
             document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // --- Recruiting Popup Setup ---
+            const recruitingPopup = document.getElementById('recruiting-popup');
+            const popupContent = document.querySelector('.popup-content');
+            
+            const hasRecentDismissal = (() => {
+                try {
+                    const stored = localStorage.getItem(POPUP_STORAGE_KEY);
+                    if (!stored) return false;
+                    const dismissedAt = parseInt(stored, 10);
+                    if (Number.isNaN(dismissedAt)) return false;
+                    return (Date.now() - dismissedAt) < POPUP_SUPPRESS_DURATION_MS;
+                } catch (error) {
+                    console.warn('Popup dismissal check failed:', error);
+                    return false;
+                }
+            })();
+
+            if (!hasRecentDismissal) {
+                setTimeout(() => {
+                    if (!window.recruitingPopupDismissed) {
+                        recruitingPopup.classList.add('show');
+                    }
+                }, 500); // Small delay to ensure page is loaded
+            } else {
+                window.recruitingPopupDismissed = true;
+            }
+            
+            // Close popup when clicking on the backdrop (outside the image)
+            recruitingPopup.addEventListener('click', function(e) {
+                if (e.target === recruitingPopup) {
+                    dismissAndRemember();
+                }
+            });
+            
+            // Handle close buttons and CTA
+            const closeButton = document.querySelector('.popup-close');
+            const closeCtaButton = document.getElementById('popup-close-btn');
+            const moreInfoButton = document.getElementById('popup-more-info');
+            const rememberDismissal = () => {
+                try {
+                    localStorage.setItem(POPUP_STORAGE_KEY, Date.now().toString());
+                } catch (error) {
+                    console.warn('Failed to persist popup dismissal:', error);
+                }
+            };
+            const dismissAndRemember = () => {
+                closeRecruitingPopup(true);
+                rememberDismissal();
+            };
+
+            if (closeButton) {
+                closeButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dismissAndRemember();
+                });
+            }
+            if (closeCtaButton) {
+                closeCtaButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dismissAndRemember();
+                });
+            }
+            if (moreInfoButton) {
+                moreInfoButton.addEventListener('click', function() {
+                    rememberDismissal();
+                    window.location.href = './recruitment.html';
+                });
+            }
             
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -404,6 +612,15 @@
                 sourcesEl.innerHTML = `<h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">${sourceTitle}</h4><div class="mt-2">${sourceLinks}</div>`;
             }
         });
+        
+        // Close recruiting popup function
+        function closeRecruitingPopup(markDismissed = false) {
+            const recruitingPopup = document.getElementById('recruiting-popup');
+            if (markDismissed) {
+                window.recruitingPopupDismissed = true;
+            }
+            recruitingPopup?.classList.remove('show');
+        }
     </script>
 </body>
 </html>

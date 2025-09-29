@@ -176,7 +176,8 @@
             <div class="relative z-20 p-8 fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider drop-shadow-lg">Become a Guardian of Great Falls</h1>
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Join a team dedicated to making a real difference. Embrace a rewarding career that challenges you, offers growth, and allows you to protect and serve the residents of our town.</p>
-                <a href="./application.html" class="mt-8 inline-block bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">Apply Now</a>
+                <a href="#application-section" 
+                   class="mt-8 inline-block bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">Apply Now</a>
             </div>
         </section>
 
@@ -277,14 +278,40 @@
 
         <section id="application-section" class="pt-4 pb-12 bg-gray-900">
             <div class="container mx-auto px-6 max-w-5xl">
-                <!-- Start Application Button -->
-                <div class="text-center fade-in-up">
+                <!-- Application Options -->
+                 <div class="text-center fade-in-up">
                     <div class="bg-gray-800 p-8 md:p-12 rounded-lg border border-gray-700">
                         <h3 class="text-2xl font-bold text-white uppercase tracking-wider mb-4">Ready to Apply?</h3>
-                        <p class="text-lg text-gray-300 mb-6">Click the button below to begin your application process. You'll be taken through a comprehensive form to complete your submission.</p>
-                        <a href="./application.html" class="inline-block bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">
-                            Start Application
-                        </a>
+                        <p class="text-lg text-gray-300 mb-6">If you meet the <a href="#recruitment-info" id="requirements-link-apply" class="text-amber-400 hover:underline">requirements</a> and are ready to serve, we invite you to apply using one of the options below.</p>
+                        
+                        <!-- Primary Apply Online Button -->
+                        <div class="mb-6">
+                            <a href="https://na3.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhB49goQcq6o-XaT1VYnGXvHVJZbcTeSqtR3_UD5PNB0vtV8gjUD1e4NKcQWf3SIl6w*" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="inline-block bg-amber-500 text-gray-900 font-bold uppercase tracking-wider py-4 px-12 rounded-lg hover:bg-amber-400 transition-colors duration-300">
+                                Apply Online
+                            </a>
+                        </div>
+                        
+                        <!-- Secondary Options -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <a href="./assets/pdfs/Great Falls Police Department - Employment Application.pdf" 
+                               download="Great Falls Police Department - Employment Application.pdf"
+                               class="inline-flex items-center gap-2 bg-gray-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-500 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Download PDF
+                            </a>
+                            <a href="#" onclick="printPDF(); return false;" 
+                               class="inline-flex items-center gap-2 bg-gray-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-500 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                                </svg>
+                                Print PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -487,7 +514,7 @@
                         <div>
                             <h4 class="text-xl font-bold text-white">Certified Applicant (In-state and Out-of-state)</h4>
                             <ul class="list-disc list-inside space-y-2 pt-2">
-                                <li><a href="./application.html" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
+                                <li><a href="https://na3.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhB49goQcq6o-XaT1VYnGXvHVJZbcTeSqtR3_UD5PNB0vtV8gjUD1e4NKcQWf3SIl6w*" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
                                 <li>Applications reviewed for automatic disqualifiers</li>
                                 <li><strong>Interview:</strong> The applicant is scheduled for an interview with the Chief of Police.</li>
                                 <li><strong>Background Investigation:</strong> A thorough background investigation is completed on all applicants. This includes (but is not limited to) contacting former and current employers and references, a credit check, and a criminal history check.</li>
@@ -498,7 +525,7 @@
                         <div>
                             <h4 class="text-xl font-bold text-white">Uncertified Applicants</h4>
                             <ul class="list-disc list-inside space-y-2 pt-2">
-                                <li><a href="./application.html" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
+                                <li><a href="https://na3.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhB49goQcq6o-XaT1VYnGXvHVJZbcTeSqtR3_UD5PNB0vtV8gjUD1e4NKcQWf3SIl6w*" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Application</a> and release to conduct <a href="assets/Authorization for the Release of Information.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Background Investigation</a></li>
                                 <li>Applications reviewed for automatic disqualifiers</li>
                                 <li><strong>Written Exam:</strong> Applicants must take a written exam and must score 70% or better on this exam.</li>
                                 <li><strong>Physical Ability Test:</strong> After passing the written examination, the applicant will be required to complete the Physical Ability Test (PAT). This is required for admission into the South Carolina Criminal Justice Academy, and the course and all obstacles must be successfully completed in under 2 minutes and 6 seconds.</li>
@@ -570,13 +597,56 @@
                     document.getElementById('recruitment-info').scrollIntoView({ behavior: 'smooth' });
                     if (window.innerWidth < 768) { // md breakpoint
                         document.querySelector('[aria-controls="accordion-panel-2"]').click();
-                    } else {
+                        } else {
                         document.getElementById('tab-requirements').click();
                     }
                 }, 500);
             }
 
+            // Requirements link in the apply section
+            const requirementsLinkApply = document.getElementById('requirements-link-apply');
+            if(requirementsLinkApply) {
+                requirementsLinkApply.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('recruitment-info').scrollIntoView({ behavior: 'smooth' });
+                    if (window.innerWidth < 768) { // md breakpoint
+                        document.querySelector('[aria-controls="accordion-panel-2"]').click();
+                    } else {
+                        document.getElementById('tab-requirements').click();
+                    }
+                });
+            }
+
         });
+
+        // Function to print the PDF (global scope so onclick can access it)
+        function printPDF() {
+            const pdfUrl = './assets/pdfs/Great Falls Police Department - Employment Application.pdf';
+            
+            // Create a new window for printing
+            const printWindow = window.open(pdfUrl, '_blank');
+            
+            if (printWindow) {
+                printWindow.onload = function() {
+                    // Wait a moment for the PDF to load, then trigger print dialog
+                    setTimeout(() => {
+                        printWindow.print();
+                        // Close the print window after printing (optional)
+                        printWindow.onafterprint = function() {
+                            printWindow.close();
+                        };
+                    }, 1000);
+                };
+                        } else {
+                // Fallback: direct download if popup is blocked
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = 'Great Falls Police Department - Employment Application.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
     </script>
 </body>
 </html>
