@@ -503,7 +503,6 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         const POPUP_STORAGE_KEY = 'gfpdRecruitingPopupDismissedAt';
-        const POPUP_SUPPRESS_DURATION_MS = 60 * 60 * 1000; // 1 hour
 
         document.addEventListener('DOMContentLoaded', async function() {
             // --- General Page Setup ---
@@ -513,20 +512,17 @@
             const recruitingPopup = document.getElementById('recruiting-popup');
             const popupContent = document.querySelector('.popup-content');
             
-            const hasRecentDismissal = (() => {
+            const hasDismissed = (() => {
                 try {
                     const stored = localStorage.getItem(POPUP_STORAGE_KEY);
-                    if (!stored) return false;
-                    const dismissedAt = parseInt(stored, 10);
-                    if (Number.isNaN(dismissedAt)) return false;
-                    return (Date.now() - dismissedAt) < POPUP_SUPPRESS_DURATION_MS;
+                    return stored !== null;
                 } catch (error) {
                     console.warn('Popup dismissal check failed:', error);
                     return false;
                 }
             })();
 
-            if (!hasRecentDismissal) {
+            if (!hasDismissed) {
                 setTimeout(() => {
                     if (!window.recruitingPopupDismissed) {
                         recruitingPopup.classList.add('show');
@@ -549,7 +545,7 @@
             const moreInfoButton = document.getElementById('popup-more-info');
             const rememberDismissal = () => {
                 try {
-                    localStorage.setItem(POPUP_STORAGE_KEY, Date.now().toString());
+                    localStorage.setItem(POPUP_STORAGE_KEY, 'true');
                 } catch (error) {
                     console.warn('Failed to persist popup dismissal:', error);
                 }
