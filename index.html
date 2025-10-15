@@ -69,128 +69,6 @@
         #ai-response a:hover { color: #fbbf24; }
         .source-link { display: inline-block; background-color: #374151; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; margin-top: 0.5rem; margin-right: 0.5rem; }
         
-        /* Recruiting Flyer Popup Styles */
-        #recruiting-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            box-sizing: border-box;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        
-        #recruiting-popup.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .popup-content {
-            position: relative;
-            display: inline-block;
-            cursor: default;
-            padding: 16px;
-            background: linear-gradient(180deg, rgba(17, 24, 39, 0.85) 0%, rgba(17, 24, 39, 0.6) 100%);
-            border-radius: 20px;
-        }
-        
-        .popup-content img {
-            max-width: calc(100vw - 128px);
-            max-height: calc(100vh - 160px);
-            width: auto;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            transition: transform 0.2s ease;
-            object-fit: contain;
-            cursor: pointer;
-            display: block;
-        }
-        
-        .popup-content:hover img {
-            transform: scale(1.02);
-        }
-        
-        .popup-close {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 48px;
-            height: 48px;
-            background-color: #ef4444;
-            color: white;
-            border: 2px solid white;
-            border-radius: 50%;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-            transition: background-color 0.2s ease, transform 0.2s ease;
-            z-index: 10000;
-        }
-        
-        .popup-close:hover {
-            background-color: #dc2626;
-            transform: scale(1.1);
-        }
-        
-        .popup-close:active {
-            transform: scale(0.95);
-        }
-        
-        .popup-actions {
-            margin-top: 20px;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .popup-btn {
-            min-width: 140px;
-            padding: 0.65rem 1.8rem;
-            border-radius: 9999px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-        }
-        
-        .popup-btn-primary {
-            background-color: transparent;
-            border: 2px solid #f97316;
-            color: #f97316;
-        }
-        
-        .popup-btn-primary:hover {
-            background-color: #f97316;
-            color: #111827;
-            transform: translateY(-2px);
-        }
-        
-        .popup-btn-secondary {
-            background-color: #ef4444;
-            border: 2px solid #ef4444;
-            color: #ffffff;
-        }
-        
-        .popup-btn-secondary:hover {
-            background-color: #dc2626;
-            border-color: #dc2626;
-            transform: translateY(-2px);
-        }
     </style>
     
     <!-- Structured Data for Local Business -->
@@ -271,17 +149,6 @@
 </head>
 <body class="text-gray-300">
 
-    <!-- Recruiting Flyer Popup Overlay -->
-    <div id="recruiting-popup">
-        <div class="popup-content">
-            <button class="popup-close" aria-label="Close popup">&times;</button>
-            <img src="./assets/recruiting-flyer.jpg" alt="Great Falls Police Department Recruitment Flyer" onclick="window.location.href='./recruitment.html'">
-            <div class="popup-actions">
-                <button class="popup-btn popup-btn-primary" id="popup-more-info">More Info</button>
-                <button class="popup-btn popup-btn-secondary" id="popup-close-btn">Close</button>
-            </div>
-        </div>
-    </div>
 
     <header id="header" class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-3">
@@ -502,78 +369,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-        const POPUP_STORAGE_KEY = 'gfpdRecruitingPopupDismissedAt';
-
         document.addEventListener('DOMContentLoaded', async function() {
             // --- General Page Setup ---
             document.getElementById('current-year').textContent = new Date().getFullYear();
-            
-            // --- Recruiting Popup Setup ---
-            const recruitingPopup = document.getElementById('recruiting-popup');
-            const popupContent = document.querySelector('.popup-content');
-            
-            const hasDismissed = (() => {
-                try {
-                    const stored = localStorage.getItem(POPUP_STORAGE_KEY);
-                    return stored !== null;
-                } catch (error) {
-                    console.warn('Popup dismissal check failed:', error);
-                    return false;
-                }
-            })();
-
-            if (!hasDismissed) {
-                setTimeout(() => {
-                    if (!window.recruitingPopupDismissed) {
-                        recruitingPopup.classList.add('show');
-                    }
-                }, 500); // Small delay to ensure page is loaded
-            } else {
-                window.recruitingPopupDismissed = true;
-            }
-            
-            // Close popup when clicking on the backdrop (outside the image)
-            recruitingPopup.addEventListener('click', function(e) {
-                if (e.target === recruitingPopup) {
-                    dismissAndRemember();
-                }
-            });
-            
-            // Handle close buttons and CTA
-            const closeButton = document.querySelector('.popup-close');
-            const closeCtaButton = document.getElementById('popup-close-btn');
-            const moreInfoButton = document.getElementById('popup-more-info');
-            const rememberDismissal = () => {
-                try {
-                    localStorage.setItem(POPUP_STORAGE_KEY, 'true');
-                } catch (error) {
-                    console.warn('Failed to persist popup dismissal:', error);
-                }
-            };
-            const dismissAndRemember = () => {
-                closeRecruitingPopup(true);
-                rememberDismissal();
-            };
-
-            if (closeButton) {
-                closeButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dismissAndRemember();
-                });
-            }
-            if (closeCtaButton) {
-                closeCtaButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    dismissAndRemember();
-                });
-            }
-            if (moreInfoButton) {
-                moreInfoButton.addEventListener('click', function() {
-                    rememberDismissal();
-                    window.location.href = './recruitment.html';
-                });
-            }
             
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -611,8 +409,8 @@
             }
 
             // --- Digital Community Officer ---
-            // The rest of the script remains unchanged...
             const apiUrl = "https://gfpd-ai-proxy.mc-bygone.workers.dev";
+            const embeddingsUrl = "./assets/ordinances-embeddings.json";
             const aiPromptInput = document.getElementById('ai-prompt');
             const generateBtn = document.getElementById('ai-generate-btn');
             const presetBtns = document.querySelectorAll('.preset-btn');
@@ -621,30 +419,58 @@
             const sourcesEl = document.getElementById('ai-sources');
             const loadingEl = document.getElementById('ai-loading');
             const fallbackButton = document.getElementById('fallback-button');
+            
             let ordinanceData = [];
-            try {
-                const response = await fetch('./assets/ordinances.json');
-                if (!response.ok) { throw new Error(`Failed to load ordinances: ${response.statusText}`); }
-                ordinanceData = await response.json();
+            let ordinanceEmbeddings = [];
+            let dataLoadError = null;
+
+            const formatOrdinanceTitle = (item) => {
+                if (!item) return '';
+                const hierarchy = Array.isArray(item.hierarchy) ? item.hierarchy.filter(Boolean) : [];
+                const title = item.title || '';
+                return [...hierarchy, title].filter(Boolean).join(' › ');
+            };
+
+            const dataLoadPromise = (async () => {
+                try {
+                    const [ordinanceResp, embeddingsResp] = await Promise.all([
+                        fetch('./assets/ordinances.json'),
+                        fetch(embeddingsUrl)
+                    ]);
+                    if (!ordinanceResp.ok) {
+                        throw new Error(`Failed to load ordinances: ${ordinanceResp.statusText}`);
+                    }
+                    if (!embeddingsResp.ok) {
+                        throw new Error(`Failed to load ordinance embeddings: ${embeddingsResp.statusText}`);
+                    }
+                    ordinanceData = await ordinanceResp.json();
+                    const embeddingsJson = await embeddingsResp.json();
+                    ordinanceEmbeddings = (embeddingsJson.embeddings || []).map(entry => ({
+                        ...entry,
+                        embedding: (entry.embedding || []).map(Number)
+                    }));
+                    if (ordinanceEmbeddings.length === 0) {
+                        throw new Error('Ordinance embeddings file is empty.');
+                    }
             } catch (error) {
                 console.error("Error loading ordinance data:", error);
+                    dataLoadError = error;
                 responseContainer.classList.remove('hidden');
-                responseEl.innerHTML = `<p class="text-red-400">Error: Could not load the town ordinance data. The Q&A feature may not function correctly.</p>`;
-            }
-            const formatOrdinanceTitle = (ordinance) => {
-                const hierarchy = Array.isArray(ordinance.hierarchy) ? ordinance.hierarchy.filter(Boolean) : [];
-                return [...hierarchy, ordinance.title].filter(Boolean).join(' › ');
+                    responseEl.innerHTML = `<p class="text-red-400">Error: Could not load the town ordinance knowledge base. The Q&A feature may not function correctly.</p>`;
+                }
+            })();
+
+            const ensureDataReady = async () => {
+                await dataLoadPromise;
+                if (dataLoadError) {
+                    throw dataLoadError;
+                }
             };
 
             const handleGeneration = async () => {
                 const query = aiPromptInput.value.trim();
                 if (!query) return;
-                if (!apiUrl || apiUrl === "PASTE_YOUR_CLOUDFLARE_WORKER_URL_HERE") {
-                    responseContainer.classList.remove('hidden');
-                    responseEl.innerHTML = `<p class="text-red-400"><strong>Configuration Error:</strong> The Cloudflare Worker URL has not been set. Please add your URL to the index.html file to enable this feature.</p>`;
-                    sourcesEl.innerHTML = "";
-                    return;
-                }
+
                 responseContainer.classList.remove('hidden');
                 loadingEl.classList.remove('hidden');
                 responseEl.innerHTML = '';
@@ -652,9 +478,10 @@
                 fallbackButton.classList.add('hidden');
                 generateBtn.disabled = true;
                 try {
-                    const result = await getAIResponse(query);
-                    responseEl.innerHTML = marked.parse(result.text);
-                    displaySources(result.sources);
+                    await ensureDataReady();
+                    const { text, sources, usedWebSearch } = await getAIResponse(query);
+                    responseEl.innerHTML = marked.parse(text);
+                    displaySources(sources, usedWebSearch);
                     fallbackButton.classList.remove('hidden');
                 } catch (error) {
                     console.error("Error getting AI response:", error);
@@ -664,98 +491,246 @@
                     generateBtn.disabled = false;
                 }
             };
+
+            if (generateBtn) {
             generateBtn.addEventListener('click', handleGeneration);
+            }
+            if (aiPromptInput) {
             aiPromptInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { handleGeneration(); } });
+            }
+            if (presetBtns) {
             presetBtns.forEach(btn => { btn.addEventListener('click', () => { aiPromptInput.value = btn.textContent; handleGeneration(); }); });
-            function searchOrdinances(query) {
-                if (!ordinanceData || ordinanceData.length === 0) return [];
-                const queryWords = [...new Set(query.toLowerCase().split(/\s+/).filter(w => w.length > 2))];
-                if (queryWords.length === 0) return [];
-                const primaryWord = queryWords[0] || '';
-                const synonymMap = {
-                    marijuana: ['marijuana', 'cannabis', 'weed', 'hemp', 'drug'],
-                    cannabis: ['cannabis', 'marijuana', 'weed', 'drug'],
-                    weed: ['weed', 'marijuana', 'cannabis', 'drug'],
-                    fireworks: ['fireworks', 'pyrotechnics', 'firecracker', 'explosives'],
-                    firework: ['fireworks', 'pyrotechnics', 'firecracker', 'explosives'],
-                    firecrackers: ['firecracker', 'fireworks', 'pyrotechnics', 'explosives']
-                };
-                const augmentedWords = new Set(queryWords);
-                queryWords.forEach(word => {
-                    if (synonymMap[word]) {
-                        synonymMap[word].forEach(syn => augmentedWords.add(syn));
+            }
+
+            const MIN_SIMILARITY_THRESHOLD = 0.23;
+            const MAX_CONTEXT_CHUNKS = 6;
+            const MIN_TOP_MATCH_SCORE = 0.26;
+
+            const GENERIC_TOKENS = new Set(['rule', 'rules', 'regulation', 'regulations', 'law', 'laws', 'info', 'information', 'detail', 'details', 'policy', 'policies', 'guideline', 'guidelines']);
+
+            const SYNONYM_MAP = {
+                fireworks: ['firework', 'pyrotechnics', 'pyrotechnic', 'explosives', 'sparklers'],
+                firework: ['fireworks', 'pyrotechnics', 'explosives', 'sparkler', 'sparklers'],
+                pet: ['pets', 'animals', 'animal', 'dog', 'dogs', 'cat', 'cats', 'leash'],
+                pets: ['pet', 'animals', 'animal', 'dog', 'dogs', 'cat', 'cats', 'leash'],
+                noise: ['sound', 'loud', 'disturbance', 'disturbances'],
+                party: ['gathering', 'event', 'events', 'celebration'],
+                alcohol: ['liquor', 'beer', 'wine'],
+                marijuana: ['cannabis', 'weed', 'hemp', 'drug'],
+                cannabis: ['marijuana', 'weed', 'hemp', 'drug'],
+                weed: ['marijuana', 'cannabis', 'hemp', 'drug'],
+                curfew: ['curfews', 'hours', 'time'],
+                parking: ['park', 'parked', 'vehicle', 'vehicles']
+            };
+
+            function tokenizeQuery(query) {
+                return [...new Set(query.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).filter(word => word.length > 2))];
+            }
+
+            function expandTokens(tokens) {
+                const expanded = new Set(tokens);
+                tokens.forEach(token => {
+                    const synonyms = SYNONYM_MAP[token];
+                    if (synonyms) {
+                        synonyms.forEach(syn => {
+                            if (syn.length > 2) {
+                                expanded.add(syn);
+                            }
+                        });
                     }
                 });
-                const expandedWords = Array.from(augmentedWords);
-                const scoredResults = ordinanceData.map(ordinance => {
-                    const title = (ordinance.title || '').toLowerCase();
-                    const text = (ordinance.text || '').toLowerCase();
-                    let score = 0;
-                    const matchedWords = new Set();
-                    expandedWords.forEach(word => {
-                        if (title.includes(word)) {
-                            score += 15;
-                            matchedWords.add(word);
-                        }
-                        if (text.includes(word)) {
-                            score += 5;
-                            matchedWords.add(word);
-                        }
-                    });
-                    if (matchedWords.size === 0) {
-                        return null;
-                    }
-                    const hasPrimary = primaryWord ? matchedWords.has(primaryWord) : true;
-                    const allMatched = queryWords.every(word => matchedWords.has(word));
-                    if (!hasPrimary && !allMatched) {
-                        return null;
-                    }
-                    if (hasPrimary) score += 20;
-                    if (allMatched) score += 25;
-                    score += matchedWords.size * 3;
-                    return { ...ordinance, score, displayTitle: formatOrdinanceTitle(ordinance) };
-                }).filter(o => o && o.score > 0);
-                scoredResults.sort((a, b) => b.score - a.score);
-                return scoredResults.slice(0, 3);
+                return expanded;
             }
+
+            function buildTokenSets(query) {
+                const tokens = tokenizeQuery(query);
+                const highPriorityTokens = tokens.filter(token => !GENERIC_TOKENS.has(token));
+                const expandedAll = expandTokens(tokens);
+                const expandedHigh = expandTokens(highPriorityTokens);
+                return { expandedAll, expandedHigh };
+            }
+
+            function chunkMatchesTokens(chunk, expandedAllTokens, expandedHighTokens) {
+                const haystack = `${chunk.title || ''} ${chunk.text || ''}`.toLowerCase();
+                if (expandedHighTokens.size > 0) {
+                    for (const token of expandedHighTokens) {
+                        if (haystack.includes(token)) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                if (!expandedAllTokens || expandedAllTokens.size === 0) return true;
+                for (const token of expandedAllTokens) {
+                    if (haystack.includes(token)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function chunkContainsTokens(chunk, tokenSet) {
+                if (!tokenSet || tokenSet.size === 0) return false;
+                const haystack = `${chunk.title || ''} ${chunk.text || ''}`.toLowerCase();
+                for (const token of tokenSet) {
+                    if (haystack.includes(token)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+ 
+            async function getEmbeddingForText(text) {
+                const payload = { type: 'embedding', texts: [text] };
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) {
+                    const errorBody = await response.text();
+                    throw new Error(`Embedding request failed with status ${response.status}: ${errorBody}`);
+                }
+                const data = await response.json();
+                const embeddingValues = data.embeddings?.[0]?.values || data.responses?.[0]?.values || data.embeddings?.[0]?.embedding || data.responses?.[0]?.embedding;
+                if (!embeddingValues || !Array.isArray(embeddingValues)) {
+                    throw new Error('Embedding response did not include values.');
+                }
+                return embeddingValues.map(Number);
+            }
+
+            function cosineSimilarity(a, b) {
+                if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length) {
+                    return 0;
+                }
+                let dot = 0;
+                let normA = 0;
+                let normB = 0;
+                for (let i = 0; i < a.length; i++) {
+                    const ai = a[i];
+                    const bi = b[i];
+                    dot += ai * bi;
+                    normA += ai * ai;
+                    normB += bi * bi;
+                }
+                const denominator = Math.sqrt(normA) * Math.sqrt(normB) || 1;
+                return dot / denominator;
+            }
+
+            async function retrieveRelevantChunks(query) {
+                if (!ordinanceEmbeddings.length) return [];
+                const { expandedAll, expandedHigh } = buildTokenSets(query);
+                const queryEmbedding = await getEmbeddingForText(query);
+                const scored = ordinanceEmbeddings
+                    .map(chunk => {
+                        const baseScore = cosineSimilarity(queryEmbedding, chunk.embedding);
+                        const containsHigh = chunkContainsTokens(chunk, expandedHigh);
+                        const containsAny = containsHigh || chunkContainsTokens(chunk, expandedAll);
+                        let score = baseScore;
+                        if (containsHigh) {
+                            score += 0.04;
+                        } else if (containsAny) {
+                            score += 0.02;
+                        }
+                        return { ...chunk, score, containsHighToken: containsHigh, containsAnyToken: containsAny };
+                    })
+                    .sort((a, b) => b.score - a.score);
+                const requireHighMatch = expandedHigh.size > 0;
+                const filtered = scored.filter(item => item.score >= MIN_SIMILARITY_THRESHOLD && (requireHighMatch ? item.containsHighToken : item.containsAnyToken));
+                if (filtered.length === 0) {
+                    return [];
+                }
+                if (filtered[0].score < MIN_TOP_MATCH_SCORE) {
+                    return [];
+                }
+                return filtered.slice(0, MAX_CONTEXT_CHUNKS);
+            }
+
+            function buildSourceList(chunks) {
+                const seen = new Map();
+                chunks.forEach(chunk => {
+                    const key = chunk.url || chunk.ordinanceId || chunk.id;
+                    if (!key) return;
+                    if (!seen.has(key)) {
+                        seen.set(key, {
+                            uri: chunk.url,
+                            label: formatOrdinanceTitle(chunk)
+                        });
+                    }
+                });
+                return Array.from(seen.values());
+            }
+
             async function getAIResponse(userQuery) {
-                const MIN_SCORE_THRESHOLD = 10;
-                let relevantOrdinances = searchOrdinances(userQuery);
-                let payload;
+                await ensureDataReady();
+
+                const relevantChunks = await retrieveRelevantChunks(userQuery);
                 let useWebSearch = false;
-                if (relevantOrdinances.length > 0 && relevantOrdinances[0].score >= MIN_SCORE_THRESHOLD) {
-                    const context = relevantOrdinances.map(o => {
-                        const heading = o.displayTitle || formatOrdinanceTitle(o);
-                        return `Title: ${heading}\nURL: ${o.url}\nContent: ${o.text}`;
+                let payload;
+                let localSources = [];
+
+                if (relevantChunks.length > 0) {
+                    const context = relevantChunks.map(chunk => {
+                        const heading = formatOrdinanceTitle(chunk);
+                        return `Title: ${heading}\nURL: ${chunk.url}\nContent: ${chunk.text}`;
                     }).join('\n\n');
                     const systemPrompt = `You are a helpful, friendly digital assistant for the Great Falls, SC Police Department. Your tone should be professional, clear, and easy to understand for a citizen. Base your answer *strictly* on the provided local ordinances. Do not add information not present in the text. Directly address the user's question. Format your response clearly using markdown.\n\nResponse structure:\n1. Add a level-3 heading labeled "Summary" followed by 2-4 sentences in plain language that answer the question directly.\n2. Add a level-3 heading labeled "Key Ordinance Details" and list the specific requirements, prohibitions, or allowances from the ordinance using concise bullet points. Reference section identifiers in parentheses where relevant.\n3. If no ordinance information is supplied, clearly state that under the Summary heading and encourage contacting the department for clarification.\n4. Do not repeat the entire ordinance verbatim—surface only the clauses that answer the question.`;
-                    payload = { contents: [{ parts: [{ text: `CONTEXT:\n${context}\n\nQUESTION:\n${userQuery}` }] }], systemInstruction: { parts: [{ text: systemPrompt }] }, };
+                    const combinedPrompt = `SYSTEM PROMPT: ${systemPrompt}\n\nCONTEXT:\n${context}\n\nQUESTION:\n${userQuery}`;
+                    payload = {
+                        contents: [{ role: 'user', parts: [{ text: combinedPrompt }] }]
+                    };
+                    localSources = buildSourceList(relevantChunks);
                 } else {
                     useWebSearch = true;
                     const systemPrompt = `You are a helpful, friendly digital assistant for the Great Falls, SC Police Department. Your tone should be professional, clear, and easy to understand for a citizen. The user is asking a question about laws or safety. Answer the question specifically for Great Falls, South Carolina, USA. Use the search tool to find the most accurate and up-to-date information. Format your response clearly using markdown.\n\nResponse structure:\n1. Add a level-3 heading labeled "Summary" followed by 2-4 sentences in plain language that answer the question directly.\n2. Add a level-3 heading labeled "Key Ordinance Details" and list any specific requirements, prohibitions, or allowances discovered, citing authoritative sources.\n3. If reliable information is not available, state that clearly under the Summary heading and encourage contacting the department for clarification.`;
-                    payload = { contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemPrompt }] }, tools: [{ "google_search": {} }], };
+                    const combinedPrompt = `SYSTEM PROMPT: ${systemPrompt}\n\nQUESTION:\n${userQuery}`;
+                    payload = {
+                        contents: [{ role: 'user', parts: [{ text: combinedPrompt }] }],
+                        tools: [{ google_search: {} }]
+                    };
                 }
-                let response;
-                try {
-                    response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                    if (!response.ok) { const errorBody = await response.text(); throw new Error(`API request failed with status ${response.status}: ${errorBody}`); }
-                } catch (error) { console.error("Fetch failed:", error); throw new Error("Could not connect to the AI service. Please check your network connection."); }
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const errorBody = await response.text();
+                    throw new Error(`API request failed with status ${response.status}: ${errorBody}`);
+                }
+
                 const result = await response.json();
                 const candidate = result.candidates?.[0];
-                if (!candidate || !candidate.content?.parts?.[0]?.text) { console.error("Invalid response structure:", result); throw new Error("Received an invalid response from the AI service."); }
-                const text = candidate.content.parts[0].text;
+                const parts = candidate?.content?.parts || [];
+                const text = parts.map(part => part.text || '').join('').trim();
+                if (!text) {
+                    console.error('Invalid response structure:', result);
+                    throw new Error('Received an invalid response from the AI service.');
+                }
+
                 let sources = [];
                 if (useWebSearch) {
-                     const groundingMetadata = candidate.groundingMetadata;
-                    if (groundingMetadata && groundingMetadata.groundingAttributions) { sources = groundingMetadata.groundingAttributions.map(attr => ({ uri: attr.web?.uri, title: attr.web?.title })).filter(source => source.uri && source.title); }
+                    const groundingMetadata = candidate?.groundingMetadata;
+                    if (groundingMetadata?.groundingAttributions) {
+                        sources = groundingMetadata.groundingAttributions
+                            .map(attr => ({ uri: attr.web?.uri, title: attr.web?.title }))
+                            .filter(source => source.uri && source.title);
+                    }
                 } else {
-                    sources = relevantOrdinances.map(o => ({ uri: o.url, label: o.displayTitle || formatOrdinanceTitle(o) }));
+                    sources = localSources;
                 }
-                return { text, sources };
+
+                return { text, sources, usedWebSearch: useWebSearch };
             }
-            function displaySources(sources) {
-                if (!sources || sources.length === 0) { sourcesEl.innerHTML = ""; return; }
-                const sourceTitle = sources[0].uri.includes('municode.com') ? 'Source Documents:' : 'Web Sources:';
+
+            function displaySources(sources, wasWebSearch) {
+                if (!sources || sources.length === 0) {
+                    sourcesEl.innerHTML = "";
+                    return;
+                }
+                const sourceTitle = wasWebSearch ? 'Web Sources:' : 'Source Documents:';
                 const sourceLinks = sources.map(source => {
                     const label = source.label || source.title || source.uri;
                     return `<a href="${source.uri}" target="_blank" rel="noopener noreferrer" class="source-link hover:bg-gray-600">${label}</a>`;
@@ -772,14 +747,6 @@
             }
         });
         
-        // Close recruiting popup function
-        function closeRecruitingPopup(markDismissed = false) {
-            const recruitingPopup = document.getElementById('recruiting-popup');
-            if (markDismissed) {
-                window.recruitingPopupDismissed = true;
-            }
-            recruitingPopup?.classList.remove('show');
-        }
     </script>
 </body>
 </html>
