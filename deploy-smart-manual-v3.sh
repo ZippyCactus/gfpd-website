@@ -40,7 +40,7 @@ else
     DELETED_FILES=$(git diff --name-only --diff-filter=D $LAST_COMMIT HEAD | grep -v "^\.git" | grep -v "deploy-" | grep -v "setup-" | grep -v "upload-")
     
     # Get renamed files with old and new names
-    RENAMED_FILES=$(git diff --name-status --diff-filter=R $LAST_COMMIT HEAD | grep -v "^\.git" | grep -v "deploy-" | grep -v "setup-" | grep -v "upload-")
+    RENAMED_FILES=$(git diff --name-status --diff-filter=R $LAST_COMMIT HEAD | grep -v "^\.git" | grep -v "deploy-" | grep -v "setup-" | grep -v "upload-" | grep -v "cleanup-files.txt")
     
     # Extract new names from renamed files
     NEW_RENAMED_FILES=$(echo "$RENAMED_FILES" | awk '{print $2}')
