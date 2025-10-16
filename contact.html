@@ -53,7 +53,7 @@
             top: 0;
             width: 100%;
             height: 110%;
-            background-image: url('./assets/gfpd-banner-no-text.jpg');
+            background-image: url('./assets/images/heroes/gfpd-banner-no-text.jpg');
             background-size: cover;
             background-position: center bottom;
             z-index: 0;
@@ -76,7 +76,7 @@
         <nav class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
                 <a href="./index.html" class="flex items-center space-x-3">
-                    <img src="./assets/gfpd-badge.png" alt="Great Falls Police Department Badge" class="h-12 w-auto">
+                    <img src="./assets/images/badges/gfpd-badge.png" alt="Great Falls Police Department Badge" class="h-12 w-auto">
                     <div class="flex flex-col">
                         <span class="text-xl font-bold uppercase tracking-wider text-white">Great Falls</span>
                         <span class="text-sm font-semibold uppercase tracking-widest text-amber-400">Police Department</span>
@@ -304,7 +304,7 @@
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
-                    <img src="./assets/gfpd-coin.png" alt="Great Falls Police Department Badge" class="h-40 w-auto" loading="lazy">
+                    <img src="./assets/images/badges/gfpd-coin.png" alt="Great Falls Police Department Badge" class="h-40 w-auto" loading="lazy">
                 </div>
                 <div class="md:text-right">
                      <h3 class="text-lg font-bold text-white uppercase tracking-wider">Site Navigation</h3>
@@ -407,7 +407,7 @@
 
             // --- START OF AI ASSISTANT CHANGES ---
             const apiUrl = "https://gfpd-ai-proxy.mc-bygone.workers.dev";
-            const embeddingsUrl = "./assets/ordinances-embeddings.json";
+            const embeddingsUrl = "./assets/data/ordinances-embeddings.json";
             const aiPromptInput = document.getElementById('ai-prompt');
             const generateBtn = document.getElementById('ai-generate-btn');
             const presetBtns = document.querySelectorAll('.preset-btn');
@@ -430,7 +430,7 @@
             const dataLoadPromise = (async () => {
                 try {
                     const [ordinanceResp, embeddingsResp] = await Promise.all([
-                        fetch('./assets/ordinances.json'),
+                        fetch('./assets/data/ordinances.json'),
                         fetch(embeddingsUrl)
                     ]);
                     if (!ordinanceResp.ok) {

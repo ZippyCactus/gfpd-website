@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const WORKER_URL = process.env.WORKER_URL || 'https://gfpd-ai-proxy.mc-bygone.workers.dev';
-const ORDINANCES_PATH = path.resolve(__dirname, '../assets/ordinances.json');
-const OUTPUT_PATH = path.resolve(__dirname, '../assets/ordinances-embeddings.json');
+const ORDINANCES_PATH = path.resolve(__dirname, '../assets/data/ordinances.json');
+const OUTPUT_PATH = path.resolve(__dirname, '../assets/data/ordinances-embeddings.json');
 
 const MAX_CHARS_PER_CHUNK = 1800;
 const SENTENCE_SPLIT_REGEX = /(?<=[.!?])\s+/;

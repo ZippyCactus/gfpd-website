@@ -229,7 +229,7 @@ def parse_args() -> argparse.Namespace:
 def main():
     args = parse_args()
     chapters = collect_sections()
-    output = pathlib.Path("assets/ordinances.json")
+    output = pathlib.Path("assets/data/ordinances.json")
     output.parent.mkdir(parents=True, exist_ok=True)
     data = serialize(chapters) if not args.flat else serialize_flat(chapters)
     output.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

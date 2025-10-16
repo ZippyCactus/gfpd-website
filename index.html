@@ -14,7 +14,7 @@
     <meta property="og:description" content="The official website for the Great Falls, SC Police Department. Committed to protecting and serving our community with integrity, respect, and fairness.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://GreatFallsPoliceSC.com/">
-    <meta property="og:image" content="https://GreatFallsPoliceSC.com/assets/gfpd-banner.jpg">
+    <meta property="og:image" content="https://GreatFallsPoliceSC.com/assets/images/heroes/gfpd-banner.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Great Falls Police Department">
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Great Falls Police Department | Official Website">
     <meta name="twitter:description" content="The official website for the Great Falls, SC Police Department. Committed to protecting and serving our community with integrity, respect, and fairness.">
-    <meta name="twitter:image" content="https://GreatFallsPoliceSC.com/assets/gfpd-banner.jpg">
+    <meta name="twitter:image" content="https://GreatFallsPoliceSC.com/assets/images/heroes/gfpd-banner.jpg">
     
     <title>Great Falls Police Department | Official Website</title>
 
@@ -80,8 +80,8 @@
         "alternateName": "GFPD",
         "description": "The official website for the Great Falls, SC Police Department. Committed to protecting and serving our community with integrity, respect, and fairness.",
         "url": "https://GreatFallsPoliceSC.com",
-        "logo": "https://GreatFallsPoliceSC.com/assets/gfpd-badge.png",
-        "image": "https://GreatFallsPoliceSC.com/assets/gfpd-banner.jpg",
+        "logo": "https://GreatFallsPoliceSC.com/assets/images/badges/gfpd-badge.png",
+        "image": "https://GreatFallsPoliceSC.com/assets/images/heroes/gfpd-banner.jpg",
         "telephone": "(803) 482-2145",
         "email": "contact@GreatFallsPoliceSC.com",
         "address": {
@@ -154,7 +154,7 @@
         <nav class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
                 <a href="./index.html" class="flex items-center space-x-3">
-                    <img src="./assets/gfpd-badge.png" alt="Great Falls Police Department Badge" class="h-12 w-auto">
+                    <img src="./assets/images/badges/gfpd-badge.png" alt="Great Falls Police Department Badge" class="h-12 w-auto">
                     <div class="flex flex-col">
                         <span class="text-xl font-bold uppercase tracking-wider text-white">Great Falls</span>
                         <span class="text-sm font-semibold uppercase tracking-widest text-amber-400">Police Department</span>
@@ -189,7 +189,7 @@
 
     <main>
         <section class="parallax-container relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white bg-black">
-            <div id="parallax-bg" style="background-image: url('./assets/hero-flags.jpg');"></div>
+            <div id="parallax-bg" style="background-image: url('./assets/images/heroes/hero-flags.jpg');"></div>
             <div class="absolute inset-0 bg-black/60 z-10"></div>
             <div class="relative z-20 p-8">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider leading-tight drop-shadow-lg">Protecting Today,</h1>
@@ -270,7 +270,7 @@
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <div class="lg:w-1/3 fade-in-up">
                         <div class="rounded-full shadow-2xl mx-auto w-64 h-64 lg:w-full lg:h-auto lg:aspect-square overflow-hidden border-4 border-gray-700">
-                            <img src="./assets/chief-james-parker.png" alt="Chief James Parker" class="w-full h-full object-cover object-top" loading="lazy">
+                            <img src="./assets/images/people/chief-james-parker.png" alt="Chief James Parker" class="w-full h-full object-cover object-top" loading="lazy">
                         </div>
                     </div>
                     <div class="lg:w-2/3 text-center lg:text-left fade-in-up" style="transition-delay: 200ms;">
@@ -286,7 +286,7 @@
             <div class="container mx-auto px-6 fade-in-up">
                 <div class="flex items-center text-gray-600">
                     <div class="flex-grow border-t border-gray-600"></div>
-                    <div class="px-4"><img src="./assets/gfpd-coin-back.png" alt="Great Falls Police Officer Badge" class="h-36 w-auto" loading="lazy"></div>
+                    <div class="px-4"><img src="./assets/images/badges/gfpd-coin-back.png" alt="Great Falls Police Officer Badge" class="h-36 w-auto" loading="lazy"></div>
                     <div class="flex-grow border-t border-gray-600"></div>
                 </div>
             </div>
@@ -349,7 +349,7 @@
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
-                    <img src="./assets/gfpd-coin.png" alt="Great Falls Police Department Badge" class="h-40 w-auto" loading="lazy">
+                    <img src="./assets/images/badges/gfpd-coin.png" alt="Great Falls Police Department Badge" class="h-40 w-auto" loading="lazy">
                 </div>
                 <div class="md:text-right">
                      <h3 class="text-lg font-bold text-white uppercase tracking-wider">Site Navigation</h3>
@@ -410,7 +410,7 @@
 
             // --- Digital Community Officer ---
             const apiUrl = "https://gfpd-ai-proxy.mc-bygone.workers.dev";
-            const embeddingsUrl = "./assets/ordinances-embeddings.json";
+            const embeddingsUrl = "./assets/data/ordinances-embeddings.json";
             const aiPromptInput = document.getElementById('ai-prompt');
             const generateBtn = document.getElementById('ai-generate-btn');
             const presetBtns = document.querySelectorAll('.preset-btn');
@@ -434,7 +434,7 @@
             const dataLoadPromise = (async () => {
                 try {
                     const [ordinanceResp, embeddingsResp] = await Promise.all([
-                        fetch('./assets/ordinances.json'),
+                        fetch('./assets/data/ordinances.json'),
                         fetch(embeddingsUrl)
                     ]);
                     if (!ordinanceResp.ok) {
