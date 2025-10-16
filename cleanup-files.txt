@@ -1,4 +1,0 @@
-# Files to delete from server after uploading new package
-# This ensures no duplicate files remain
-
-gfpd-changes-20251016-0105.zip
